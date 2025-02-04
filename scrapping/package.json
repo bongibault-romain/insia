@@ -1,0 +1,16 @@
+{
+  "name": "scrapping",
+  "version": "1.0.0",
+  "description": "- Commencer par une liste des sites web (par exemple le site de l'insa) - Lancer un algorithme qui va chercher tout les liens dans cette page et les mettre dans une liste - On répéte ça sur tous les liens trouvés.",
+  "main": "indexing.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsdom": "^26.0.0",
+    "normalize-url": "^8.0.1"
+  },
+  "type": "module"
+}
