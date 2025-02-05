@@ -1,8 +1,0 @@
-[package]
-name = "scrapping"
-version = "0.1.0"
-edition = "2021"
-
-[dependencies]
-html5ever = "0.29.1"
-http = "1.2.0"
