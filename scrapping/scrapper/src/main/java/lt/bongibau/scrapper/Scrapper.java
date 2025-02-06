@@ -15,21 +15,9 @@ import java.net.URLConnection;
 
 public class Scrapper {
     public static void main(String[] args) throws IOException, InterruptedException {
-        URL test = new URL("https://google.com/search?q=java");
-        HttpURLConnection connection = (HttpURLConnection) test.openConnection();
+        URL test = new URL("https://api.google.com/search?q=java&a=2#salut");
 
-        connection.setRequestMethod("GET");
+        System.out.println(test.getPath());
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        StringBuffer content = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) {
-            content.append(inputLine);
-        }
-        in.close();
-        connection.disconnect();
-
-        System.out.println(test.para);
     }
 }
