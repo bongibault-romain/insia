@@ -54,8 +54,7 @@ public class Searcher extends Thread {
         }
     }
 
-    public         // join all searchers
-    void setPhase(Searcher.Phase phase) {
+    public void setPhase(Searcher.Phase phase) {
         this.phase = phase;
     }
 
