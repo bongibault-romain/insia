@@ -43,7 +43,11 @@ class FilterTest {
                 Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://sub.sub.example.com", true),
                 Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://sub.example.com", true),
                 Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://sub.subexample.com", false),
-                Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://example.com", true)
+                Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://example.com", true),
+                Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://example.com:80", true),
+
+                // Long urls
+                Arguments.of(new Filter("example.com", Filter.Type.ACCEPT), "http://sub.example.com/hello/world?query=hello&date=now", true)
         );
     }
 
