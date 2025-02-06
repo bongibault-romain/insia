@@ -1,5 +1,7 @@
 package lt.bongibau.scrapper.searching;
 
+import lt.bongibau.scrapper.searching.filters.FilterContainer;
+import lt.bongibau.scrapper.searching.formatter.NotValidHrefException;
 import lt.bongibau.scrapper.searching.formatter.URLFormatter;
 import org.jetbrains.annotations.Nullable;
 
@@ -11,13 +13,20 @@ import java.util.List;
 
 public class SearchManager implements Searcher.Observer {
 
-    private static SearchManager instance;
+    private final FilterContainer filters;
 
-    private List<Searcher> searchers = new ArrayList<>();
+    private List<Searcher> searchers;
 
-    private List<URL> heap = new LinkedList<>();
+    private List<URL> heap;
 
-    private List<URL> visited = new LinkedList<>();
+    private List<URL> visited;
+
+    public SearchManager(List<URL> heap, FilterContainer filters) {
+        this.heap = new LinkedList<>(heap);
+        this.searchers = new ArrayList<>();
+        this.visited = new LinkedList<>();
+        this.filters = filters;
+    }
 
     public void start(int searcherCount) {
         for (int i = 0; i < searcherCount; i++) {
@@ -112,14 +121,25 @@ public class SearchManager implements Searcher.Observer {
     @Override
     public synchronized void notify(URL baseUrl, List<String> links) {
         for (String link : links) {
-        }
-    }
+            URL url;
+            try {
+                 url = URLFormatter.hrefToUrl(baseUrl, link);
+            } catch (NotValidHrefException e) {
+                continue;
+            }
 
-    public static SearchManager getInstance() {
-        if (instance == null) {
-            instance = new SearchManager();
-        }
+            url = URLFormatter.format(url);
 
-        return instance;
+            if (this.isVisited(url)) {
+                continue;
+            }
+
+            if (!filters.check(url)) {
+                continue;
+            }
+
+            this.markVisited(url);
+            this.push(url);
+        }
     }
 }
