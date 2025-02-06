@@ -7,6 +7,13 @@ import java.net.URL;
 import java.util.Arrays;
 
 public class URLFormatter {
+
+    /**
+     * Formats the URL to a static format
+     * and sorts the query parameters
+     * @param url URL to format
+     * @return Formatted URL
+     */
     static URL format(URL url){
         String stringUrl = url.toString();
         if(stringUrl.contains("?")){
@@ -37,6 +44,14 @@ public class URLFormatter {
         return url;
     }
 
+    /**
+     * Converts href to URL
+     * and verifies if the href is valid
+     * @param baseUrl Base URL
+     * @param href Href to convert
+     * @return URL
+     * @throws NotValidHrefException If the href is not valid
+     */
     static URL hrefToUrl(URL baseUrl, String href) throws NotValidHrefException {
         if(!hrefIsValid(href))throw new NotValidHrefException();
         try {
@@ -47,6 +62,12 @@ public class URLFormatter {
             throw new NotValidHrefException();
         }
     }
+
+    /**
+     * Checks if the href is valid
+     * @param href Href to check
+     * @return true if the href is valid
+     */
     static boolean hrefIsValid(String href){
         if(href==null)return false;
         if(href.startsWith("/")||href.startsWith("https://")||href.startsWith("http://"))return true;
