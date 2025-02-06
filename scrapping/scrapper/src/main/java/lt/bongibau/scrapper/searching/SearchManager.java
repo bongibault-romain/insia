@@ -29,6 +29,7 @@ public class SearchManager implements Searcher.Observer {
     }
 
     public void start(int searcherCount) {
+        System.out.println("Starting search manager with " + searcherCount + " searchers");
         for (int i = 0; i < searcherCount; i++) {
             Searcher searcher = new Searcher();
             searcher.start();
@@ -37,20 +38,29 @@ public class SearchManager implements Searcher.Observer {
             searchers.add(searcher);
         }
 
+        System.out.println("[MAIN] Search manager started");
         while (!this.isEmpty() || this.isSearchersWorking()) {
             URL url = this.pop();
             if (url == null) {
+                System.out.println("[MAIN] IDLE");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                System.out.println(isSearchersWorking());
                 continue;
             }
 
+            System.out.println("[MAIN] Popped " + url);
+
             Searcher searcher = this.findSearcher();
             searcher.push(url);
+
+            System.out.println(isSearchersWorking());
         }
+
+        System.out.println("[MAIN] Search manager is waiting for searchers to finish");
 
         searchers.forEach((s) -> s.setRunning(false));
         searchers.forEach((s) -> {
@@ -70,7 +80,7 @@ public class SearchManager implements Searcher.Observer {
      * @return true if at least one searcher is working
      */
     private boolean isSearchersWorking() {
-        return searchers.stream().anyMatch((s) -> s.getPhase() == Searcher.Phase.WORKING);
+        return searchers.stream().anyMatch((s) -> s.getPhase() == Searcher.Phase.WORKING || s.hasWork());
     }
 
     /**
@@ -128,7 +138,12 @@ public class SearchManager implements Searcher.Observer {
                 continue;
             }
 
-            url = URLFormatter.format(url);
+            try {
+                url = URLFormatter.format(url);
+            } catch (Exception e) {
+                System.out.println("Failed to format URL: " + url);
+                continue;
+            }
 
             if (this.isVisited(url)) {
                 continue;

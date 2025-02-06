@@ -1,13 +1,20 @@
 package lt.bongibau.scrapper.searching;
 
 import org.jetbrains.annotations.Nullable;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Attribute;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Searcher extends Thread {
-
     public enum Phase {
         WORKING,
         IDLE
@@ -38,21 +45,81 @@ public class Searcher extends Thread {
     @Override
     public void run() {
         while (this.isRunning()) {
+            this.setPhase(Phase.WORKING);
+
             URL url = this.pop();
             if (url == null) {
+                System.out.println("IDLE");
+                this.setPhase(Phase.IDLE);
+
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
                 continue;
             }
 
+            System.out.println("WORKING");
 
+            HttpURLConnection connection = null;
+            try {
+                connection = (HttpURLConnection) url.openConnection();
+
+                connection.setInstanceFollowRedirects(false);
+                connection.setRequestMethod("GET");
+                connection.connect();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            int status = 0;
+            try {
+                status = connection.getResponseCode();
+            } catch (IOException e) {
+                e.printStackTrace();
+                continue;
+            }
+
+            if (status == HttpURLConnection.HTTP_MOVED_TEMP
+                    || status == HttpURLConnection.HTTP_MOVED_PERM) {
+                String location = connection.getHeaderField("Location");
+
+                this.notifyAll(url, List.of(location));
+                continue;
+            }
+
+            if (status != HttpURLConnection.HTTP_OK) {
+                System.out.println("Error: " + status);
+                // TODO: log error
+                continue;
+            }
+
+            StringBuilder content = new StringBuilder();
+            try {
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream()));
+                String inputLine;
+                while ((inputLine = in.readLine()) != null) {
+                    content.append(inputLine);
+                }
+                in.close();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            Document document = Jsoup.parse(content.toString());
+            List<String> links = document.select("a").stream().map((a) -> a.attr("href")).toList();
+            System.out.println("Found links: " + links.size());
+            this.notifyAll(url, links);
         }
+
+        System.out.println("Searcher stopped.");
     }
 
-    public void setPhase(Searcher.Phase phase) {
+    public synchronized void setPhase(Searcher.Phase phase) {
         this.phase = phase;
     }
 
@@ -84,6 +151,10 @@ public class Searcher extends Thread {
 
     public synchronized void unsubscribe(Searcher.Observer observer) {
         observers.remove(observer);
+    }
+
+    public synchronized boolean hasWork() {
+        return !heap.isEmpty();
     }
 
     @Nullable

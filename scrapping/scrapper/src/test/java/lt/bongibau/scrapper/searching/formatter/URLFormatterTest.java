@@ -43,7 +43,8 @@ class URLFormatterTest {
                 Arguments.of("tel:123456789", false),
                 Arguments.of("file:///home/user/file.txt", false),
                 Arguments.of("data:text/plain;base64,SGVsbG8sIFdvcmxkIQ==", false),
-                Arguments.of("data:application/octet-stream;base64,SGVsbG8sIFdvcmxkIQ==", false)
+                Arguments.of("data:application/octet-stream;base64,SGVsbG8sIFdvcmxkIQ==", false),
+                Arguments.of("mailto:servicecom@insatoulouse.fr?subject=Désinscription%20newsletter&body=Bonjour,%0A%0AMerci de me désabonner de votre newsletter.%0A%0ACordialement.", false)
         );
     }
 
