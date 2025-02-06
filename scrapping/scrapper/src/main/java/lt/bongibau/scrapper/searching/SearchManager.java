@@ -1,9 +1,10 @@
 package lt.bongibau.scrapper.searching;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchManager {
+public class SearchManager implements Searcher.Observer {
 
     private static SearchManager instance;
 
@@ -25,5 +26,10 @@ public class SearchManager {
         }
 
         return instance;
+    }
+
+    @Override
+    public void notify(URL baseUrl, List<String> links) {
+
     }
 }

@@ -20,9 +20,11 @@ public class Searcher extends Thread {
          * one loop of searching
          *
          * @param baseUrl Base URL of the page, where the links were found
-         * @param links List of links found on the page
+         * @param links List of links found on the page, links are relative to the base URL
+         *              and are not formatted, they are just the href attribute values.
+         *              They should be formatted before using them.
          */
-        void onLinksFound(URL baseUrl, List<String> links);
+        void notify(URL baseUrl, List<String> links);
     }
 
     private final List<String> heap = new LinkedList<>();
@@ -47,6 +49,8 @@ public class Searcher extends Thread {
             }
 
             System.out.println("Searching: " + url);
+
+            this.notifyAll(null, List.of("link1", "link2"));
         }
     }
 
@@ -72,6 +76,12 @@ public class Searcher extends Thread {
 
     public synchronized void addAll(List<String> urls) {
         heap.addAll(urls);
+    }
+
+    public synchronized void notifyAll(URL baseUrl, List<String> links) {
+        for (Searcher.Observer observer : observers) {
+            observer.notify(baseUrl, links);
+        }
     }
 
     public synchronized void subscribe(Searcher.Observer observer) {
