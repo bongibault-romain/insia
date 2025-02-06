@@ -54,7 +54,8 @@ public class Searcher extends Thread {
         }
     }
 
-    public synchronized void setPhase(Searcher.Phase phase) {
+    public         // join all searchers
+    void setPhase(Searcher.Phase phase) {
         this.phase = phase;
     }
 
