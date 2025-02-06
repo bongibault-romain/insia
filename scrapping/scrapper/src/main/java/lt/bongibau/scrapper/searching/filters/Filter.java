@@ -16,11 +16,11 @@ public record Filter(String host, lt.bongibau.scrapper.searching.filters.Filter.
     /**
      * Check if the URL is accepted by the filter
      *
-     * @param uri URI to check
+     * @param url URL to check
      * @return true if the URL is accepted by the filter
      */
-    public boolean check(URI uri) {
-        String[] urlDomains = uri.getHost().split("\\.");
+    public boolean check(URL url) {
+        String[] urlDomains = url.getHost().split("\\.");
         String[] hosts = host.split("\\.");
 
         if (hosts.length > urlDomains.length) {

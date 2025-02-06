@@ -25,12 +25,12 @@ public class FilterContainer {
      * Check if the URL is accepted by the filters,
      * if no filter accepts the URL, the default policy is used
      *
-     * @param uri URI to check
+     * @param url URL to check
      * @return true if the URL is accepted by the filters
      */
-    public boolean check(URI uri) {
+    public boolean check(URL url) {
         for (Filter filter : filters) {
-            if (filter.check(uri)) {
+            if (filter.check(url)) {
                 return filter.type() == Filter.Type.ACCEPT;
             }
         }

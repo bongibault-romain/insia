@@ -19,7 +19,7 @@ class FilterTest {
     @MethodSource("provideFilter")
     @DisplayName("Test check")
     void check(Filter filter, String url, boolean expected) throws MalformedURLException {
-        assertEquals(expected, filter.check(URI.create(url)), "Check should return expected value.");
+        assertEquals(expected, filter.check(URI.create(url).toURL()), "Check should return expected value.");
     }
 
 

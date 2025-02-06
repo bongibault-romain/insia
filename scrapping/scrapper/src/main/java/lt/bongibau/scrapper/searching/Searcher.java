@@ -27,7 +27,7 @@ public class Searcher extends Thread {
         void notify(URL baseUrl, List<String> links);
     }
 
-    private final List<String> heap = new LinkedList<>();
+    private final List<URL> heap = new LinkedList<>();
 
     private final List<Searcher.Observer> observers = new LinkedList<>();
 
@@ -38,7 +38,7 @@ public class Searcher extends Thread {
     @Override
     public void run() {
         while (this.isRunning()) {
-            String url = this.pop();
+            URL url = this.pop();
             if (url == null) {
                 try {
                     Thread.sleep(1000);
@@ -48,9 +48,7 @@ public class Searcher extends Thread {
                 continue;
             }
 
-            System.out.println("Searching: " + url);
 
-            this.notifyAll(null, List.of("link1", "link2"));
         }
     }
 
@@ -70,12 +68,8 @@ public class Searcher extends Thread {
         this.running = running;
     }
 
-    public synchronized void add(String url) {
+    public synchronized void push(URL url) {
         heap.add(url);
-    }
-
-    public synchronized void addAll(List<String> urls) {
-        heap.addAll(urls);
     }
 
     public synchronized void notifyAll(URL baseUrl, List<String> links) {
@@ -93,7 +87,7 @@ public class Searcher extends Thread {
     }
 
     @Nullable
-    public synchronized String pop() {
+    public synchronized URL pop() {
         return heap.isEmpty() ? null : heap.removeFirst();
     }
 }

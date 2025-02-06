@@ -14,7 +14,7 @@ public class URLFormatter {
      * @param url URL to format
      * @return Formatted URL
      */
-    static URI format(URI url){
+    public static URL format(URL url){
         String stringUrl = url.toString();
         if(stringUrl.contains("?")){
             String[] parts = stringUrl.split("\\?",1);
@@ -37,10 +37,11 @@ public class URLFormatter {
         if(querrySelector!=null)stringUrl+="?"+querrySelector;
 
         try {
-            return new URI(stringUrl);
-        } catch (URISyntaxException  e) {
+            return new URI(stringUrl).toURL();
+        } catch (MalformedURLException | URISyntaxException e) {
             e.printStackTrace();
         }
+
         return url;
     }
 
@@ -52,9 +53,13 @@ public class URLFormatter {
      * @return URI
      * @throws NotValidHrefException If the href is not valid
      */
-    static URI hrefToUrl(URI baseUrl, String href) throws NotValidHrefException {
+    public static URL hrefToUrl(URL baseUrl, String href) throws NotValidHrefException {
         if(!hrefIsValid(href))throw new NotValidHrefException();
-        return baseUrl.resolve(href);
+        try {
+            return baseUrl.toURI().resolve(href).toURL();
+        } catch (URISyntaxException | MalformedURLException e) {
+            throw new NotValidHrefException();
+        }
     }
 
     /**
@@ -62,7 +67,7 @@ public class URLFormatter {
      * @param href Href to check
      * @return true if the href is valid
      */
-    static boolean hrefIsValid(String href){
+    public static boolean hrefIsValid(String href){
         if(href==null)return false;
         if(href.startsWith("/")||href.startsWith("https://")||href.startsWith("http://"))return true;
         if(href.contains(":")){
