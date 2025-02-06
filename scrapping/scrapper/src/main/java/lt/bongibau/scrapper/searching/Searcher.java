@@ -1,16 +1,37 @@
 package lt.bongibau.scrapper.searching;
 
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Searcher extends Thread {
 
-    private List<String> heap = new LinkedList<>();
+    public enum Phase {
+        WORKING,
+        IDLE
+    }
+
+    public static interface Observer {
+        /**
+         * Called when the searcher finds links on a page,
+         * basically when the searcher is working and finished
+         * one loop of searching
+         *
+         * @param baseUrl Base URL of the page, where the links were found
+         * @param links List of links found on the page
+         */
+        void onLinksFound(URL baseUrl, List<String> links);
+    }
+
+    private final List<String> heap = new LinkedList<>();
+
+    private final List<Searcher.Observer> observers = new LinkedList<>();
 
     private boolean running = false;
+
+    private Phase phase = Phase.IDLE;
 
     @Override
     public void run() {
@@ -29,6 +50,14 @@ public class Searcher extends Thread {
         }
     }
 
+    public synchronized void setPhase(Searcher.Phase phase) {
+        this.phase = phase;
+    }
+
+    public synchronized Searcher.Phase getPhase() {
+        return phase;
+    }
+
     public synchronized boolean isRunning() {
         return running;
     }
@@ -43,6 +72,14 @@ public class Searcher extends Thread {
 
     public synchronized void addAll(List<String> urls) {
         heap.addAll(urls);
+    }
+
+    public synchronized void subscribe(Searcher.Observer observer) {
+        observers.add(observer);
+    }
+
+    public synchronized void unsubscribe(Searcher.Observer observer) {
+        observers.remove(observer);
     }
 
     @Nullable
