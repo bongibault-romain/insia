@@ -2,6 +2,7 @@ package lt.bongibau.scrapper.searching.filters;
 
 import org.jetbrains.annotations.Unmodifiable;
 
+import java.net.URI;
 import java.net.URL;
 import java.util.Collections;
 import java.util.List;
@@ -24,12 +25,12 @@ public class FilterContainer {
      * Check if the URL is accepted by the filters,
      * if no filter accepts the URL, the default policy is used
      *
-     * @param url URL to check
+     * @param uri URI to check
      * @return true if the URL is accepted by the filters
      */
-    public boolean check(URL url) {
+    public boolean check(URI uri) {
         for (Filter filter : filters) {
-            if (filter.check(url)) {
+            if (filter.check(uri)) {
                 return filter.type() == Filter.Type.ACCEPT;
             }
         }
