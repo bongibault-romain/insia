@@ -50,29 +50,29 @@ class URLFormatterTest {
     public static Stream<Arguments> provideHrefToURL() {
         try {
             return Stream.of(
-                    Arguments.of(new URI("https://test.com").toURL(), "https://example.com", new URI("https://example.com").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "http://example.com", new URI("http://example.com").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "http://example.com/", new URI("http://example.com/").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "http://example.com/home/", new URI("http://example.com/home/").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "http://example.com/home", new URI("http://example.com/home").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "http://example.com/search?q=hello:world", new URI("http://example.com/search?q=hello:world").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "/home#hello-world", new URI("https://example.com/home#hello-world").toURL()),
-                    Arguments.of(new URI("https://example.com").toURL(), "/home?test=1#hello-world", new URI("https://example.com/home?test=1#hello-world").toURL()),
+                    Arguments.of(new URI("https://test.com"), "https://example.com", new URI("https://example.com")),
+                    Arguments.of(new URI("https://example.com"), "http://example.com", new URI("http://example.com")),
+                    Arguments.of(new URI("https://example.com"), "http://example.com/", new URI("http://example.com/")),
+                    Arguments.of(new URI("https://example.com"), "http://example.com/home/", new URI("http://example.com/home/")),
+                    Arguments.of(new URI("https://example.com"), "http://example.com/home", new URI("http://example.com/home")),
+                    Arguments.of(new URI("https://example.com"), "http://example.com/search?q=hello:world", new URI("http://example.com/search?q=hello:world")),
+                    Arguments.of(new URI("https://example.com"), "/home#hello-world", new URI("https://example.com/home#hello-world")),
+                    Arguments.of(new URI("https://example.com"), "/home?test=1#hello-world", new URI("https://example.com/home?test=1#hello-world")),
 
-                    Arguments.of(new URI("https://insa-toulouse.fr").toURL(), "/home", new URI("https://insa-toulouse.fr/home").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr").toURL(), "/home/", new URI("https://insa-toulouse.fr/home/").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr").toURL(), "/articles/012891141", new URI("https://insa-toulouse.fr/articles/012891141").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr").toURL(), "/articles/012891141/", new URI("https://insa-toulouse.fr/articles/012891141/").toURL()),
+                    Arguments.of(new URI("https://insa-toulouse.fr"), "/home", new URI("https://insa-toulouse.fr/home")),
+                    Arguments.of(new URI("https://insa-toulouse.fr"), "/home/", new URI("https://insa-toulouse.fr/home/")),
+                    Arguments.of(new URI("https://insa-toulouse.fr"), "/articles/012891141", new URI("https://insa-toulouse.fr/articles/012891141")),
+                    Arguments.of(new URI("https://insa-toulouse.fr"), "/articles/012891141/", new URI("https://insa-toulouse.fr/articles/012891141/")),
 
-                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world").toURL(), "/home/?q=hello?b=world", new URI("https://insa-toulouse.fr/home/?q=hello?b=world").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world").toURL(), "/home?q=hello?b=world#test", new URI("https://insa-toulouse.fr/home?q=hello?b=world#test").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world").toURL(), "/home?q=hello:world", new URI("https://insa-toulouse.fr/home?q=hello:world").toURL()),
+                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world"), "/home/?q=hello?b=world", new URI("https://insa-toulouse.fr/home/?q=hello?b=world")),
+                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world"), "/home?q=hello?b=world#test", new URI("https://insa-toulouse.fr/home?q=hello?b=world#test")),
+                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world"), "/home?q=hello:world", new URI("https://insa-toulouse.fr/home?q=hello:world")),
 
-                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world").toURL(), "page.html", new URI("https://insa-toulouse.fr/hello/page.html").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world").toURL(), "page.html?q=hello?b=world", new URI("https://insa-toulouse.fr/hello/page.html?q=hello?b=world").toURL()),
-                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world").toURL(), "page.html?q=hello:world", new URI("https://insa-toulouse.fr/hello/page.html?q=hello:world").toURL())
+                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world"), "page.html", new URI("https://insa-toulouse.fr/hello/page.html")),
+                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world"), "page.html?q=hello?b=world", new URI("https://insa-toulouse.fr/hello/page.html?q=hello?b=world")),
+                    Arguments.of(new URI("https://insa-toulouse.fr/hello/world"), "page.html?q=hello:world", new URI("https://insa-toulouse.fr/hello/page.html?q=hello:world"))
             );
-        } catch (MalformedURLException | URISyntaxException e) {
+        } catch (URISyntaxException e) {
             throw new RuntimeException(e);
         }
     }
@@ -80,7 +80,7 @@ class URLFormatterTest {
     @ParameterizedTest
     @MethodSource("provideHrefToURL")
     @DisplayName("Test hrefToUrl")
-    void hrefToUrlTest(URL baseUrl, String href, URL expected) {
+    void hrefToUrlTest(URI baseUrl, String href, URI expected) {
         Assertions.assertDoesNotThrow(() -> {
             assertEquals(expected, URLFormatter.hrefToUrl(baseUrl, href), "hrefToUrl should return expected URL.");
         });
