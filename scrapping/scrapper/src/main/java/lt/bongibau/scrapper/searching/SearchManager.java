@@ -20,6 +20,7 @@ public class SearchManager implements Searcher.Observer {
             Searcher searcher = new Searcher();
             searcher.start();
             searcher.setRunning(true);
+            searcher.subscribe(this);
             searchers.add(searcher);
         }
 
