@@ -82,7 +82,7 @@ class URLFormatterTest {
     @DisplayName("Test hrefToUrl")
     void hrefToUrlTest(URL baseUrl, String href, URL expected) {
         Assertions.assertDoesNotThrow(() -> {
-            assertEquals(expected, URLFormatter.hrefToUrl(baseUrl, href).toString(), "hrefToUrl should return expected URL.");
+            assertEquals(expected, URLFormatter.hrefToUrl(baseUrl, href), "hrefToUrl should return expected URL.");
         });
     }
 
