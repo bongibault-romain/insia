@@ -54,9 +54,6 @@ public class URLFormatter {
      */
     static URI hrefToUrl(URI baseUrl, String href) throws NotValidHrefException {
         if(!hrefIsValid(href))throw new NotValidHrefException();
-        //if(href.startsWith("https://")||href.startsWith("http://"))return new URI(href).toURL();
-        //else if(href.startsWith("/"))return new URI(baseUrl.getProtocol()+"://"+baseUrl.getHost()+href).toURL();
-        //else return new URI(baseUrl.getProtocol()+"://"+baseUrl.getHost()+baseUrl.getPath()+'/'+href).toURL();
         return baseUrl.resolve(href);
     }
 
