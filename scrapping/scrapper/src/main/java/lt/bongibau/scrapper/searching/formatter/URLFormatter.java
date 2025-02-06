@@ -14,7 +14,7 @@ public class URLFormatter {
      * @param url URL to format
      * @return Formatted URL
      */
-    static URL format(URL url){
+    static URI format(URI url){
         String stringUrl = url.toString();
         if(stringUrl.contains("?")){
             String[] parts = stringUrl.split("\\?",1);
@@ -37,30 +37,27 @@ public class URLFormatter {
         if(querrySelector!=null)stringUrl+="?"+querrySelector;
 
         try {
-            return new URI(stringUrl).toURL();
-        } catch (URISyntaxException | MalformedURLException e) {
+            return new URI(stringUrl);
+        } catch (URISyntaxException  e) {
             e.printStackTrace();
         }
         return url;
     }
 
     /**
-     * Converts href to URL
+     * Converts href to URI
      * and verifies if the href is valid
-     * @param baseUrl Base URL
+     * @param baseUrl Base URI
      * @param href Href to convert
-     * @return URL
+     * @return URI
      * @throws NotValidHrefException If the href is not valid
      */
-    static URL hrefToUrl(URL baseUrl, String href) throws NotValidHrefException {
+    static URI hrefToUrl(URI baseUrl, String href) throws NotValidHrefException {
         if(!hrefIsValid(href))throw new NotValidHrefException();
-        try {
-            if(href.startsWith("https://")||href.startsWith("http://"))return new URI(href).toURL();
-            else if(href.startsWith("/"))return new URI(baseUrl.getProtocol()+"://"+baseUrl.getHost()+href).toURL();
-            else return new URI(baseUrl.getProtocol()+"://"+baseUrl.getHost()+baseUrl.getPath()+'/'+href).toURL();
-        }catch (URISyntaxException | MalformedURLException e){
-            throw new NotValidHrefException();
-        }
+        //if(href.startsWith("https://")||href.startsWith("http://"))return new URI(href).toURL();
+        //else if(href.startsWith("/"))return new URI(baseUrl.getProtocol()+"://"+baseUrl.getHost()+href).toURL();
+        //else return new URI(baseUrl.getProtocol()+"://"+baseUrl.getHost()+baseUrl.getPath()+'/'+href).toURL();
+        return baseUrl.resolve(href);
     }
 
     /**
