@@ -24,6 +24,7 @@ public class SearchManager implements Searcher.Observer {
             searchers.add(searcher);
         }
 
+        // TODO: replace heap.isEmpty() by synchronized method
         while (!heap.isEmpty() || this.isSearchersWorking()) {
             // TODO: implement
             throw new UnsupportedOperationException("Not implemented");

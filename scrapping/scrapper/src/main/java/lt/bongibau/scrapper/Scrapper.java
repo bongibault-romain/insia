@@ -9,15 +9,13 @@ import org.jsoup.nodes.Element;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
 
 public class Scrapper {
-    public static void main(String[] args) throws IOException, InterruptedException {
-        URL test = new URL("https://api.google.com/search?q=java&a=2#salut");
+    public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
+        URI test = new URI("https://api.google.com/search?q=java&a=2#salut");
 
-        System.out.println(test.getPath());
+        System.out.println(test.resolve("sapristie.j'ai/faim#hello"));
 
     }
 }
