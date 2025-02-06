@@ -1,5 +1,6 @@
 package lt.bongibau.scrapper.searching.formatter;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -80,7 +81,9 @@ class URLFormatterTest {
     @MethodSource("provideHrefToURL")
     @DisplayName("Test hrefToUrl")
     void hrefToUrlTest(URL baseUrl, String href, URL expected) {
-        assertEquals(expected, URLFormatter.hrefToUrl(baseUrl, href).toString(), "hrefToUrl should return expected URL.");
+        Assertions.assertDoesNotThrow(() -> {
+            assertEquals(expected, URLFormatter.hrefToUrl(baseUrl, href).toString(), "hrefToUrl should return expected URL.");
+        });
     }
 
     @ParameterizedTest
