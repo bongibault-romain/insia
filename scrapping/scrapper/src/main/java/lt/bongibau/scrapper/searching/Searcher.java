@@ -1,5 +1,6 @@
 package lt.bongibau.scrapper.searching;
 
+import lt.bongibau.scrapper.ScrapperLogger;
 import org.jetbrains.annotations.Nullable;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attribute;
@@ -49,8 +50,8 @@ public class Searcher extends Thread {
 
             URL url = this.pop();
             if (url == null) {
-                System.out.println("IDLE");
                 this.setPhase(Phase.IDLE);
+                ScrapperLogger.log("No work found, sleeping...");
 
                 try {
                     Thread.sleep(1000);
@@ -61,7 +62,7 @@ public class Searcher extends Thread {
                 continue;
             }
 
-            System.out.println("WORKING");
+            ScrapperLogger.log("Processing URL: " + url);
 
             HttpURLConnection connection = null;
             try {
@@ -86,13 +87,14 @@ public class Searcher extends Thread {
                     || status == HttpURLConnection.HTTP_MOVED_PERM) {
                 String location = connection.getHeaderField("Location");
 
+                ScrapperLogger.log("Redirecting to: " + location + ", adding to heap and notifying all.");
+
                 this.notifyAll(url, List.of(location));
                 continue;
             }
 
             if (status != HttpURLConnection.HTTP_OK) {
-                System.out.println("Error: " + status);
-                // TODO: log error
+                ScrapperLogger.log("Failed to connect to: " + url + ", status: " + status);
                 continue;
             }
 
@@ -112,11 +114,10 @@ public class Searcher extends Thread {
 
             Document document = Jsoup.parse(content.toString());
             List<String> links = document.select("a").stream().map((a) -> a.attr("href")).toList();
-            System.out.println("Found links: " + links.size());
             this.notifyAll(url, links);
         }
 
-        System.out.println("Searcher stopped.");
+        ScrapperLogger.log("Searcher stopped.");
     }
 
     public synchronized void setPhase(Searcher.Phase phase) {

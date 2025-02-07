@@ -1,5 +1,7 @@
 package lt.bongibau.scrapper.searching;
 
+import lt.bongibau.scrapper.Scrapper;
+import lt.bongibau.scrapper.ScrapperLogger;
 import lt.bongibau.scrapper.searching.filters.FilterContainer;
 import lt.bongibau.scrapper.searching.formatter.NotValidHrefException;
 import lt.bongibau.scrapper.searching.formatter.URLFormatter;
@@ -10,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class SearchManager implements Searcher.Observer {
 
@@ -29,38 +32,36 @@ public class SearchManager implements Searcher.Observer {
     }
 
     public void start(int searcherCount) {
-        System.out.println("Starting search manager with " + searcherCount + " searchers");
         for (int i = 0; i < searcherCount; i++) {
             Searcher searcher = new Searcher();
-            searcher.start();
-            searcher.setRunning(true);
+            searcher.setName("S" + i);
+
             searcher.subscribe(this);
             searchers.add(searcher);
+            searcher.setRunning(true);
+
+            searcher.start();
         }
 
-        System.out.println("[MAIN] Search manager started");
         while (!this.isEmpty() || this.isSearchersWorking()) {
             URL url = this.pop();
             if (url == null) {
-                System.out.println("[MAIN] IDLE");
+                ScrapperLogger.log("No work found, sleeping...");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                System.out.println(isSearchersWorking());
                 continue;
             }
 
-            System.out.println("[MAIN] Popped " + url);
 
             Searcher searcher = this.findSearcher();
+
+            ScrapperLogger.log("Assigning " + url + " to searcher " + searcher.getName());
+
             searcher.push(url);
-
-            System.out.println(isSearchersWorking());
         }
-
-        System.out.println("[MAIN] Search manager is waiting for searchers to finish");
 
         searchers.forEach((s) -> s.setRunning(false));
         searchers.forEach((s) -> {
@@ -130,6 +131,10 @@ public class SearchManager implements Searcher.Observer {
 
     @Override
     public synchronized void notify(URL baseUrl, List<String> links) {
+        ScrapperLogger.log("Found " + links.size() + " links on " + baseUrl);
+
+        int added = 0;
+
         for (String link : links) {
             URL url;
             try {
@@ -141,7 +146,7 @@ public class SearchManager implements Searcher.Observer {
             try {
                 url = URLFormatter.format(url);
             } catch (Exception e) {
-                System.out.println("Failed to format URL: " + url);
+                ScrapperLogger.log(Level.SEVERE, "Failed to format URL: " + url, e);
                 continue;
             }
 
@@ -155,6 +160,9 @@ public class SearchManager implements Searcher.Observer {
 
             this.markVisited(url);
             this.push(url);
+            added++;
         }
+
+        ScrapperLogger.log("Added " + added + " new links to the heap");
     }
 }
