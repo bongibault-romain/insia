@@ -15,34 +15,39 @@ public class URLFormatter {
      * @return Formatted URL
      */
     public static URL format(URL url){
-        String stringUrl = url.toString();
-        if(stringUrl.contains("?")){
-            String[] parts = stringUrl.split("\\?",1);
-            if(!parts[0].endsWith("/")) stringUrl =parts[0]+"/?"+parts[1];
-        }else{
-            if(!stringUrl.endsWith("/")) stringUrl +="/";
-        }
-        if(stringUrl.contains("#")){
-            stringUrl = stringUrl.split("#",1)[0];
-        }
-
-        String querrySelector=url.getQuery();
-        if(querrySelector!=null){
-            String[] querryParts = querrySelector.split("&");
-            Arrays.sort(querryParts);
-            querrySelector = String.join("&",querryParts);
-        }
-
-        stringUrl = stringUrl.split("\\?",1)[0];
-        if(querrySelector!=null)stringUrl+="?"+querrySelector;
-
         try {
-            return new URI(stringUrl).toURL();
-        } catch (MalformedURLException | URISyntaxException e) {
-            e.printStackTrace();
-        }
+            String urlString = url.toString();
 
-        return url;
+            int hashIndex = urlString.indexOf('#');
+            if (hashIndex != -1) {
+                urlString = urlString.substring(0, hashIndex);
+            }
+
+            String[] parts = urlString.split("\\?", 2);
+            String baseUrl = parts[0];
+            String queryParams;
+            if(parts.length>1)if(parts[1].contains("="))queryParams = parts[1]; else queryParams = null;
+            else queryParams = null;
+
+            if (!baseUrl.endsWith("/")) {
+                baseUrl += "/";
+            }
+
+            // Trier les paramètres de requête
+            if (queryParams != null) {
+                String[] queryArray = queryParams.split("&");
+                Arrays.sort(queryArray);
+                queryParams = String.join("&", queryArray);
+            }
+
+            String formattedUrl;
+            if(queryParams!=null) formattedUrl= baseUrl + "?" + queryParams;
+            else formattedUrl = baseUrl;
+
+            return new URI(formattedUrl).toURL();
+        } catch (MalformedURLException | URISyntaxException e) {
+            throw new RuntimeException("Failed to format URL", e);
+        }
     }
 
     /**
