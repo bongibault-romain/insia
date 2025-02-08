@@ -71,7 +71,7 @@ public class URLFormatter {
         if(href==null)return false;
         if(href.startsWith("/")||href.startsWith("https://")||href.startsWith("http://"))return true;
         if(href.contains(":")){
-            String prefix = href.split(":",1)[0];
+            String prefix = href.split(":")[0];
             return prefix.contains("?");
         }
         return true;
