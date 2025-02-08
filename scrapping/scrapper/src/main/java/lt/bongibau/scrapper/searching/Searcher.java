@@ -52,7 +52,7 @@ public class Searcher extends Thread {
             URL url = this.pop();
             if (url == null) {
                 this.setPhase(Phase.IDLE);
-                ScrapperLogger.log("No work found, sleeping...");
+                ScrapperLogger.log("Heap Size: " + this.getWorkload() + ". No work found, sleeping...");
 
                 try {
                     Thread.sleep(1000);
@@ -63,7 +63,7 @@ public class Searcher extends Thread {
                 continue;
             }
 
-            ScrapperLogger.log("Processing URL: " + url);
+            ScrapperLogger.log("Heap Size: " + this.getWorkload() + ". Processing URL: " + url);
 
             HttpURLConnection connection = null;
             try {

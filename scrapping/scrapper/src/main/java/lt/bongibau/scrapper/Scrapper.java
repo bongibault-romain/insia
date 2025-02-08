@@ -26,7 +26,7 @@ public class Scrapper {
                 filters
         );
 
-        searchManager.start(16);
+        searchManager.start(32);
 
     }
 }

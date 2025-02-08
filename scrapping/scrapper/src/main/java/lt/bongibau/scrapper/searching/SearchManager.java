@@ -49,7 +49,7 @@ public class SearchManager implements Searcher.Observer {
         while (!this.isEmpty() || this.isSearchersWorking()) {
             URL url = this.pop();
             if (url == null) {
-                ScrapperLogger.log("No work found, sleeping...");
+                ScrapperLogger.log("Total Discovered: " + getDiscoveredCount() + " Total visited: " + getVisitedCount() + ". No work found, sleeping...");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
