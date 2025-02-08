@@ -107,7 +107,7 @@ public class SearchManager implements Searcher.Observer {
                 return -1;
             }
 
-            return 0;
+            return s1.getWorkload() - s2.getWorkload();
         }).orElse(null);
     }
 
