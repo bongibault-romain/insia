@@ -8,9 +8,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.*;
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +16,7 @@ import java.util.List;
 public class Scrapper {
     public static void main(String[] args) throws IOException, InterruptedException, URISyntaxException {
         FilterContainer filters = new FilterContainer(List.of(
+                new Filter("moodle.insa-toulouse.fr", Filter.Type.DENY),
                 new Filter("insa-toulouse.fr", Filter.Type.ACCEPT)
         ));
 
@@ -26,7 +25,19 @@ public class Scrapper {
                 filters
         );
 
-        searchManager.start(32);
+        List<URL> links = searchManager.start(16);
 
+        File file = new File("insa-toulouse.txt");
+        file.createNewFile();
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+
+        System.out.println("Found " + links.size() + " links.");
+
+        for (URL link : links) {
+            writer.write(link.toString() + "\n");
+        }
+
+        writer.close();
     }
 }

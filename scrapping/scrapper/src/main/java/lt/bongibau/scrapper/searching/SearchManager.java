@@ -34,7 +34,7 @@ public class SearchManager implements Searcher.Observer {
         this.filters = filters;
     }
 
-    public void start(int searcherCount) {
+    public List<URL> start(int searcherCount) {
         for (int i = 0; i < searcherCount; i++) {
             Searcher searcher = new Searcher();
             searcher.setName("S" + i);
@@ -73,6 +73,8 @@ public class SearchManager implements Searcher.Observer {
                 e.printStackTrace();
             }
         });
+
+        return new ArrayList<>(visited);
     }
 
     /**
