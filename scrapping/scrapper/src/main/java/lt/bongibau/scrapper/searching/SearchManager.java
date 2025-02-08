@@ -24,10 +24,13 @@ public class SearchManager implements Searcher.Observer {
 
     private List<URL> visited;
 
+    private List<URL> discovered;
+
     public SearchManager(List<URL> heap, FilterContainer filters) {
         this.heap = new LinkedList<>(heap);
         this.searchers = new ArrayList<>();
         this.visited = new LinkedList<>();
+        this.discovered = new LinkedList<>();
         this.filters = filters;
     }
 
@@ -57,7 +60,7 @@ public class SearchManager implements Searcher.Observer {
 
             Searcher searcher = this.findSearcher();
 
-            ScrapperLogger.log("Assigning " + url + " to searcher " + searcher.getName());
+            ScrapperLogger.log("Total Discovered: " + getDiscoveredCount() + " Total visited: " + getVisitedCount() + ". Global Heap Size: " + getWorkload() + ". Assigning " + url + " to searcher " + searcher.getName());
 
             searcher.push(url);
         }
@@ -112,6 +115,18 @@ public class SearchManager implements Searcher.Observer {
         return heap.isEmpty();
     }
 
+    private synchronized int getWorkload() {
+        return heap.size();
+    }
+
+    private synchronized int getVisitedCount() {
+        return visited.size();
+    }
+
+    private synchronized int getDiscoveredCount() {
+        return discovered.size();
+    }
+
     @Nullable
     private synchronized URL pop() {
         if (heap.isEmpty()) {
@@ -130,14 +145,32 @@ public class SearchManager implements Searcher.Observer {
     }
 
     public synchronized void markVisited(URL url) {
-        if (visited.contains(url)) return;
+        if (visited.contains(url)) {
+            ScrapperLogger.log(Level.WARNING, "Trying to mark already visited URL: " + url + ". Skipping...");
+            return;
+        }
 
         visited.add(url);
+    }
+
+    public synchronized void markDiscovered(URL url) {
+        if (discovered.contains(url)) {
+            ScrapperLogger.log(Level.WARNING, "Trying to mark already discovered URL: " + url + ". Skipping...");
+            return;
+        }
+
+        discovered.add(url);
+    }
+
+    public synchronized boolean isDiscovered(URL url) {
+        return discovered.contains(url);
     }
 
     @Override
     public synchronized void notify(URL baseUrl, List<String> links) {
         ScrapperLogger.log("Found " + links.size() + " links on " + baseUrl);
+
+        this.markVisited(baseUrl);
 
         int added = 0;
 
@@ -156,7 +189,7 @@ public class SearchManager implements Searcher.Observer {
                 continue;
             }
 
-            if (this.isVisited(url)) {
+            if (this.isDiscovered(url)) {
                 continue;
             }
 
@@ -164,7 +197,7 @@ public class SearchManager implements Searcher.Observer {
                 continue;
             }
 
-            this.markVisited(url);
+            this.markDiscovered(url);
             this.push(url);
             added++;
         }

@@ -14,6 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
 
 public class Searcher extends Thread {
     public enum Phase {
@@ -56,7 +57,7 @@ public class Searcher extends Thread {
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    ScrapperLogger.log(Level.SEVERE, "Failed to sleep.", e);
                 }
 
                 continue;
@@ -72,14 +73,14 @@ public class Searcher extends Thread {
                 connection.setRequestMethod("GET");
                 connection.connect();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                ScrapperLogger.log(Level.SEVERE, "Failed to connect to: " + url, e);
             }
 
             int status = 0;
             try {
                 status = connection.getResponseCode();
             } catch (IOException e) {
-                e.printStackTrace();
+                ScrapperLogger.log(Level.SEVERE, "Failed to get response code from: " + url, e);
                 continue;
             }
 
@@ -94,7 +95,7 @@ public class Searcher extends Thread {
             }
 
             if (status != HttpURLConnection.HTTP_OK) {
-                ScrapperLogger.log("Failed to connect to: " + url + ", status: " + status);
+                ScrapperLogger.log(Level.WARNING, "Failed to connect to: " + url + ", status: " + status);
                 continue;
             }
 
@@ -109,12 +110,16 @@ public class Searcher extends Thread {
                 in.close();
 
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                ScrapperLogger.log(Level.SEVERE, "Failed to read content from: " + url, e);
             }
 
-            Document document = Jsoup.parse(content.toString());
-            List<String> links = document.select("a").stream().map((a) -> a.attr("href")).toList();
-            this.notifyAll(url, links);
+            try {
+                Document document = Jsoup.parse(content.toString());
+                List<String> links = document.select("a").stream().map((a) -> a.attr("href")).toList();
+                this.notifyAll(url, links);
+            } catch (Exception e) {
+                ScrapperLogger.log(Level.SEVERE, "Failed to parse content from: " + url, e);
+            }
         }
 
         ScrapperLogger.log("Searcher stopped.");
