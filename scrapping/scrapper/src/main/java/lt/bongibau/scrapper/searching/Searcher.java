@@ -158,6 +158,10 @@ public class Searcher extends Thread {
         return !heap.isEmpty();
     }
 
+    public synchronized int getWorkload() {
+        return heap.size();
+    }
+
     @Nullable
     public synchronized URL pop() {
         return heap.isEmpty() ? null : heap.removeFirst();

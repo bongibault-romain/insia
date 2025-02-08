@@ -55,7 +55,6 @@ public class SearchManager implements Searcher.Observer {
                 continue;
             }
 
-
             Searcher searcher = this.findSearcher();
 
             ScrapperLogger.log("Assigning " + url + " to searcher " + searcher.getName());
@@ -91,15 +90,22 @@ public class SearchManager implements Searcher.Observer {
      * @return Searcher that is not working or has the least amount of work
      */
     private Searcher findSearcher() {
+        // s.getWorkload && s.getPhase
         return searchers.stream().min((s1, s2) -> {
-            if (s1.getPhase() == Searcher.Phase.IDLE && s2.getPhase() == Searcher.Phase.WORKING) {
-                return -1;
-            } else if (s1.getPhase() == Searcher.Phase.WORKING && s2.getPhase() == Searcher.Phase.IDLE) {
-                return 1;
-            } else {
-                return 0;
+            if (s1.getPhase() == Searcher.Phase.WORKING && s2.getPhase() == Searcher.Phase.WORKING) {
+                return s1.getWorkload() - s2.getWorkload();
             }
-        }).orElse(searchers.getFirst());
+
+            if (s1.getPhase() == Searcher.Phase.WORKING) {
+                return 1;
+            }
+
+            if (s2.getPhase() == Searcher.Phase.WORKING) {
+                return -1;
+            }
+
+            return 0;
+        }).orElse(null);
     }
 
     private synchronized boolean isEmpty() {
