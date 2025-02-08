@@ -89,7 +89,8 @@ class URLFormatterTest {
                     Arguments.of(new URI("https://example.com/path?one=1&two=2&three=3#fragment").toURL(), new URI("https://example.com/path/?one=1&three=3&two=2").toURL()),
                     Arguments.of(new URI("https://example.com/alpha?delta=4&beta=2&gamma=3&alpha=1").toURL(), new URI("https://example.com/alpha/?alpha=1&beta=2&delta=4&gamma=3").toURL()),
                     Arguments.of(new URI("https://example.com/simple?x=5&y=10").toURL(), new URI("https://example.com/simple/?x=5&y=10").toURL()),
-                    Arguments.of(new URI("https://example.com/test?m=1&n=2&o=3#drop").toURL(), new URI("https://example.com/test/?m=1&n=2&o=3").toURL())
+                    Arguments.of(new URI("https://example.com/test?m=1&n=2&o=3#drop").toURL(), new URI("https://example.com/test/?m=1&n=2&o=3").toURL()),
+                    Arguments.of(new URI("https://example.com/test.php?m=1&n=2&o=3#drop").toURL(), new URI("https://example.com/test.php?m=1&n=2&o=3").toURL())
             );
         } catch (MalformedURLException | URISyntaxException e) {
             throw new RuntimeException(e);
