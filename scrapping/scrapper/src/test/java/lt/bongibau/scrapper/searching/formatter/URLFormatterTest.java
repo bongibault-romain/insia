@@ -80,16 +80,16 @@ class URLFormatterTest {
     public static Stream<Arguments> provideFormat(){
         try {
             return Stream.of(
-                    Arguments.of(new URI("https://example.com?b=2&a=1#section").toURL(), new URI("https://example.com/?a=1&b=2").toURL()),
-                    Arguments.of(new URI("http://example.com/home?z=last&x=first&y=middle").toURL(), new URI("http://example.com/home/?x=first&y=middle&z=last").toURL()),
-                    Arguments.of(new URI("https://test.com/path?beta=2&alpha=1&gamma=3#fragment").toURL(), new URI("https://test.com/path/?alpha=1&beta=2&gamma=3").toURL()),
-                    Arguments.of(new URI("https://example.org?").toURL(), new URI("https://example.org/").toURL()),
-                    Arguments.of(new URI("https://example.org#hash").toURL(), new URI("https://example.org/").toURL()),
-                    Arguments.of(new URI("https://site.com/path?c=3&a=1&b=2#ignored").toURL(), new URI("https://site.com/path/?a=1&b=2&c=3").toURL()),
-                    Arguments.of(new URI("https://example.com/path?one=1&two=2&three=3#fragment").toURL(), new URI("https://example.com/path/?one=1&three=3&two=2").toURL()),
-                    Arguments.of(new URI("https://example.com/alpha?delta=4&beta=2&gamma=3&alpha=1").toURL(), new URI("https://example.com/alpha/?alpha=1&beta=2&delta=4&gamma=3").toURL()),
-                    Arguments.of(new URI("https://example.com/simple?x=5&y=10").toURL(), new URI("https://example.com/simple/?x=5&y=10").toURL()),
-                    Arguments.of(new URI("https://example.com/test?m=1&n=2&o=3#drop").toURL(), new URI("https://example.com/test/?m=1&n=2&o=3").toURL()),
+                    Arguments.of(new URI("https://example.com?b=2&a=1#section").toURL(), new URI("https://example.com?a=1&b=2").toURL()),
+                    Arguments.of(new URI("http://example.com/home?z=last&x=first&y=middle").toURL(), new URI("http://example.com/home?x=first&y=middle&z=last").toURL()),
+                    Arguments.of(new URI("https://test.com/path?beta=2&alpha=1&gamma=3#fragment").toURL(), new URI("https://test.com/path?alpha=1&beta=2&gamma=3").toURL()),
+                    Arguments.of(new URI("https://example.org?").toURL(), new URI("https://example.org").toURL()),
+                    Arguments.of(new URI("https://example.org#hash").toURL(), new URI("https://example.org").toURL()),
+                    Arguments.of(new URI("https://site.com/path?c=3&a=1&b=2#ignored").toURL(), new URI("https://site.com/path?a=1&b=2&c=3").toURL()),
+                    Arguments.of(new URI("https://example.com/path?one=1&two=2&three=3#fragment").toURL(), new URI("https://example.com/path?one=1&three=3&two=2").toURL()),
+                    Arguments.of(new URI("https://example.com/alpha?delta=4&beta=2&gamma=3&alpha=1").toURL(), new URI("https://example.com/alpha?alpha=1&beta=2&delta=4&gamma=3").toURL()),
+                    Arguments.of(new URI("https://example.com/simple?x=5&y=10").toURL(), new URI("https://example.com/simple?x=5&y=10").toURL()),
+                    Arguments.of(new URI("https://example.com/test?m=1&n=2&o=3#drop").toURL(), new URI("https://example.com/test?m=1&n=2&o=3").toURL()),
                     Arguments.of(new URI("https://example.com/test.php?m=1&n=2&o=3#drop").toURL(), new URI("https://example.com/test.php?m=1&n=2&o=3").toURL())
             );
         } catch (MalformedURLException | URISyntaxException e) {

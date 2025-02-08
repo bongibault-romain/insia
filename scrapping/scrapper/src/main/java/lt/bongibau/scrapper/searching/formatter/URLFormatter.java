@@ -29,8 +29,8 @@ public class URLFormatter {
             if(parts.length>1)if(parts[1].contains("="))queryParams = parts[1]; else queryParams = null;
             else queryParams = null;
 
-            if (!baseUrl.endsWith("/")) {
-                baseUrl += "/";
+            if (baseUrl.endsWith("/")) {
+                baseUrl=baseUrl.substring(0, baseUrl.length() - 1);
             }
 
             // Trier les paramètres de requête
