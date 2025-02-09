@@ -1,79 +1,64 @@
 import torch
-import torch.distributed as dist
-import torch.multiprocessing as mp
-import os
-
-def setup(rank, world_size):
-    os.environ['MASTER_ADDR'] = 'localhost'  # Change this to the master node's IP address if using multiple machines
-    os.environ['MASTER_PORT'] = '12355'  # Pick a free port on the master node
-    dist.init_process_group("nccl", rank=rank, world_size=world_size)
-
-def cleanup():
-    dist.destroy_process_group()
-
 import torch.nn as nn
 import torch.optim as optim
-from torch.nn.parallel import DistributedDataParallel as DDP
-
-class SimpleModel(nn.Module):
-    def __init__(self):
-        super(SimpleModel, self).__init__()
-        self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(28*28, 10)
-        self.relu = nn.ReLU()
-        self.fc2 = nn.Linear(10, 10)
-        self.fc3 = nn.Linear(10, 10)
-
-    def forward(self, x):
-        x = self.flatten(x)
-        x = self.fc1(x)
-        x = self.relu(x)
-        x = self.fc2(x)
-        x = self.relu(x)
-        x = self.fc3(x)
-        return x
-
-def create_model():
-    return SimpleModel()
-
+import torch.distributed as dist
 from torch.utils.data import DataLoader, DistributedSampler
 from torchvision import datasets, transforms
 
-def create_dataloader(rank, world_size, batch_size=32):
-    transform = transforms.Compose([transforms.ToTensor()])
-    dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-    sampler = DistributedSampler(dataset, num_replicas=world_size, rank=rank)
-    dataloader = DataLoader(dataset, batch_size=batch_size, sampler=sampler)
-    return dataloader
+# A simple model for demonstration
+class SimpleModel(nn.Module):
+    def __init__(self):
+        super(SimpleModel, self).__init__()
+        self.fc = nn.Linear(784, 10)
 
-def train(rank, world_size, epochs=5):
-    setup(rank, world_size)
-    
-    dataloader = create_dataloader(rank, world_size)
-    model = create_model().to(rank)
-    ddp_model = DDP(model, device_ids=[rank])
-    
-    optimizer = optim.SGD(ddp_model.parameters(), lr=0.01)
-    criterion = nn.CrossEntropyLoss()
-    
-    for epoch in range(epochs):
-        ddp_model.train()
-        for batch_idx, (data, target) in enumerate(dataloader):
-            data, target = data.to(rank), target.to(rank)
-            optimizer.zero_grad()
-            output = ddp_model(data)
-            loss = criterion(output, target)
-            loss.backward()
-            optimizer.step()
-        
-        if rank == 0:
-            print(f"Epoch {epoch} complete")
-    
-    cleanup()
+    def forward(self, x):
+        return self.fc(x)
 
 def main():
-    world_size = 2  # Number of GPUs
-    mp.spawn(train, args=(world_size,), nprocs=world_size, join=True)
+    # Initialize the distributed environment
+    dist.init_process_group(backend='nccl', init_method='env://')
+    rank = dist.get_rank()  # Get the rank of the process
+    world_size = dist.get_world_size()  # Total number of processes (workers)
+
+    # Set device for the current process
+    torch.cuda.set_device(rank)
+    
+    # Load the dataset with distributed sampler
+    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
+    train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
+    train_sampler = DistributedSampler(train_dataset, num_replicas=world_size, rank=rank)
+    train_loader = DataLoader(dataset=train_dataset, batch_size=64, sampler=train_sampler)
+
+    # Create model and move it to the appropriate device
+    model = SimpleModel().cuda()
+
+    # Wrap the model with DistributedDataParallel
+    model = nn.parallel.DistributedDataParallel(model, device_ids=[rank])
+
+    # Optimizer and loss function
+    optimizer = optim.SGD(model.parameters(), lr=0.01)
+    criterion = nn.CrossEntropyLoss()
+
+    # Training loop
+    for epoch in range(10):
+        model.train()
+        train_sampler.set_epoch(epoch)  # Shuffle data for each epoch
+        running_loss = 0.0
+        for inputs, targets in train_loader:
+            inputs, targets = inputs.cuda(rank), targets.cuda(rank)
+            optimizer.zero_grad()
+
+            outputs = model(inputs.view(inputs.size(0), -1))
+            loss = criterion(outputs, targets)
+            loss.backward()
+            optimizer.step()
+
+            running_loss += loss.item()
+
+        if rank == 0:  # Print only from the master process
+            print(f"Epoch {epoch+1}, Loss: {running_loss/len(train_loader)}")
+
+    dist.barrier()  # Synchronize all processes before ending
 
 if __name__ == "__main__":
     main()
