@@ -17,29 +17,62 @@ class ToyModel(nn.Module):
     def forward(self, x):
         return self.net2(self.relu(self.net1(x)))
 
-def setup(rank, world_size):
-    dist.init_process_group("gloo")  # Backend pour GPU, "gloo" pour CPU
-    torch.cuda.set_device(rank)
-    
+def setup():
+    """Initialise le processus distribué"""
+    dist.init_process_group(backend="nccl", init_method="env://")
+    rank = dist.get_rank()
+    world_size = dist.get_world_size()
+    torch.cuda.set_device(rank % torch.cuda.device_count())
+    print(f"Process {rank} initialized (Total: {world_size})")
+
 def cleanup():
+    """Détruit le groupe de processus distribué"""
     dist.destroy_process_group()
 
 def train(rank, world_size):
-    print(f"Running DDP on rank {rank}.")
-    setup(rank, world_size)
-    print(f"Rank {rank} is using GPU {torch.cuda.current_device()}.")
+    print(f"Rank {rank} is running.")
+
+    """Entraînement avec DistributedDataParallel"""
+    setup()
+
+    print(f"Rank {rank} has started training.")
+    
+    # Récupération du rank après initialisation
+    rank = dist.get_rank()
+
+    print(f"Running DDP on rank {rank}, using GPU {torch.cuda.current_device()}.")
+    
+    # Initialisation du modèle sur le bon GPU
     model = ToyModel().to(rank)
-    print(f"Model on rank {rank} is on GPU {next(model.parameters()).device}.")
+
+    print(f"Model initialized on rank {rank}.")
+
     model = DDP(model, device_ids=[rank])
-    print(f"Model on rank {rank} is on GPU {next(model.parameters()).device}.")
 
-    # Votre boucle d'entraînement ici...
+    print(f"Model initialized on rank {rank}.")
 
-    print(f"Rank {rank} is done.")
+    # optimizer = optim.Adam(model.parameters(), lr=0.01)
+    # loss_fn = nn.MSELoss()
+
+    # for epoch in range(5):
+    #     inputs = torch.randn(16, 10).to(rank)
+    #     labels = torch.randn(16, 5).to(rank)
+
+    #     optimizer.zero_grad()
+    #     outputs = model(inputs)
+    #     loss = loss_fn(outputs, labels)
+    #     loss.backward()
+    #     optimizer.step()
+
+    #     print(f"Rank {rank}, Epoch {epoch}, Loss: {loss.item()}")
+
+    print(f"Rank {rank} has finished training.")
+
     cleanup()
     print(f"Rank {rank} has cleaned up.")
 
 if __name__ == "__main__":
-    world_size = torch.cuda.device_count()
+    world_size = int(os.environ["WORLD_SIZE"])  # Définir via torchrun
     print(f"Running on {world_size} GPUs.")
-    mp.spawn(train, args=(world_size,), nprocs=world_size, join=True)
+    
+    mp.spawn(train, args=(world_size,), nprocs=torch.cuda.device_count(), join=True)
