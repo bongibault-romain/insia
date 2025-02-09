@@ -4,6 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 import os
 import torch.multiprocessing as mp
+import time
 
 from torch.nn.parallel import DistributedDataParallel as DDP
 
@@ -81,6 +82,8 @@ def train(i, rank, world_size):
 
     cleanup()
     print(f"Rank {rank} has cleaned up.")
+
+    print("time: ", time.time())
 
 if __name__ == "__main__":
     world_size = int(os.environ["WORLD_SIZE"])  # Set via torchrun
