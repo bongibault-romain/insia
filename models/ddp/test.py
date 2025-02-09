@@ -18,15 +18,15 @@ class ToyModel(nn.Module):
         return self.net2(self.relu(self.net1(x)))
 
 def setup():
-    """Initialise le processus distribué"""
+    """Initialize the distributed process group"""
     dist.init_process_group(backend="nccl", init_method="env://")
     rank = dist.get_rank()
     world_size = dist.get_world_size()
-    torch.cuda.set_device(rank % torch.cuda.device_count())
+    torch.cuda.set_device(rank % torch.cuda.device_count())  # Ensure each rank gets a valid GPU
     print(f"Process {rank} initialized (Total: {world_size})")
 
 def cleanup():
-    """Détruit le groupe de processus distribué"""
+    """Destroy the distributed process group"""
     dist.destroy_process_group()
 
 def train(i, rank, world_size):
@@ -36,39 +36,40 @@ def train(i, rank, world_size):
 
     print(f"Rank {rank} is running.")
 
-    """Entraînement avec DistributedDataParallel"""
+    """Training with DistributedDataParallel"""
     setup()
 
     print(f"Rank {rank} has started training.")
     
-    # Récupération du rank après initialisation
+    # Get rank after initialization
     rank = dist.get_rank()
 
     print(f"Running DDP on rank {rank}, using GPU {torch.cuda.current_device()}.")
     
-    # Initialisation du modèle sur le bon GPU
-    model = ToyModel().to(rank)
+    # Initialize model on the correct GPU (cuda:0)
+    device = torch.device(f"cuda:0")
+    model = ToyModel().to(device)
 
     print(f"Model initialized on rank {rank}.")
 
-    model = DDP(model, device_ids=[rank])
+    model = DDP(model, device_ids=[0])  # Since each node has one GPU, we use device 0
 
     print(f"Model initialized on rank {rank}.")
 
-    # optimizer = optim.Adam(model.parameters(), lr=0.01)
-    # loss_fn = nn.MSELoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.01)
+    loss_fn = nn.MSELoss()
 
-    # for epoch in range(5):
-    #     inputs = torch.randn(16, 10).to(rank)
-    #     labels = torch.randn(16, 5).to(rank)
+    for epoch in range(5):
+        inputs = torch.randn(16, 10).to(device)
+        labels = torch.randn(16, 5).to(device)
 
-    #     optimizer.zero_grad()
-    #     outputs = model(inputs)
-    #     loss = loss_fn(outputs, labels)
-    #     loss.backward()
-    #     optimizer.step()
+        optimizer.zero_grad()
+        outputs = model(inputs)
+        loss = loss_fn(outputs, labels)
+        loss.backward()
+        optimizer.step()
 
-    #     print(f"Rank {rank}, Epoch {epoch}, Loss: {loss.item()}")
+        print(f"Rank {rank}, Epoch {epoch}, Loss: {loss.item()}")
 
     print(f"Rank {rank} has finished training.")
 
@@ -76,8 +77,10 @@ def train(i, rank, world_size):
     print(f"Rank {rank} has cleaned up.")
 
 if __name__ == "__main__":
-    world_size = int(os.environ["WORLD_SIZE"])  # Définir via torchrun  
-    rank = int(os.environ["NODE_RANK"])  # Définir
+    world_size = int(os.environ["WORLD_SIZE"])  # Set via torchrun
+    rank = int(os.environ["NODE_RANK"])  # Set via environment
+
     print(f"Running on {world_size} GPUs.")
-    
-    mp.spawn(train, args=(rank, world_size), nprocs=torch.cuda.device_count(), join=True)
+
+    # We only have one process per node, so nprocs = 1
+    mp.spawn(train, args=(rank, world_size), nprocs=1, join=True)
