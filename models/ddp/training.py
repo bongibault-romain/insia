@@ -5,7 +5,7 @@ import torch.optim as optim
 import os
 import torch.multiprocessing as mp
 import time
-import model
+from model import GPTLanguageModel
 from constants import *
 
 from torch.nn.parallel import DistributedDataParallel as DDP
@@ -92,7 +92,7 @@ def train(i, rank, world_size):
         model = torch.load(model_path, weights_only=False)
     else:
         print('Creating model...')    
-        model = model.GPTLanguageModel().to(device)
+        model = GPTLanguageModel().to(device)
 
     print(f"Model initialized on rank {rank}.")
 
