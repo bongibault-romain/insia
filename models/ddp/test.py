@@ -29,7 +29,11 @@ def cleanup():
     """Détruit le groupe de processus distribué"""
     dist.destroy_process_group()
 
-def train(rank, world_size):
+def train(i, rank, world_size):
+    print(f"World size: {world_size}.")
+    print(f"Rank: {rank}.")
+    print(f"Process Index {i}.")
+
     print(f"Rank {rank} is running.")
 
     """Entraînement avec DistributedDataParallel"""
@@ -72,7 +76,8 @@ def train(rank, world_size):
     print(f"Rank {rank} has cleaned up.")
 
 if __name__ == "__main__":
-    world_size = int(os.environ["WORLD_SIZE"])  # Définir via torchrun
+    world_size = int(os.environ["WORLD_SIZE"])  # Définir via torchrun  
+    rank = int(os.environ["NODE_RANK"])  # Définir
     print(f"Running on {world_size} GPUs.")
     
-    mp.spawn(train, args=(world_size,), nprocs=torch.cuda.device_count(), join=True)
+    mp.spawn(train, args=(rank, world_size), nprocs=torch.cuda.device_count(), join=True)
