@@ -80,10 +80,19 @@ def train(i, rank, world_size):
 
     print(f"Rank {rank} has finished training.")
 
+    # Wait for all processes to finish
+
+    dist.barrier()
+
     cleanup()
     print(f"Rank {rank} has cleaned up.")
 
-    print("time: ", time.time())
+    # Save the model
+
+    if rank == 0:
+        print("Saving model...")
+        torch.save(model.state_dict(), "model.pth") 
+
 
 if __name__ == "__main__":
     world_size = int(os.environ["WORLD_SIZE"])  # Set via torchrun
