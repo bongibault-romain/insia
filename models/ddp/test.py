@@ -62,7 +62,7 @@ def train(i, rank, world_size):
 
     print(f"Rank {rank} has initialized the model.")
 
-    for epoch in range(2):
+    for epoch in range(1000):
         print(f"Rank {rank} is training on epoch {epoch}.")
         inputs = torch.randn(16, 10).to(device)
         labels = torch.randn(16, 5).to(device)
