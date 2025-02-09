@@ -1,74 +1,83 @@
 import torch
+import torch.distributed as dist
 import torch.nn as nn
 import torch.optim as optim
-import torch.distributed as dist
-from torch.utils.data import DataLoader, DistributedSampler
-from torchvision import datasets, transforms
+import os
+import torch.multiprocessing as mp
 
-# A simple model for demonstration
-class SimpleModel(nn.Module):
+from torch.nn.parallel import DistributedDataParallel as DDP
+
+class ToyModel(nn.Module):
     def __init__(self):
-        super(SimpleModel, self).__init__()
-        self.fc = nn.Linear(784, 10)
+        super(ToyModel, self).__init__()
+        self.net1 = nn.Linear(10, 10)
+        self.relu = nn.ReLU()
+        self.net2 = nn.Linear(10, 5)
 
     def forward(self, x):
-        return self.fc(x)
+        return self.net2(self.relu(self.net1(x)))
 
-def main():
-    # Initialize the distributed environment
-    dist.init_process_group(backend='nccl', init_method='env://')
-    rank = dist.get_rank()  # Get the rank of the process
-    world_size = dist.get_world_size()  # Total number of processes (workers)
+def setup():
+    """Initialise le processus distribué"""
+    dist.init_process_group(backend="nccl", init_method="env://")
+    rank = dist.get_rank()
+    world_size = dist.get_world_size()
+    torch.cuda.set_device(rank % torch.cuda.device_count())
+    print(f"Process {rank} initialized (Total: {world_size})")
 
-    print(f"1Rank {rank} is ready to go!")
+def cleanup():
+    """Détruit le groupe de processus distribué"""
+    dist.destroy_process_group()
 
-    # Set device for the current process
-    torch.cuda.set_device(rank)
+def train(i, rank, world_size):
+    print(f"World size: {world_size}.")
+    print(f"Rank: {rank}.")
+    print(f"Process Index {i}.")
+
+    print(f"Rank {rank} is running.")
+
+    """Entraînement avec DistributedDataParallel"""
+    setup()
+
+    print(f"Rank {rank} has started training.")
     
-    print(f"2Rank {rank} is ready to go!")
+    # Récupération du rank après initialisation
+    rank = dist.get_rank()
 
-    # Load the dataset with distributed sampler
-    transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))])
-    train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
-    train_sampler = DistributedSampler(train_dataset, num_replicas=world_size, rank=rank)
-    train_loader = DataLoader(dataset=train_dataset, batch_size=64, sampler=train_sampler)
+    print(f"Running DDP on rank {rank}, using GPU {torch.cuda.current_device()}.")
+    
+    # Initialisation du modèle sur le bon GPU
+    model = ToyModel().to(rank)
 
-    print(f"3Rank {rank} is ready to go!")
+    print(f"Model initialized on rank {rank}.")
 
-    # Create model and move it to the appropriate device
-    model = SimpleModel().cuda()
+    model = DDP(model, device_ids=[rank])
 
-    print(f"4Rank {rank} is ready to go!")
+    print(f"Model initialized on rank {rank}.")
 
-    # Wrap the model with DistributedDataParallel
-    model = nn.parallel.DistributedDataParallel(model, device_ids=[rank])
+    # optimizer = optim.Adam(model.parameters(), lr=0.01)
+    # loss_fn = nn.MSELoss()
 
-    print(f"5Rank {rank} is ready to go!")
+    # for epoch in range(5):
+    #     inputs = torch.randn(16, 10).to(rank)
+    #     labels = torch.randn(16, 5).to(rank)
 
-    # # Optimizer and loss function
-    # optimizer = optim.SGD(model.parameters(), lr=0.01)
-    # criterion = nn.CrossEntropyLoss()
+    #     optimizer.zero_grad()
+    #     outputs = model(inputs)
+    #     loss = loss_fn(outputs, labels)
+    #     loss.backward()
+    #     optimizer.step()
 
-    # # Training loop
-    # for epoch in range(10):
-    #     model.train()
-    #     train_sampler.set_epoch(epoch)  # Shuffle data for each epoch
-    #     running_loss = 0.0
-    #     for inputs, targets in train_loader:
-    #         inputs, targets = inputs.cuda(rank), targets.cuda(rank)
-    #         optimizer.zero_grad()
+    #     print(f"Rank {rank}, Epoch {epoch}, Loss: {loss.item()}")
 
-    #         outputs = model(inputs.view(inputs.size(0), -1))
-    #         loss = criterion(outputs, targets)
-    #         loss.backward()
-    #         optimizer.step()
+    print(f"Rank {rank} has finished training.")
 
-    #         running_loss += loss.item()
-
-    #     if rank == 0:  # Print only from the master process
-    #         print(f"Epoch {epoch+1}, Loss: {running_loss/len(train_loader)}")
-
-    dist.barrier()  # Synchronize all processes before ending
+    cleanup()
+    print(f"Rank {rank} has cleaned up.")
 
 if __name__ == "__main__":
-    main()
+    world_size = int(os.environ["WORLD_SIZE"])  # Définir via torchrun  
+    rank = int(os.environ["NODE_RANK"])  # Définir
+    print(f"Running on {world_size} GPUs.")
+    
+    mp.spawn(train, args=(rank, world_size), nprocs=torch.cuda.device_count(), join=True)
