@@ -18,7 +18,7 @@ class ToyModel(nn.Module):
         return self.net2(self.relu(self.net1(x)))
 
 def setup(rank, world_size):
-    dist.init_process_group("nccl")  # Backend pour GPU, "gloo" pour CPU
+    dist.init_process_group("gloo")  # Backend pour GPU, "gloo" pour CPU
     torch.cuda.set_device(rank)
     
 def cleanup():
@@ -41,4 +41,5 @@ def train(rank, world_size):
 
 if __name__ == "__main__":
     world_size = torch.cuda.device_count()
+    print(f"Running on {world_size} GPUs.")
     mp.spawn(train, args=(world_size,), nprocs=world_size, join=True)
