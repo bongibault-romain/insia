@@ -26,5 +26,5 @@ prompt = input("Enter prompt: ")
 context = torch.tensor([encode(prompt)], dtype=torch.long, device=device)
 
 # generate from the model
-print(decode(model.generate(context, max_new_tokens=500)[0].tolist()))
+print(decode(model.generate(context, max_new_tokens=max_tokens)[0].tolist()))
 #open('more.txt', 'w').write(decode(m.generate(context, max_new_tokens=10000)[0].tolist()))

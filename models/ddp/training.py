@@ -10,9 +10,6 @@ from constants import *
 from tokenization import *
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-torch.manual_seed(1337)
-
-
 # data loading
 def get_batch(split):
     # generate a small batch of data of inputs x and targets y
@@ -124,6 +121,8 @@ def train(i, rank, world_size):
 if __name__ == "__main__":
     world_size = int(os.environ["WORLD_SIZE"])  # Set via torchrun
     rank = int(os.environ["NODE_RANK"])  # Set via environment
+
+    torch.manual_seed(1337 + rank + world_size)
 
     print(f"Running on {world_size} GPUs.")
 

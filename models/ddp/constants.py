@@ -1,7 +1,7 @@
 import torch
 
 batch_size = 2 # how many independent sequences will we process in parallel?
-block_size = 192 # what is the maximum context length for predictions?
+block_size = 64 # what is the maximum context length for predictions?
 max_iters = 5000
 eval_interval = 300
 learning_rate = 3e-4

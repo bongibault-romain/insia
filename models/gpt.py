@@ -8,7 +8,7 @@ encoding = tiktoken.get_encoding("o200k_base")
 
 # hyperparameters
 batch_size = 32 # how many independent sequences will we process in parallel?
-block_size = 256 # what is the maximum context length for predictions?
+block_size = 192 # what is the maximum context length for predictions?
 max_iters = 5000
 eval_interval = 300
 learning_rate = 3e-4
@@ -18,7 +18,7 @@ n_embd = 384
 n_head = 6
 n_layer = 6
 dropout = 0.2
-model_path = './models/gpt.pth'
+model_path = './models/bigram.pth'
 data_path = './data/input.txt'
 # ------------
 
@@ -63,7 +63,7 @@ def estimate_loss():
         losses = torch.zeros(eval_iters)
         for k in range(eval_iters):
             X, Y = get_batch(split)
-            print(f"k {k}, X {X.shape}, Y {Y.shape}")
+           # print(f"k {k}, X {X.shape}, Y {Y.shape}")
             logits, loss = model(X, Y)
             losses[k] = loss.item()
         out[split] = losses.mean()
@@ -222,7 +222,7 @@ optimizer = torch.optim.AdamW(model.parameters(), lr=learning_rate)
 
 for iter in range(max_iters):
 
-    print(f"step {iter}")
+    print(f"step {(iter/max_iters)*100:.2f}% complete ({iter}/{max_iters})")
 
     # every once in a while evaluate the loss on train and val sets
     if iter % eval_interval == 0 or iter == max_iters - 1:
@@ -231,8 +231,6 @@ for iter in range(max_iters):
 
     # sample a batch of data
     xb, yb = get_batch('train')
-
-    print(f"xb {xb.shape}, yb {yb.shape}")
 
     # evaluate the loss
     logits, loss = model(xb, yb)
