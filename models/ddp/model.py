@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 from torch.nn import functional as F
 from constants import *
+from tokenization import *
 
 class Head(nn.Module):
     """ one head of self-attention """
