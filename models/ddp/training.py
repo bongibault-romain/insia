@@ -136,7 +136,7 @@ def train(i, rank, world_size):
 
     if rank == 0:
         print("Saving model...")
-        torch.save(model.state_dict(), "model.pth") 
+        torch.save(model, model_path) 
 
 
 if __name__ == "__main__":
