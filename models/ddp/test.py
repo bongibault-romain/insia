@@ -59,13 +59,19 @@ def train(i, rank, world_size):
     optimizer = optim.Adam(model.parameters(), lr=0.01)
     loss_fn = nn.MSELoss()
 
-    for epoch in range(5):
+    print(f"Rank {rank} has initialized the model.")
+
+    for epoch in range(2):
+        print(f"Rank {rank} is training on epoch {epoch}.")
         inputs = torch.randn(16, 10).to(device)
         labels = torch.randn(16, 5).to(device)
 
         optimizer.zero_grad()
         outputs = model(inputs)
         loss = loss_fn(outputs, labels)
+
+        print(f"Rank {rank} has computed loss.")
+
         loss.backward()
         optimizer.step()
 
