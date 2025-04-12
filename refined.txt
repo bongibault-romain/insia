@@ -1,0 +1,645 @@
+REGLEMENT DES ETUDES DES FORMATION S DE L’INSA TOULOUSE Année 2023 -2024 
+Texte approuvé CE 21 septembre présenté CA 5 octobre 
+Règlement études 20 23-2024 INSA Toulouse Les modifications règlement études l’année 2023 -2024 Aménagement d'études DD Sciences Po Toulouse, raison 
+modification maquettes ’arrivée certains élèves 5A Prise compte formes alternatives ’expérience internationale, 21, IV.1.d. 
+Conditions validation ’implication citoyenne, p.22, IV.1.e Modification règlement DE SEAMonline, 28, IV.4.a Modification aménagements EGA, 40 (Annexe C Liste 
+statuts étudiants spositions particulières Ajout ’évènements donnant absences justifiées, 43 (Annexe B. Liste évènements donnant absence justifiée) 
+Aménagement S²E ’Annexe C, p.49 nouvelle convention APS Aménagement EGA, p.49, Annexe C 
+Modification ‘admission dettes/redoublement, p.58, Modification contrats ’études, p.59, Annexe E Modification validation crédits, P.60, Annexe E 
+Le UF remplacé UE Le SHN remplacé S²E 
+Règlement études 20 23-2024 INSA Toulouse I. Préambule ................................ ................................ ................................ ................ 6 II. Déroulement études validation ................................ ................................ 6 
+II.1. Evaluation unités d'enseignement ................................ ............................... 6 II.1.a. Méthode ’évaluation ................................ ................................ .............................. 6 II.1.b. Validation UE ................................ ................................ ................................ 7 
+II.1.c. Cas particulier 1ère domaines ................................ ........................ 8 II.1.d. Gestion fraudes ................................ ................................ ................................ 9 II.1.e. Gestion absences ................................ ................................ ............................ 9 
+II.1.f. Modalités contrôle connaissances dérogatoires ................................ ......... 10 II.2. Double diplôme INSA -Sciences Po Toulouse ................................ .................. 10 II.3. Reconnaissance Challenge Based Learning ................................ .............. 11 
+II.4. Etudiants statut particulier ................................ ................................ .............. 11 II.5. Bilan pédagogique ................................ ................................ ............................ 11 II.6. Validation ’année ................................ ................................ ........................ 12 
+II.6.a. Conditions validation ’année ................................ ................................ ....... 12 II.6.b. Redoublements Exclusions ................................ ................................ ................. 12 III. Déroulement pré-jurys ’année ................................ ........................ 12 
+III.1. Pré première ................................ ................................ ............ 13 III.2. Autres -jurys ’année ................................ ................................ ....... 13 III.3. Autorisations réinscrire raisons médicales sociales graves ...... 14 
+III.3.a. Principes ................................ ................................ ................................ .............. 14 III.3.b. Interactions l'équipe médico -sociale ................................ ....... 14 III.4. Autres dispositions ................................ ................................ .......................... 15 
+III.4.a. Première répartition étudiants ré-orientations ................... 15 III.4.b. Troisième spécialités ................................ ............................... 15 III.4.c. Choix parcours transversaux pluridisciplinaires ................................ ............. 16 
+III.4.d. Césures ................................ ................................ ................................ ............... 16 III.4.e. Fin ’année administrative ................................ ................................ ................... 17 IV. Règles délivrance diplômes labels ................................ ............ 18 
+IV.1. Diplôme ’Ingénieur INSA Toulouse, master ............................... 18 IV.1.a. Résultats obtenus scolarité ................................ ........................... 18 IV.1.b. Niveau ’anglais ................................ ................................ ................................ 18 
+IV.1.c. Niveau français ................................ ................................ ............................... 18 IV.1.d. Durée validation stages séjour ’étranger ................................ ............ 19 IV.1.e. Implication citoyenne ................................ ................................ ........................... 20 
+Règlement études 20 23-2024 INSA Toulouse 4/ 41 IV.1.f. Cas particulier filières Fontanet (formation continue) VAE ................. 21 IV.1.g. Cas particulier filières apprentissage ................................ ....................... 21 
+IV.2. Attestation niveau Diplôme ’établissement Bachelor ’INSA Toulouse ................................ ................................ ................................ ............................ 21 IV.3. Master Science ................................ ................................ ........................... 21 
+IV.3.a. Fluids engineering industrial processes ................................ .......................... 22 IV.3.b. Water engineering management ................................ ......................... 23 IV.3.c Industrial BioTechnology Bio -Based Economy ................................ .............. 25 
+IV.4. Diplômes ’établissement ................................ ................................ ............... 27 IV.4.a. SEAMonline Diploma Safety Engineering ................................ ...................... 27 Présentation générale ................................ ................................ ................................ 27 
+Conditions ’accès formation ................................ ................................ ................... 28 Organisation formation ................................ ................................ ........................... 28 Évaluation ................................ ................................ ................................ ....................... 28 
+Certification diplomation ................................ ................................ .............................. 28 Discipline ................................ ................................ ................................ ........................ 29 IV.4.a. PTP Génie Urbain TBS ................................ ................................ ...................... 29 
+IV.5. Labels ’INSA Toulouse ................................ ................................ .............. 29 V. Règlement ................................ ................................ ............................ 30 V.1. P réambule ................................ ................................ ................................ ....... 30 
+V.1.a. Adoption modification ................................ ................................ ........................ 30 V.1.b. Communication présent règlement ................................ ................................ 30 V.2. Organisation -jurys l'INSA ................................ ..................... 31 
+V.2.a. Convocation ................................ ................................ ................................ .......... 31 V.2.b. Votes ................................ ................................ ................................ .................... 31 V.3. Le ’établissement ................................ ................................ .................... 31 
+V.3.a. Rôle ................................ ................................ ................................ ...................... 31 V.3.b. Composition ................................ ................................ ................................ .......... 31 V.3.c. Présidence secrétariat ................................ ................................ ...................... 32 
+V.3.d. Quorum ................................ ................................ ................................ ................ 32 V.3.e. Saisine ’établissement ................................ ................................ ............. 32 V.4. Les -jurys département matière formation initiale statut 
+étudiant ................................ ................................ ................................ ................ 32 V.4.a. Rôle ................................ ................................ ................................ ...................... 32 V.4.b. Composition ................................ ................................ ................................ .......... 32 
+V.4.c. Pré sidence secrétariat ................................ ................................ ...................... 33 V.4.d. Quorum ................................ ................................ ................................ ................ 33 V.5. Les -jurys département matière formation initiale statut 
+apprenti ................................ ................................ ................................ ................ 33 V.5.a. Rôle ................................ ................................ ................................ ...................... 33 V.5.b. Composition ................................ ................................ ................................ .......... 34 
+V.5.c. Présidence secrétariat ................................ ................................ ...................... 34 
+Règlement études 20 23-2024 INSA Toulouse 5/ 41 V.5.d. Quorum ................................ ................................ ................................ ................ 34 V.5.e. Déroulement recrutement filière apprentissage ................................ 34 
+V.6. Les -jurys statuant matière Validation Acquis ’Expérience 35 V.6.a. Rôle ................................ ................................ ................................ ...................... 35 V.6.b. Compositi on................................ ................................ ................................ .......... 35 
+V.6.c. Présidence secrétariat ................................ ................................ ...................... 35 V.6.d. Quorum ................................ ................................ ................................ ................ 35 V.7. Les -jurys statuant matière formation continue ingénieur 
+................................ ................................ ................................ ............................ 35 V.7.a. Recrutement Cycle Préparatoire Cycle Terminal ................................ 35 V.7.b. Pré Formation Continue ................................ ................................ ............ 36 
+V.8. Organisation recrutements l'INSA ................................ .......................... 38 V.8.a. Admissions ’INSA Toulouse ................................ ................................ .......... 38 V.8.b. Le recrutement 4ème ................................ ................................ 38 
+V.8.c. Les commissions transfert ................................ ................................ ............... 39 V.9. Semestre 9 INSA ................................ ................................ ...... 39 Annexes ................................ ................................ ................................ .................... 41 
+Annexe A. Déroulement examens attitude fraude .............................. Annexe B. Liste événements donnant absence justifiée ............................. Annexe C. Liste statuts tudiants dispositions particulières ....................... 
+Annexe D. Niveau ’anglais ................................ ................................ ....................... Annexe E. Séjours ’études ’étranger ................................ ................................ 
+Règlement études 20 23-2024 INSA Toulouse 6/ 41 I. Préambule Le règlement études définir règles vigueur domaine formation 
+d’informer communauté universitaire Le règlement études pposable personne enseignant étudiant ’INSA l’accepte rejoignant ’établissement. 
+Aucune disposition d’organisation départements, laboratoires recherche services obstacle ’application règlement études. Quels soient termes généraux employés désigner personnes 
+désignent indifféremment femmes hommes. II. Déroulement études valida Chaque universitaire, organisée semestres, composée ’Unités 'Enseignement 
+(UE) domaines insécables obligatoires représentant 60 crédits ECTS Leur modification intervenir annuellement, décision conseil département compétent réserve validation conseil études. 
+Le tableau récapitulant ’ensemble UE conditions validation connaissance étudiants ’année Pour filière apprentissage, calendrier annuel spécifique tableau récapitulant UE. 
+La présence travaux pratiques, examens, activités impliquant travail qu'aux activités physiques sportives obligatoire, dispense exemple médicale) dûment constatée notifiée. Toute absence justifiée séance ’activités physiques 
+sportives, travaux pratiques impliquant travail groupe enseignement évalué continu (APP exemple) susceptible sanctionnée niveau l’évaluation Les étudiants UE session 2 peuvent suivre totalité 
+enseignements ’UE. Dans pourront passer session 1. II.1. Evaluation unités 'enseignement II.1.a. Méthode d’évaluation 
+L’équipe pédagogique ’UE disposition étudiants ’année acquis ’apprentissage (connaissances, capacités compétences) étudiés ’UE. Dans chacune UE, l'évaluation acquis ’apprentissage pourra intervenir 
+contrôle continu contrôle final. Elle associée évaluation travaux pratiques correspondants projet tutoré travail personnel relatif UE. Les copies, corrigées doivent rendues maximum 3 semaines vacances. Les 
+étudiants oivent connaissance résultat observations formulées travail. Un corrigé éléments corrigé seront portés connaissance élèves idéalement 
+Règlement études 20 23-2024 INSA Toulouse 7/ 41 suivant ’évaluation Les contestations éventuell concernant ’évaluation pourront restitution copies 
+Les évaluations doivent réparties durant semestre. Le programme contrôles étudier UE 7 contrôle. Les modalités doivent communiquées étudiants 7 contrôle. 
+L’évaluation acquis l’apprentissage pourra uniformément UE, ’équipe pédagogique Une évaluation II.1.a.i 
+Une évaluation acquis ’apprentissage II.1.a.ii Quelle méthode ’évaluation choisie, principe compensation ’UE II.1.a.i. Cas ’évaluation 
+L’évaluation acquis ’apprentissage découle compte plusieurs modalités calcul précisé d'enseignement. Il pourra utilisé éliminatoires méthodes calcul introduisant telles (moyenne 
+harmonique exemple) II.1.a.ii. Cas ’évaluation acquis ’apprentissage Ils peuvent classés catégories 
+l’apprentissage fondamentaux doivent impérativement acquis ’appren tissage partie acquise ‘UE. Lors remise travaux corrigés, servant ’évaluation ’UE, acquis 
+l’apprentissage évalués niveau ’acquisition observé acquis, partiellement acquis acquis maîtrisé remarquable l’étudiant. II.1.b. Validation UE 
+L’année universitaire composée sessions 1ère §II.1.c) A première session, ’UE composé ’équipe pédagogique l’UE convoqué responsable ’UE réunit ’évaluer acquis l’apprentissage 
+chaque étudiant L’évaluation ’UE définie 5 niveaux suivants remarquable l’étudiant maîtrise ’ensemble acquis ’UE domaine maîtrisé l’étudiant possède grande majorité acquis attendus 
+acquis l’étudiant possède acquis attendus essentiels partiellement acquis l’étudiant possède partie acquis présente acquis l’étudiant lacunes importantes 
+Dans évaluation d’UE supérieure 10/20 conduit acquis maîtrisé remarquable 
+Règlement études 20 23-2024 INSA Toulouse 8/ 41 Les niveaux Acquis Maîtrisé Remarquable validation ’UE l’octroi crédits ECTS Pour niveau Non acquis partiellement acquis 
+département -orientation session 2 second semestre, pourra proposer validation l’UE particulier acquis ’apprentissage manquants acquis UE. Dans niveau ’UE devient Acquis 
+Toute UE validée définitivement crédits ECTS correspondant aussi, définitivement acquis. Tout tudiant validé UE session 1 automatiquement inscrit session 2 
+passera nouvelle épreuve. Pour UE continues l’année validation UE second semestre permet validation UE premier mestre), session 2 organisé ’année A ’épreuve session 2, ’UE réunit 
+nouveau effectue travail session 1. Le niveau obtenu l’issue épreuve devient l’UE. Si, l’issue session 2, UE validée, ’étudiant epasser ’année suivante. 
+Dans redoublement, l’étudiant suivre totalité UE, qu’elle homogène hétérogène, assister l’intégralité cours, TD TP. Les xamens passés session 1, motivé l'équipe pédagogique UE hétérogènes. 
+Dans passage supérieure examens différentes composantes UE passés 2. Lorsque UE hétérogène, programme l'examen discuté l’équipe pédagogique. Lorsque UE homogène l’étudiant repasser totalité 
+composantes UE dette. Pour étudiants anticipent UE, pourront passer session 2 obtenu niveau partiellement acquis session 1. 
+La étudiants convoqués session 2 établie ’UE validée d’établissement. Elle publiée rapidement ssible session 2 II.1.c. Cas particulier 1ère domaines 
+La première composée domaines (mathématique -algorithmique sciences physique industrielles humanités Ces domaines évalués acquis d’apprentissage. 
+Le fonctionnement Grands Domaines (notamment nombre d’évaluations plusieurs évaluations acquis d’apprentissage session 2 spécifique organisée. Les équipes pédagogiques fonction résultats rajouter 
+évaluations supplémentaires jugent nécessaires. A l’année domaine composé ’équipe pédagogique domaine convoqué responsable domaine réunit ’évalu acquis ’apprentissage 
+chaque étudiant. L ’évaluation acquis ’apprentissage domaine définie 5 niveaux 
+Règlement études 20 23-2024 INSA Toulouse 9/ 41 suivants remarquable l’étudiant maîtrise ’ensemble acquis ’UE domaine 
+maîtrisé l’étudiant grande majorité acquis attendus acquis l’étudiant possède acquis attendus essentiels partiellement acquis l’étudiant possède partie acquis présente 
+acquis l’étudiant lacunes importantes Les niveaux Acquis Maîtrisé Remarquable entrainent validation domaine l’octroi crédits ECTS. Pour niveau partiellement acquis 1ère pourra 
+proposer validation domaine Dans niveau domaine devient Acquis Tout domaine validé définitivement crédits ECTS correspondants aussi, définitivement acquis. 
+En redoublement 1ère année, étudiants devront repasser totalité domaines validés. L anticipations 2ème possible. II.1.d. Gestion fraudes 
+Les conditions déroulement examens ’attitude fraude précisées II.1.e. Gestion absences Toute absence justifiée contrôle entraîne (lorsque ’évaluation 
+Un étudiant participé totalement partiellement épreuve contrôle prétendre ensuite rattrapage épreuve, majeure. Pour justifier absence, ’étudiant présenter, lorsqu reprend cours1, justificative officielle 
+secrétariat département informera enseignants concernés. La participation active certains événements Annexe B constitue d’absence justifiée condition prévenir directeur département possible 
+48 heures ’épreuve. Si demande concerne évènement défini liste, motivée auprès directeur études directeur département. Le irecteur études informe conseil décisions prises ’année. 
+Aux étudiants totalement partiellement inaptes pratique ’éducation physique 1 La justificative déposée reprise justificatif déposé 14 heures 
+lendemain reprise, l'absence considérée excusée. La reprise premier période laquelle justificatif d'absence fourni. Absent 2 vendredi 6 inclus justificatif présenté 10 14 heures. 
+Absent 2 vendredi 6 justificatif présent mercredi 4 14 heures 10 14 heures Absent matinée 2 justificatif présenté 3 14 heures. 
+Règlement études 20 23-2024 INSA Toulouse 10/ 41 justificatif), proposé ignement adaptée (rapports, épreuves aménagées...). 
+Pour étudiants absence justifiée plusieurs épreuve l’épreuve organisée session 2 servira rattrapage. L résultat obtenu remplace résultat l’épreuve épreuves) laquelle ’étudiant absent. Le ’UE décide niveau 
+validation ’UE session 1 session 2. Par exemple, évaluation ’étudiant valide l’UE, l’UE validée session 1. Si, l’étudiant valide ’UE, ’UE obtenue session 2 
+Dans domaines 1ère année, lorsqu étudiant absence justifiée, repasse l’épreuve laquelle absent. Néanmoins, l’équipe pédagogique dispenser ’étudiant d’épreuve rattrapage adapter contenu. 
+II.1.f. Modalités contrôle connaissances dérogatoires En situations exceptionnelles ’évolution sanitaire (pandémie Covid -19), modalités contrôle connaissance alternatives présentiel suivantes peuvent 
+s’appliquer. Par dérogation ’article II.1.a règlement études formations ’INSA, évaluations peuvent modalités ’évaluation distance peuvent prendre d’autres formes contrôle terminal l'évaluation continu. Les enseignants meilleur 
+effort informer étudiants modalités ’évaluation ’UE contrôles l'UE 7 contrôle annoncée. II.2. Double diplôme INSA -Sciences Po Toulouse 
+En 1A, enseignements d'APS semestre 1 Expression Projet Documentaire module PENSER semestre 2 placés modules suivis Sciences Po En 2A, enseignements Économie contemporaine transition écologique semestre 1 
+APS semestre 2 remplacés modules suivis Sciences Po Toulouse. En 3A, MO semestre 2 remplacé modules suivis Sciences Po Toulouse. En 4A, modules suivis Sciences Po Toulouse semestre 1 remplacent ’enseignement 
+Droit modules restant ’UE associée, savoir Finance d'entreprise Stratégie d'entreprise responsable l’INSA Toulouse .Au semestre 2 module Prospective remplacé module Sciences Po Toulouse. 
+En 5ème année, étudiants suivent master Scienc Po. A l'INSA, suivent modules 5ème 6 ECTS. Chaque département définit modules suivre modalités pédagogiques, sachant étudiants suivront présentiel 
+(documents moodle, video, tutorat...). 
+Règlement études 20 23-2024 INSA Toulouse 11/ 41 II.3. Reconnaissance Challenge Based Learning Les étudiant/es 4A 5A l'offre challenges proposée ECIU University 
+l'université européenne Groupe INSA membre. Cette disponible renouvelée chaque semestre. 1. Un.e étudiant.e intéressé.e challenge soumet challenge choisi direction 
+études (et/ou correspondant RI) département, impérativement semestre académique 2. La direction études département valide choix, éléments 
+descriptifs challenge (thématique, acquis d'apprentissage visés, charge travail estimé, nombre crédits ECTS, 3. La direction études département établit contrat l’étudiant.e défini 
+l'UE programme INSA l'étudiant.e dispensé.e permettre s'engager challenge. 4. Les crédits ECTS obtenus l'étudiant.e l'issue challenge intégrés 30 
+ECTS requis valider semestre. 5. Il possible suivre maximum 1 challenge proposé ECIU University II.4. Etudiants statut iculier 
+En Code ’éducation, notamment articles L611 -9 L611 -11L612 -1D611 -7 D611 -8 D611 -91, ’Article 12 ’arrêté 30 juillet 2018 modifiant ’arrêté 22 janvier 2014 fixant national formations conduisant délivrance diplôm nationaux licence, 
+licence professionnelle master, certains étudiants peuvent obtenir, conditions, statut particulier permettant concilier besoins spécifiques déroulement études. Les différents statuts particuliers conditions ’obtention modalités 
+pédagogiques spéciales applicables décrits Annexe C listés -dessous Etudiant appartenant Section Musique Etudes (SME) Etudiant appartenant Section Danse Etudes (SDE) 
+Etudiant appartenant Section Théâtre Etudes (STE) Etudiant appartenant Section Sport Etudes (S²E) Etudiant Grand Associatif (EGA) 
+Etudia Entrepreneur (EE) Etudiant situation handicap situation longue maladie (ESH) Etudiant réserviste (ER) 
+Etudiant Sapeur Pompier volontaire Etudiant salarié (ES) Etudiante enceinte 
+Etudiant chargé famille II.5. Bilan pédagogique Un pédagogique organisé chaque semestre. Il promotion 
+Règlement études 20 23-2024 INSA Toulouse 12/ 41 groupe nécessaire, présence enseignants élèves groupe promotion. II.6. Validation ’année 
+II.6.a. Conditions validation ’année L’année validée ’étudiant obtient 60 crédits ECTS ’est-à-dire valide totalité UE Les résultats étudiants satisfont condition examinés 
+-jury, compte éléments ’information disposition (ensemble résultats, participation associative, assiduité, circonstances particulières Le proposer passage supérieure étudiants ’ayant 
+60 crédits ECTS. Dans ’étudiant dettes valider UE manquantes l’année années) suivante(s). Le proposer passage supérieure maximum 2 UE dette. 
+II.6.b. Redoublements Exclusions Pour étudiants satisfont conditions passage supérieure, pré-jury proposer ’établissement l’autorisation redoublement ’exclusion. Si 
+propose l’exclusion, argumenter décision ’établissement. Tout étudiant bénéficier, demande, département, conseils réorientation liaison ’établissement ’accueil inscription délais. 
+La première pourra redoublée Un redoublement possible années 2 3 années 4 5. Le redoublement aménagé discussion l'étudiant privilégier 
+notamment consolidation ’année redoublée développement personne (stage entreprise, travail autonomie Il également possible ’autoriser suivre certaines UE l’année suivante réserve nombre ’UE repasser chaque semestre 
+important réserve compatibilité d'emploi cohérence pédagogique l'année ’inscription administrative prioritaire anticipations) capacité d’accueil Le directeur département directeur études pré-orienta concerné(e) 
+définira modalités ’assurant œuvre. Un contrat ’étude l’étudiant redoublant directeur département directeur études -orientation 15 maximum rentrée ’étudiant. 
+III. Déroulement -jurys 
+Règlement études 20 23-2024 INSA Toulouse 13/ 41 d’année La composition règles générales fonctionnement -jurys détaillées 
+règlement IV). Tous étudiants obtenu 60 crédits ECTS convoqués -jury. La étudiants voqués pré-jury affichée 24 heures -jury. 
+A l’issue -jury, missionne membres propose chaque étudiant concerné expliquer décision prise. Toute ntestation relative déroulement portée devant 
+d’établissement l'INSA. Pour courrier envoyé directeur ’INSA directeur département concerné) meilleurs délais 48 heures ’établissement. 
+III.1. Pré-jury première Compte nombre ’étudiants 1ère année, précédé commissions préparatoires examinent étudiants n'ayant satisfait conditions 
+dessus. Celles tiennent groupe ’étudiants enseignants participé enseignements groupe, étudiants ’ayant obtenu 60 crédits ECTS, Ces commissions tiennent parties 
+1ère partie audition individuelle étudiants 2ème partie enseig analysent chacun Pour chacun étudiants, proposition soumise première année. 
+Cette proposition moment portée connaissance ’étudiant, préjuge proposition 1ère Le toutes commissions préparatoires 
+délibéré. Il propose validation UE niveau acquis partiellement acquis validation domaines niveau partiellement validation l’année étudiants satisfont conditions validation ’office Il propose 
+ensuite ’admission, ’autorisation redoublement ’exclusion chacun étudiants restants. III.2. Autres -jurys ’année Compte spécificité groupe FAS 2ème année, commission préparatoire 
+pré-jury 2ème instituée. Pour promotions grande taille, commissions préparatoires peuvent également place. Elles fonctionne modèle celles 1ère III.1). 
+Les -jurys examinent résultats ’ensemble étudiants inscrits administrativement 
+Règlement études 20 23-2024 INSA Toulouse 14/ 41 ’année concernée. Ils déroulent phases 1ère propose validation ’année éventuellement validation 
+plusieurs UE niveau acquis partiellement acquis étudiants lesquels estime pouvoir auditionner. 2ème étudiants examiner 1ère phase, 
+invités transmettre information complémentaire utile. Les étudiants peuvent auditionnés peuvent écrire lettre -jury. 3ème examine étudiants D’une propose validation 
+UE niveau acquis partiellement acquis d’autre propose l’admission, l’admission dette, ’autorisation redoublement l’exclusion étudiants. Les résultats -jurys devront affichés immédiatement délibérations 
+visibles ’extérieur ’intranet pédagogique meilleurs délais III.3. Autorisations réinscrire raisons médicales sociales graves 
+III.3.a. Principes Lorsque étudiants rencontré difficultés médicales sociales graves particulier travail salarié important), responsables services sociaux médicaux peuvent informer 
+pré-jurys concernés, moyennant ’accord étudiants concernés respect secret professionnel nature précise difficulté rencontrée. Tout étudiant raisons médicales sociales graves auront l'impossibilité 
+suivre ignements pendant partie significative l'année universitaire demander bénéficier autorisation réinscrire d'études. Cette autorisation, proposée département, considérée redoublement. 
+III.3.b. Interactions l'équipe médico -sociale L’information ’importance ’impact éventuel difficultés médicales sociales rencontrées étudiants effectuée transmise 
+directeur épartement directeur études PO. La demande d'autorisation réinscrire accompagnée document émanant SIMPPS (Service Interuniversitaire Médecine Préventive Promotion Santé 
+service social compétent proposant ’octroi autorisation. Le statue proposition. 
+Règlement études 20 23-2024 INSA Toulouse 15/ 41 III.4. Autres dispositions III.4.a. Première répartition étudiants 
+Le d'établiss l'INSA procède répartition étudiants pré-orientations. Les étudiants 1ère indiquent -orientation classant obligatoirement 
+totalité -orientations proposées. Le classement étudiants établi acquis ’apprentissage manière suivante. Un nombre affecté niveau ’année chaque acquis ’apprentissage (0 
+acquis 1 partiellement acquis 2 acquis 3 maîtris 4 remarquable chaque domaine pondéré nombre crédits ECTS. Ce classement également départs semestre ’étranger. 
+Après déterminé capacité totale chacune -orientations 2ème (FAS exclus IC MIC étudiants répartis -orientations fonction classement 80% 85% capacité totale chacune -orientations. 
+Une commission transversale composée ’ensemble Directeurs Etudes Département STPI (1ère -orientations) Directeur département responsable PPI représentants) examine chacun étudiants n'aurait obtenu 
+premier ’issue répartition. Si étudiant filière spécifique (FAS, ASINSA concerné, responsable filière assiste ’audition. L’examen chaque extraite PPI entretien. L'étudiant -orientation 
+attribuer suivants examinés l'ordre décroissant Cas particuliers Les étudiants 1ère inscrits programme FAS 2ème automatiquement 
+affectés groupe FAS PO IC PO MIC fonction spécialité BAC) La commission transversale mentionnée -dessus examine chacun étudiants programme souhaite diriger -orientatio 
+III.4.b. Troisième spécialités Sauf particulier, spécialités arrêté provisoirement 1er semestre 3ème tenant compte étudiants classement. 
+Cas particuliers 1. Etudiants partant partie troisième ’étranger étudiants effectuent troisième ’étranger affectés spécialité 
+départ. Les étudiants effectuent semestre ’étranger affectés spécialité procédure commune. 
+Règlement études 20 23-2024 INSA Toulouse 16/ 41 2. Les étudiants affectés redoublent 3ème gardent bénéfice affectation, démarche contraire 
+3. Les étudiants 3ème programme FAS automatiquement affectés spécialité correspond spécialité baccalauréat. Dans différent, affectés règles autres 
+4. Les étudiants recrutés 3ème affectés spécialité recrutement. Tout étudiant obtenu spécialité ’issue classement -dessus, étudiant souhaite changer spécialité ’affectation, entretien 
+motivation commission composée irecteur département STPI, directeur études PO, directeur département spécialité concernées responsable PPI représentants). Cette commission prononce ’affectation l’étudiant considérant 
+motivations capacités capacité ’accueil spécialité considérée. L’affectation définitive étudiants spécialités arrêtée ’établissement. III.4.c. Choix parcours transversaux pluridisciplinaires 
+Les étudiants possibilité suivre parcours transversal pluridisciplinaire (PTP) l’interface plusieurs disciplines. Tous PTP accessibles étudiants. En particulier, ’accès certains PTP dernière permet départ ’étranger 4ème 
+Chaque spécialité ’étudiants peuvent suivre ’ensemble PTP nombre maximum PTP. La PTP conditions ’accès validées Con Etudes 
+proposition conseils département Les étudiants 4ère souhaitent indiquent PTP. Le d'établissement l'INSA procède répartition étudiants PTP. Les 
+étudiants classés résultats obtenus troisième quatrième Dans chaque promotion, étudiants classés fonction règles définies -dessus III.4.a). L’interclassement différentes spécialités classement 
+pourcentage ’ensemble étudiants inscrits) chaque étudiant promotion compte motivation III.4.d. Césures 
+La période césure dispositif correspondant suspension temporaire volontaire études réalisé demande ’étudiant ’accord directeur département, directeur études, directeur ’établissement. La période césure permet ’étudiant ’acquérir 
+expérience professionnelle personnelle, France ’étranger. La période césure remplace élément formation ’établissement éventuels ECTS acquis période césure reconnus 
+Règlement études 20 23-2024 INSA Toulouse 17/ 41 formation ’établissement. La période césure compte période mobilité obligatoire ’étranger. Les justificatifs originaux fournir secrétariat 
+La période césure prendre différentes formes formation, expérience milieu professionnel (contrat bénévolat, stage), réalisation mission service civique, volontariat associatif, international entreprise, international administration, volontariat 
+solidarité internationale, service volontaire européen, travail projet création ’entreprise qualité ’étudiant -entrepreneur. La maximale période césure universitaire. La césure débute 
+obligatoirement semestre universitaire Elle effectuée remière cursus jamais dernière cursus. La demande césure partir dossier demande césure transmis département. Lorsque 
+césure acceptée toutes parties, convention rédigée ’étudiant l’INSA. L ’étudiant inscrit césure ’acquitter droits ’inscription césure. Par application décret 2021 -1154 3 septembre 2021 étudiants ccomplissant 
+césure cursus formation initiale soumis modalités identiques celles classique, l'exception points suivants Pas d'obligation d'être inscrit cursus volume pédagogique 
+d'enseigneme heures comportant minimum cinquante heures dispensées présence étudiants application D124 -2 Pas d'obligation mentionner l'intitulé ladite formation volume horaire 
+convention application ’article D124 -4/1° ’éducation), Pas d'obligation restitution d’évaluation application ’article D124 -1/2° ’éducation). 
+III.4.e. Fin ’année administrative La ’année administrative 30 septembre. Toute UE validée compte. Pour comptabilisé ’année cours, stages doivent 
+terminés (stage terminé soutenance faite) 30 septembre. Dans convention soutenance l’étudiant réinscrire ’INSA Toulouse. 
+Règlement études 20 23-2024 INSA Toulouse 18/ 41 IV. Règles délivrance diplômes IV.1. Diplôme ’Ingénieur INSA Toulouse, master 
+Le ’établissement compte décision délivrance -délivrance diplôme, éléments suivants résultats obtenus scolarité, 
+niveau ’anglais atteint, niveau français atteint étudiants francophones, séjours ’étranger effectués, 
+validation stages effectués l’implication citoyenne. Le souverain lorsqu opportun délivrer diplôme lorsque 
+conditions -dessus remplies. IV.1.a. Résu obtenus scolarité Les étudiants doivent obtenu 60 crédits ECTS scolarité, 300 ECTS 
+l’issue 5ème année. IV.1.b. Niveau ’anglais En application recommandations CTI2, niveau souhaitable ingénieur 
+niveau C1 Cadre européen référence langues conseil ’Europe. Le niveau minimum demandé étudiants formation initiale niveau B2 Annexe D Ce niveau concerne étudiants formation initiale ’INSA, compris filières spécifiques. 
+Dans niveau obtenu 5ème année, suspend délivr diplôme maximum 3 Au délai, ’étudiant pourra diplômé l’INSA Toulouse. L ’obtention requis entraîne délivrance immédiate 
+diplôme autres conditions délivrance emplies. Pendant années suspension, l’étudiant inscrit ’INSA Toulouse acquitté contribution étudiante campus CVEC 
+IV.1.c. Niveau français En application recommandations CTI, niveau minimum B2 demandé étudiants INSA francophones étudiants identifiés langue passent 
+étudiants nationalité étrangère diplôme étranger entrée ’INSA 2 CTI Commission titres d’ingénieurs 
+Règlement études 20 23-2024 INSA Toulouse 19/ 41 quelle ’étude. Il atteint préférence 3ème année. Pour étudiants étrangers justifient niveau C1 entrée ’INSA, 
+FLE LV2 niveau C1 atteint groupe spécifique ENG ’INSA viennent LV2) Ces étudiants bénéficient l’obtention niveau C1. 
+En 4ème année, UE (Développer aptitudes managériales) difficile rédactionnel demande niveau C1 minimum). Tous étudiants FLE 3A auront UE. 
+Dans niveau B2 atteint 5ème année, suspendre délivrance diplôme aximum 3 L’obtention niveau requis entraîne délivrance immédiate diplôme autres conditions délivrance remplies. Pendant années 
+suspension, ’étudiant inscrit ’INSA Toulouse acquitté C VEC. IV.1.d. Durée validation stages séjour ’étranger Au scolarité ’INSA, étudiant obligatoirement effectuer 
+40 semaines stages ’expériences professionnelles) 14 semaines minimum Il ’effectuer stages 1ère (stage ouvrier, 3 semaines préconisée 4 semaines 4ème (12 16 semaines tolérance 8 semaines 
+quelques particuliers l’étranger notamment 5ème (20 26 semaines). Un vivement conseillé 3ème (4 12 semaines) décompté 40 semaines obligatoires. Les stages 1ère, 4ème 5ème évalués. 
+Il demandé étudiant passer 1 semestre minimum différent ’origine scolarité ’INSA correspond 1 semestre période d'études, 16 semaines L'objectif séjour 
+l'étranger acquisitions scientifiques techniques correspondantes, d'acquérir niveau langue étrangère découvrir d'autres cultures. Les stages séjours ’étranger validés département l’étudiant ’issue expérience. Dans 
+spécifique étudiants statut ’apprentis, mobilité ’étranger 9 semaines préconisé 12 semaines Les conditions lesquelles organisés séjours ’études résultats validés 
+cursus formation INSA précisées document annexe séjour ’études l’étranger (Annexe E Les séjours linguistiques ’étranger petits boulots comptabilisés 
+40 semaines obligatoire, limite 4 semaines. Ils validés séjour l’étranger réelle. Afin prendre compte difficulté certains étudiants (apprentis, ’architecture, 
+d'effectuer totalité semaines mobilité physique l'étranger exigée R&O Références Orientations) CTI, l'INSA Toulouse accorde équivalence semaines mobilité certaines formes alternatives ’expérience internationale, considérant qu'elles 
+conduisent également étudiants développer aptitude travailler contexte international. 
+Règlement études 20 23-2024 INSA Toulouse 20/ 41 Les conditions d'octroi suivantes L'équivalence accordée uniquement situations ’apprentissage académiques 
+donnant évaluation formelle acquis d'apprentissage, challenges micromodules d'ECIU University donnent -certificat d'ECI U University) projets internationaux virtuel hybride inclus UE offerte l'INSA Toulouse 
+responsabilité enseignant l'INSA Toulouse. Les 3 premiers volets module formation POM I -requis équivalence accordée 
+L'équivalence plafonnée 50% totale mobilité exigée ’INSA. Il possible cumuler plusieurs expériences internationales alternatives courtes aboutir nombre semaines mobilité 
+L’équivalence nombre semaines mobilité calculée suivante 1 ECTS 25 30 HETD travail étudiant) équivaut 1 semaine mobilité. Les étudiants recrutés directement 2ème, 3ème 4ème dispensés uvrier, 
+doivent effectuer 36 semaines 14 minimum entreprise) 16 semaines minimum séjour différent ’origine 36 semaines obligatoires, période 'études). 
+Les stages expériences travail séjours l'étranger, effectués niveau baccalauréat antérieurs ’entrée ’INSA, peuvent validés directeur département d'accueil compte décomptes -dessus. 
+Dans nombre semaines nombre semaines séjour l’étranger obtenu 5ème année, suspendre délivrance diplôme Au-delà ’étudian pourra L’accomplissement 
+nombre semaines manquantes entraîne délivrance immédiate attestation réussite autres conditions délivrance remplies. IV.1.e. Implication citoyenne 
+Les étudiants doivent scolarité semestre implication citoyenne. C’est obligation ’obtention diplôme ’ingénieur INSA Toulouse. Cette implication citoyenne formats suivants 
+l'étudiant impliqué association, suivra MO Ethique 3ème implication moyenne (membres associations), l’étudiant.e suivre 7 premiers MO Ethique. 
+implication (président, trésorier...), ’étudiant années 1, 2 3pourra demander dispensé LV2 APS bénéficiera accompagnement spécifique tuteur. 
+Règlement études 20 23-2024 INSA Toulouse 21/ 41 IV.1.f. Cas particulier filières Fontanet (formation continue) Conformément recommandations CTI, niveau minimum B1 anglais 
+demandé délivrance diplôme stagiaires rmation continue niveau B2+ stagiaires VAE Le séjour l’étranger obligatoire recommandé. 
+Les stagiaires formation continue suivent UE d’APS. IV.1.g. Cas particulier filières apprentissage Le séjour ’étranger obligatoire. 
+Conformément recommandations CTI, minimum B2 anglais demandé délivrance diplôme étudiants statut étudiant) IV.2. Attestation niveau Diplôme d’établissement Bachelor 
+l’INSA Toulouse Une attestation niveau Diplôme ’établiss Bachelor délivré 3ème étudiant validé 180 crédits ECTS niveau B2 minimum anglais 
+souhaite quitter ’INSA poursuivre études ’étranger. Ce niveau Bachelor certifié l'Etat licence décret 2021 -405 7 2021. Dans niveau B2 anglais atteint décision délivrer l’attestation niveau 
+Diplôme ’établissement Bachelor »revient ’établissement. Il attestation niveau Diplôme ’établissement Bachelor l’INSA Toulouse, 5 mentions ICBE, IMACS, MIC, IC -GM IC -GC, versions anglaises 
+ICBE Chemical Bioch emical Engineering IMACS Materials Science, Electronic Devices Systems Engineering MIC Computer Engi neering Information Systems 
+IC-GM Mechanical Engineering IC-GC Civil Engineering Une annexe supplément diplôme rédigée français anglais 
+chaque mention, préciser contenu technique acquis ’étudiant. IV.3. Master Science Les règles -dessous définies ’exercent éjudice stipulations convention 
+l’Université Fédérale Toulouse Midi -Pyrénées établissements -accrédités délivrer diplômes nationaux master 
+Règlement études 20 23-2024 INSA Toulouse IV.3.a. Fluid engineering industrial processes Le diplôme Master Science (MS mention Ingénierie Systèmes complexe parcours 
+Fluid Engineering Industrial Processes (FEIP) diplôme national master co-accrédité ’INP Toulouse La formation conduisant diplôme Master structurée formation théorique 
+présentiel semestres (chacun alidant 30 crédits ECTS) 5 (30 crédits ECTS). L'enseignement organisé ensemble cohérent cours, exercices, travaux pratiques, conférences projets rendent présence indispensable 
+organisation pédagogique. Les étudiant évalués chacun modules d'enseignement. Les conditions l'évaluation présentées module, responsabilité l'enseignant 
+informe étudiant L'évaluation organisée globalement ensemble L'évaluation traduit comprise 0 20. Toute inférieure 10 traduit objectifs minimaux discipline atteints. Les communiquées 
+étudiant 21ème suivant l'évaluation. Le ’étude obligatoirement l'objet rapport soutenance Les tuteurs l’étudiant l'entreprise /laboratoire associés l'évaluation La 
+minimale 5 L'admission prononcée Directeur ’établissement proposition responsables formation consultation commission désignée responsable mention 
+composée ’enseignants membres ’équipe pédagogique. La sélection, ’admission Master 1 effectuée dossier universitaire professionnel candidat lettre motivation. Des auditions peuvent 
+sélection dossier. Composition Le constitué enseignant responsable chaque module, correspondant 
+impliquée INSA INP-ENSIACET INP-ENSEIHT -responsables formation (INSA -INP) 8 enseignants. Le s'informe détail résultats, comportement, personnalité, difficultés ordres ’étudiant d'élaborer 
+proposition. Il propose étudiants M1 passage M1 M2, redoublement l’exclusion, étudiants M2 l'admission diplôme -admission entrainant redoublement ’exclusion. 
+Conditions ’admission M2 Une moyenne calculée semestre théorique compte relatif chacune disciplines, nombre crédits associé (annexe 1). L ’obtention moyenne 
+Règlement études 20 23-2024 INSA Toulouse 23/ 41 semestre supérieure 10 entraîne validation, ’octroi 30 crédits ECTS associés. Tout étudiant obtient 10 semestres composant M1 
+automatiquement proposé passage M2. La moyenne semestre calculée moyenne Tout étudiant obtient 10 chaque semestre, 10 automatiquement 
+proposé diplôme. A l'inverse, examinera étudiant remplit fortiori plusieurs, conditions -dessus. La moyenne diplôme s'obtient relation 
+Mdiplôme (M semestre 1 M semestre 2 M semestre3 M stage)/4. Une décision l'obtention diplôme prise, pré-jury propose l'assortir mentions éventuelles suivantes Assez Bien Très Avec félicitations 
+Les conditions requises l'obtention mentions ’issue années d’études suivantes L’étudiant obtenu, ’année M2, moyenne supérieure 
+points mention Assez quatorze points mention Bien points mention Très 
+dix-huit points mention Avec félicitations jury», À condition, chacune mentions, qu'aucune moyenne module inférieure Dans autres mentionnés -dessus, réserve respect 
+dispositions précédentes, réussite assortie mention passable IV.3.b. Water engineering management Le diplôme Master Science (MSc) mention Ingénierie Systèmes complexe, parcours 
+Water Engineering Water Management (WEWM) diplôme national master réalisé co-accrédité ’INP Toulouse. La formation conduisant diplôme Master structurée formation théorique 
+présentiel semestres (chacun validant 30 crédits ECTS) 5 (30 crédits ECTS). L'enseignement organisé ensemble cohérent cours, exercices, travaux pratiques, conférences projets rendent présence dispensable 
+organisation pédagogique. Les étudiant évalués chacun modules d'enseignement. Les conditions l'évaluation présentées module, responsabilité l'enseignant 
+Règlement études 20 23-2024 INSA Toulouse 24/ 41 étudiant L'évaluation organisée globalement ensemble L'évaluation traduit comprise 0 20. Toute inférieure 10 traduit 
+objectifs minimaux discipline atteints. Les communiquées étudiant 21ème suivant l'évaluation. Le ’étude obligatoirement l'objet rapport soutenance 
+Les tuteurs l’étudiant l'entreprise /laboratoire associés l'évaluation La minimale 5 Admission master 
+L'admission prononcée Directeur ’établissement proposition responsables formation consultation commission désignée conjointement directeur l’INSA présidente ’INP composée ’enseignants membres l’équipe pédagogique. 
+La sélection, ’admission Master 1 effectuée dossier universitaire professionnel candidat lettre motivation. Composition 
+Le constitué enseignan responsable chaque module -responsables formation (INSA -INP). Ce comprendre personne chaque impliquée INSA INP -ENSEIHT INP -ENSAT). Le s'informe détail 
+résultats, compor tement, personnalité, difficultés ordres ’étudiant d'élaborer proposition. Il propose étudiants M1 passage M1 M2, redoublement ’exclusion, étudiants M2 l'admission diplôme -admission 
+entrainant redoublement ’exclusion. Conditions ’admission Une moyenne calculée semestre théorique tenant compte relatif chacune 
+disciplines, nombre crédits associé (annexe 1). L’obtention moyenne semestre supérieure 10 entraîne validation, ’octroi 30 crédits ECTS associés. Tout étudiant obtient 10 semestres composant M1 
+automatiquement proposé passage M2. La moyenne semestre calculée moyenne Tout étudiant obtient 10 chaque semestre, 10 automatiquement 
+proposé diplôme. A l'inverse, examinera étudiant remplit fortiori plusieurs, conditions -dessus. Le ’établissement, souverain, compte décision délivrance 
+non-délivrance diplôme, éléments suivants propositions pré-jury, résultats obtenus formation théorique, 
+Règlement études 20 23-2024 INSA Toulouse 25/ 41 validation stages effectués. La moyenne diplôme s'obtient relation 
+Mdiplôme (M semestre 1 M semestre 2 M semestre3 M stage)/4. Une décision btention diplôme prise, pré-jury propose l'assortir mentions éventuelles suivantes Assez Bien Très Avec félicitations 
+L’étudiant obtenu, ’année M2, moyenne supérieure points mention Assez quatorze points mention Bien 
+points mention Très dix-huit points mention Avec félicitations jury», À condition, chacune mentions, qu'aucun moyenne module inférieure 
+Dans autres mentionnés -dessus, réserve respect dispositions précédentes, réussite assortie mention «passable». IV.3.c Industrial BioTechnology Bio -Based Economy 
+Le diplôme Master Science (MSc) mention Ingénierie Systèmes complexe, parcours International master program Industrial BioTechnology Bio -Based Economy BioTechEco diplôme national Master co-accrédité INSA Toulouse INP. 
+La formation conduisant diplôme Master structurée formation quatre semestres correspondant 120 ECTS (chaque semestre validant 30 crédits ECTS). Parmi 4 semestres, réalisé université étrangère partenaire master BioTechEco 
+liste) constitué 5 6 (30 crédits ECTS). L'enseignement organisé ensemble cohérent cours, travaux dirigés, projets, travaux ratiques rendent présence indispensable organisation pédagogique Si situation 
+nécessite enseignements soient réalisés distanciel, étudiants devront connectés suivre ’outil pédagogique utilisé. Admissi master 
+L'admission prononcée Directeur ’établissement proposition responsable formation consultation commission désignée conjointement directeur l’INSA présidente ’INP composée d’enseignant membre l’équipe pédagogique 
+membres responsables ’EUR La sélection, ’admission Master 1 effectuée dossier universitaire professionnel candidat lettre motivation Des audition 
+Règlement études 20 23-2024 INSA Toulouse 26/ 41 sélection dossier réalisées minima enseignants master. Evaluation(s) 
+Les étudiants évalués chaque module d'enseignement. Les conditions modalités ’évaluation présentées étudiants module, ’enseignant responsable module. Elles doivent cependant définies rentrée. 
+Au minimum évaluations obligatoires programmées module, pouvant prendre d’écrit, d’oral, rapport coefficient chaque évaluation défini chaque module rentrée 
+L'évaluation traduit module comprise 0 20. Toute inférieure 10 traduit objectifs minimaux discipline atteints. Les communiquées étudiants 21ème suivant l'évaluation. Les acquis 
+l’apprentissage chaque module chaque étudiant défini 5 niveaux suivants remarq ’étudiant maîtrise ’ensemble acquis module maîtrisé l’étudiant possède grande majorité acquis attendus 
+acquis ’étudiant possède acquis attendus essentiels partiellement acquis ’étudiant possède acquis présente acquis ’étudiant lacunes importantes 
+Une module supérieure 10/20 conduit acquis maîtrisé remarquable Des sessions rattrapage (pouvant servir ’épreuve remplacement ’absence 
+justifiée ’épreuve initiale) seront proposées ’issue semestre semestre examen donnant unique choisie ’enseignant, pourra différente l’examen initial. La rattrapage remplacera globale obtenue 
+International /Learning agreement Pour étudiants réalisant semestre ’international, validation semestre nécessitera validation crédits ECTS nombre 30), règles ’appliquent celles 
+l’université ’accueil. Le contrat ’études learning greement comporte 30 crédits ECTS semestre ’études. Pour universités lesquelles système ECTS vigueur, contrat ’études prévoit 
+nombre crédits identique pratique ’université ’accueil. L’inscription université étrangère, équivalence formation INSA, ’accord préalable Correspondant Relations Internationales Master 
+BioTechEco. En conséquence départ semestre ’études possible Correspondant Relations Internationales Master BioTechEco formellement approuvé projet contrat ’études 
+étudiant semestre ’études transmet directement ’INSA propre responsabilité, contrat ’études défini meilleurs délais semestre l’université ’accueil. Le Correspondant Relations Internationales Master BioTechEco accuse 
+réception programme ’études ’approuve modification contrat ’études séjour, ’étudiant sollicite préalablement l’accord formel Correspondant Relations Internationales master BioTechEco 
+Règlement études 20 23-2024 INSA Toulouse 27/ 41 résultats obtenus lesquels ’étudiant ’accord formel Correspondant Relati Internationales ’inscrire comptabilisés 
+A signature learning agreement, correspondance établie suivis l’université étrangère modules suivis ’INSA. En validation ’université étrangère, ’étudiant module correspondant ’INSA. 
+Stage ’étude (M2 S2) Le ’étude obligatoirement l'objet rapport soutenance calendrier défini programme master BioTechEco La calculée 
+évaluations écrites orales, consultat évaluation fournie tuteurs entreprise/laboratoire. Composition 
+Le constitué enseignant responsable chaque module, -responsables formation (INSA -INP), directeur département Génie Biochimique INSA Toulouse représentant) représentant ’INP-ENSIACET. 
+Le s'informe détail résultats, absences, comportement, personnalité, difficultés ordres ’étudiant 'élaborer proposition. Il propose étudiants M1 passage M1 M2, passage M1 M2 -condition(s) 
+dettes M1), redoublement ’exclusion, étudiants M2 l'admission diplôme -admission entrainant redoublement ’exclusion. Délivrance diplôme 
+Tout étudiant obtient 120 ECTS M1 M2 (60 ECTS M1 60 ECTS M2) proposé diplôme. Le examine étudiant remplit condit IV.4. Diplômes ’établissement 
+IV.4.a. SEAMonline Diploma Safety Engineering Présentation générale La -forme https://seamonline.insa -toulouse.fr/ l’INSA Toulouse unités 
+formation 15 heures environ chacune, permettant apprentissage autonome connaissances sécurité produits installations. L ’apprenant acquérir, paiement, certificat terminaison chaque unité, attestant sérieux suivi. 
+Le Diplôme ’Etablissement intitulé Diploma Safety Engineering permet d’attester connaissances sécurité industrielle ’obtention 9 certificats vérification l’identité ’apprenant passage examen payant surveillé 
+Règlement études 20 23-2024 INSA Toulouse 28/ 41 (proctoring Conditions ’accès formation 
+SEAMonline Diploma Safety Engineering s'adresse personnes formation ingénierie. Comme sécuri industrielle concerne plusieurs disciplines, modules accessibles sélection prérequis disciplinaire. 
+L’inscription formation implique inscription administrative pédagogique -forme https://seamonline -toulouse.fr/ Aucune ’étudiant certificat scolarité l’INSA Toulouse délivré. L ’inscription confère statut étudiant. L ’inscription 
+Diploma confère statut ’usager ’INSA Toulouse. Les apprenants validant certificat (après paiement) ’inscrivant ’examen Diplôme ’Etablissement intitulé Diploma Safety Engineering enregistrés 
+effectifs apprenants ’INSA Toulouse. Organisation mation Le détail ’offre formation SEAMonline pouvant éventuellement conduire délivrance 
+Diplôme détaillée https://seamonline.insa -toulouse.fr/ La formation propose 9 Modules. Un Module correspond 3 semaines formation Chaque module divisé Unités. Une Unité correspond formation 
+plein, 12 15 heures. Il possible participer Unité répartir participation semaines. Chaque Unité autonome. Néanmoins, indispensable participer Unités précédentes (séquençage). 
+Chaque Unité divisée 5 7 parties. Chaque Partie traite donné. Chaque Partie nécessite environ 2 heures travail. Enfin, Partie regroupe Activités chaque Activité terminée passer 
+Une graduée rouge, orange indique permanence sérieux participation formation. Certification diplomation 
+Il nécessaire terminer chaque Unité formation obtenir certificat, paiement. Chaque certificat numéroté. L’obtention Diploma implique, validation 9 certificats, satisfaire épreuves 
+examen modalités attendus communiqués 30 
+Règlement études 20 23-2024 INSA Toulouse 29/ 41 Les conditions ’utilisation solution surveillance proctoring communiquées ’appre délais. Le ’apprenant approuver 
+conditions ’utilisation solution surveillance interdit pouvoir présenter l’examen diplômé Diploma Safety Engineering. Une vérificat l'authenticité certificats possible https://seamonline.insa 
+toulouse.fr/mod/customcert/verify_certificate.php Une vérification ’authenticité Diploma également possible ligne. Toute fraude tentative fraude ’examen Diploma conduire 
+saisine section disciplinaire ’INSA retrait certificats Diplôme. IV.4.a. PTP Génie Urbain TBS Le diplôme ’établissement PTP Génie Urbain TBS diplôme formation délivré 
+étudiants TBS venant suivre PTP Génie Urbain ’INSA Toulouse. Les modalités validation diplôme ’établissem identiques celles étudiants ’INSA Toulouse suivant PTP Génie IV.5. Labels ’INSA Toulouse 
+L’INSA Toulouse propose 5 programmes Mastère Spécialisé Ingénieur ’affaires industrielles (MSIAI) Safety engineering management (SEAM) 
+Innovative secure internet things systems (MSIoT) Valorisation données massives (Valdom) Sécurité Informatique 
+Un ’INSA Toulouse validant ’obtention Mastère Spécialisé Conférence Grandes Ecol délivré Directeur ’INSA Toulouse proposition d’établissement, étudiants formation satisfait critères suivants 
+1. Avoir validé ’ensemble matières mastère 2. Avoir réalisé validé entreprise minimale 5 3. Avoir obtenu moyenne globale (égale moyenne matières théoriques 
+entreprise) supérieure 12/20 MSIoT évalué tences). 4. Avoir obtenu 75 crédits ECTS. 
+Règlement études 20 23-2024 INSA Toulouse 30/ 41 V. Règlement Textes référence 
+Code l’éducation notamment article L613 -1, L715 -1,R715 -2 R715 -8 Arrêté 31 janvier 1974 fixant règles délivrance diplôme ’ingénieur formation continue 
+Arrêté 10 1990 relatif statuts ’INSA Toulouse Arrêté 3 2016 fixant règles communes d'admission scolarité instituts nationaux sciences appliquées l'obtention diplôme d'ingénie Autorisation 
+conduire expérimentation ’INSA Toulouse (lettre DESA12/FB N° 010856 31 2001 lettre DESA12/PB N° 011044 2 juillet 2001) Loi modernisation sociale 2002 -73 17 janvier 2002, chapitre II, section 1, relative 
+Validation Acquis ’Expérience Décret 2002 -590 24 2002 relatif ’application VAE établissements d’enseignement supérieur 
+V.1. Préambule Ce document concerne spécifiques ’INSA Toulouse (formation initiale, formation continue, transferts, admissions Il définit règles générales fonctionnement 
+jurys. Les concernant stagiaires formation continue ingénieur (IFCI) dispositions particulières énoncées chapit VI.7. Le délibère souverainement respect textes règlements partir ’ensemble 
+résultats obtenus candidats pièces transmises. Il garant l’égalité traitement étudiants. V.1.a. Adoption modification 
+L'adoption modification présent règlement ressort Conseil d'Administration l'INSA, proposition Conseil Etudes. Le l'article L 613 -1 Code l'Éducation, impose modalités 
+contrôle aptitudes l'acquisition connaissances soient arrêtées premier l'année d'enseignement puissent modifiées d'année, s'applique modifications présent règlement. 
+V.1.b. Communication présent règlement Le présent règlement connaissance communauté INSA moyens utiles ’intranet) rentrée. Les étudiants reçoivent courriel personnel 
+invitant consulter. 
+Règlement études 20 23-2024 INSA Toulouse 31/ 41 V.2. Organisation -jurys l'INSA V.2.a. Convocation 
+Le Directeur ’INSA convoque ’établissement conformément ’article 18 ’arrêté 12 juillet 1993. Les -jurys département -orientation convoqués directeurs département 
+Tous membres participent l'ensemble cependant, peuvent question assisté totalité discussion relative question. Les délibérations strictement identielles décisions collégiales. Elles 
+acquises majorité absolue présents, chaque membre L ’abstention autorisée décomptée négatif Pour -jurys, décision majorité absolue 
+présents V.3. Le ’établissement Le ’établissement, unique ’INSA, réunit -jurys 
+départements -orientation formation continue, VAE, formation apprentissage, mastères délibéré. Il connaissance propositions -jurys département -orientation 
+-jurys spécifiques formation continue VAE examine litiges soulevés propos étudiant, stagiaire formation continue enseignant décider d’examiner décision département apparaîtrait nécessiter. Le 
+d’établissement décision finale. Il décide vrance diplôme ’ingénieur étudiants formation initiale (statut étudiant statut apprenti) stagiaires formation continue (formation ingénieur 
+VAE), compte propositions -jurys département, rmation continue VAE. Il répartit étudiants -orientations spécialités. 
+De générale, traiter question relative fonctionnement -jurys département, formation continue, VAE, mastères coordination. V.3.b. Composition 
+Le ’établissement comprend 6 membres STPI directeur département, directeur études première 4 directeurs ’études -orientations représentants), 2 représentan spécialité choisis ’ensemble présidents secrétaires 
+-jurys (département, formation continue VAE) directeur directeur études 
+Règlement études 20 23-2024 INSA Toulouse 32/ 41 l’INSA représentants). Pour session 2, 1 représentant spécialité toléré. V.3.c. Présidence secrétariat 
+Le ’établissement présidé directeur l'INSA représentant. Son secrétariat assuré directeur études ’INSA représentant. Le président secrétaire ’établissement participent débats votes. Le 
+secrétaire débats enseignant enseignant -chercheur formation concernée. Il apporte cependant soutien administratif logistique ’organisati V.3.d. Quorum 
+Le quorum nécessaire nombre personnes convoquées représentants chaque département doivent présents. Les procurations admises. Si conditi -dessus remplies, 
+convoqué nouveau meilleurs délais, conditions quorum. V.3.e. Saisine ’établissement Tout enseignant participé département, formation continue, VAE, 
+mastères, étudiant, apprenti stagiaire formation continue l'objet décision -jurys saisir, écrit, ’établissement. Ce document adressé Directeur ’INSA 72 heures réunion ’établissement. 
+V.4. Les -jurys département matière formation initiale statut étudiant Un ’études convoqué chaque -orientation chaque 
+spécialité 1ère année. Il examine étudiants, proposer validation UE lesquelles ’étudiant obtenu niveau Partiellement acquis propositions ’établissement passage, passage dette, redoublement, 
+l’exclusion étudiants ’obtention diplôme. V.4.b. Composition Sont membres 
+représentant UE enseigné UE pendant ’année représentants domaine fonction taille domaine (1 représentant 4 directeur département -orientation STPI) responsable 
+pédagogique ’année représentants. Les autres enseignants effectué 10 heures ’enseignement ’année invités -jury, 
+Règlement études 20 23-2024 INSA Toulouse 33/ 41 V.4.c. Présidence secrétariat Les -jurys présidés Directeur département représentant. Leur 
+secrétariat assuré respons pédagogique l'année représentant. Le président secrétaire chaque participent débats votes. V.4.d. Quorum 
+Le quorum nécessaire moitié nombre personnes convoquées Le procurations admises. Si quorum atteint, convoqué nouveau meilleurs délais, conditions quorum. 
+V.5. Les -jurys département matière formation initiale statut apprenti Le exerce contrôle l'ensemble formation, depuis 
+sélection jusqu'à proposition diplôme, appréciant l'évolution l'apprenti -ingénieur triple connaissances, méthodes travail comportement centre formation entreprise. 
+Le ’apprentissage examine étudiants UE mention partiellement acquis En fonction niveau global ’étudiant ’acquisition éventuelle acquis ’apprentissage manquants ’autres UE, proposer validation ’UE 
+niveau devient acquis Le ’apprentissage examine apprentis validé 60 crédits ECTS. Il compte éléments ’information disposition (ensemble résultats, 
+participation associative, assiduité, circonstances particulières Le d’apprentissage transmis ’établissement statue. Tout apprenti satisfait conditions passage supérieure convoqué 
+’apprentissage maître ’apprentissage. L ’entreprise ’accueil informée résultats apprenti formation S’ils peuvent présents, peuvent transmettre courrier information utile. 
+Le proposer passage supérieure apprentis ’ayant 60 ECTS. Dans ’apprenti dettes valider UE manquantes ultérieurement. Les dettes peuvent dépasser, total, 2 UE. 
+En ’échec épreuves session 2 maître ’apprentissage immédiatement Au formation, rupture contrat ’apprentissage possib L’apprentissage prolongé (redoublement 
+prorogation contrat initial ’entreprise ’accord, conclusion nouveau contrat employeur. Si supplémentaire, conditions 
+Règlement études 20 23-2024 INSA Toulouse 34/ 41 validation UE toujours remplies, ’apprenti diplômé. V.5.b. Composition 
+Les pré-jurys comprennent minimum 12 membres composé d’enseignants V.4.b proportion comprise 2/3 3/4 représentants ingénieurs tuteurs proportion complémentaire précédente. Leur composition précise arrêtée Directeur 
+V.5.c. Présidence secrétariat Les -jurys présidés Directeur département représentant. Son secrétariat assuré responsable formation apprentissage. Le président 
+secrétaire chaque participent débats votes. V.5.d. Quorum Le quorum nécessaire moitié nombre personnes 
+convoquées Les procurations admises. Si quorum atteint, convoqué nouveau meilleurs délais, conditions quorum. V.5.e. Déroulement recrutement filière apprentissage 
+La présélection candidats s'effectue dossier, fonction résultats scolaires, CV lettre motivation. Le dossier candidature d'établissement d'origine candidat 
+enseignants remplissent fiches d'appréciation constituant dossier. Les fiches préparées responsables formation d'ingénieur apprentissage. La sélection définitive s'effectue l'issue entretien motivation d'évaluation 
+professionnel candidat. Les candidats filière apprentissage satisfait épreuves sélection recherchent entreprise ’accueil correspondant projet professionnel individuel. Ils également 
+relation entreprises demande Chaque candidat satisfait sélection présenter pré-jury lettre d'engagement l'entreprise d'accueil fournie ’INSA 
+attestation diplôme. Le pré-jury valide l'admission formation d'ingénieurs. 
+Règlement études 20 23-2024 INSA Toulouse 35/ 41 V.6. Les -jurys statuant matière Validation Acquis Un pré-jury validation acquis ’expérience constitué spécialité chaque 
+dossier examiné. Il procède ’examen dossier candidat ’entretient déterminer ’étendue validation accordée (validation totale, validation partielle aucune validation). Dans validation partielle, indique candidat nature connaissances 
+aptitudes restant acquérir devant ’objet contrôle complémentaire. Il imparti candida acquisitions complémentaires. Dans validation totale, propose délivrance diplôme ’ingénieur ’établissement. 
+V.6.b. Composition Le VAE composé membres permanents membres désignés fonction spécialité diplôme. Il comprend, Directeur ’INSA représentant, 
+Responsable Formation continue ’autre Directeur département spécialité représentant 2 3 enseignants spécialité, 1 nseignant CSH 2 représentants industriel. 
+V.6.c. Présidence secrétariat Le présidé Directeur ’INSA représentant. Son secrétariat assuré responsable Formation Continue ’INSA représentant. 
+V.6.d. Quorum Le quorum nécessaire nombre personnes convoquées représentant industriel présent. Les 
+procurations admises. Si conditions -dessus remplies, convoqué nouveau meilleurs délais, conditions quorum. V.7. Les -jurys statuant matière formation continue 
+ingénieur V.7.a. Recrutement Cycle Préparatoire Cycle Terminal V.7.a.i. Rôle 
+L’admission Cycle Préparatoire ’admission Cycle Terminal examinées commission recrutement spécifique département. Cette commission, examen dossiers audition candidats, propose admission -admission 
+Formation Continue. V.7.a.ii. Composition La commission recrutement compte 8 membres minimum, composée 
+Règlement études 20 23-2024 INSA Toulouse 36/ 41 d’enseignants proportion comprise quarts membres professionnels proportion émentaire précédente. 
+Les enseignants siégeant commission enseignent filière formation continue ingénieur concernée représentent ’ensemble matières formation. Les professionnels appartiennent secteur ’activité apport formation concernée exercent 
+compétences domaine gestion ressources humaines. Le responsable Formation Continue l’INSA représentant invité réunions consultative. La composition commission recrutement arrêtée 
+Directeur ’INSA. V.7.a.iii. Présidence secrétariat La commission recrutement présidée Directeur département 
+représentant. Son secrétariat assuré responsable pédagogique Formation Continue ingénieur Département. V.7.a.iv. Déroulement recrutement Cycle Préparatoire 
+En fonction dossier, candidats peuvent auditionnés commission recrutement. Cet entretien déroule ’ensemble mission recrutement -commission L’autorisation passer ’entretien distance ’intermédiaire 
+-conférence, webcam, téléphone analogue) accordée candidat raisons ’éloignement, condition ’identité candidat puisse vérifiée moment ’entretien. 
+La commission recrutement établit principale ’admission échéant, complémentaire classée mérite Ces listes seront ensuite examinées formation continue. 
+V.7.a.v. Déroulement recrutement Cycle Terminal Concernant candidats Cycle Préparatoire ’INSA, ’éclairer commission recruteme Directeur département réunit préalable ’ensemble 
+enseignants assuré enseignement formation Cycle Préparatoire. Les réunion communiqués commission recrutement. Pour candidats Cycle Préparatoire établissement ’INSA 
+candidats admission directe terminal (justifiée niveau maîtrise), déroulement recrutement identique recrutement Cycle Préparatoire -V.7.b. Pré-jury Formation Continue 
+V.7.b.i. Rôle Le Formation Continue réunit commissions recrutement Il connaissance propositions commissions recrutement chaque 
+département concernant ’admission Cycle Préparatoire Cycle Terminal. Il examine litiges 
+Règlement études 20 23-2024 INSA Toulouse 37/ 41 soulevés enseignant candidat propositions décider ’examiner décision commission apparaîtrait nécessiter. Il particulièrement chargé 
+veiller ’harmonisation recrutements Cycle Préparatoire niveau départements. Il confirme propositions partements demande réexamen. Il propose délivrance diplôme ’ingénieur Cycle Terminal. 
+De générale, traite question relative fonctionnement commissions recrutement départements. V.7.b.ii. Composition 
+Le formation continue comprend ’ensemble présidents secrétaires commissions recrutement départements, professionnels participé commissions Directeur ’INSA, Directeur Etudes responsable 
+Formation Continue ’INSA. Les dispositions chapitre IV.3. ’établissement s’appliquent Formation Continue concerne ‘Présidence secrétariat ‘Quorum 
+V.7.b.iii. Saisine formation Le formation continue saisi, litige concernant proposition commission recrutement, stagiaire concerné enseignant participé 
+commission. Un document adressé Dire ’INSA 72 heures réunion Formation Continue. Le Formation Continue décision finale. 
+V.7.b.iv. Passage 1ère 2ème Cycle Terminal Les décisions passage première deuxième Cycle Terminal prises ’établissement proposition -jurys département, constitués fonctionnant 
+manière identique -jurys département statuent matière formation initiale. Les dispositions relatives -jurys décrites chapitre IV.4 ‘Les département matière formation initiale statut étudiant 
+Le INSA Formation Continue informé décisions -jurys V.7.b.v. Proposition délivrance diplôme d’ingénieur La proposition délivrance diplôme prononcée ’établissement 
+proposition formation continue. Afin ’éclairer Formation Continue, chaque Directeur département concerné réunit enseignants assuré enseignement Cycle Terminal (CT1 CT2) 
+modalités utilisées préalable pré-jurys spécialité. Les réunion communiqués pré-jury formation continue. 
+Règlement études 20 23-2024 INSA Toulouse 38/ 41 V.8. Organisation recrutements l'INSA V.8.a. Admissions ’INSA Toulouse 
+Les admissions première troisième régies commission ’admission Inter-INSA (CA2I). Les admissions deuxième prononcées -établissements regroupant INSA recrutent niveau 
+Les admissions quatrième prononcées spécifique ’INSA V.8.b. Le recrutement 4ème V.8.b.i. Rôle décisions possibles 
+Le d'admission directe 4ème traite utement candidats titulaires licence maîtrise diplôme équivalent, recrutement candidats programme Master Bachelors recrutement étudiants double diplôme (3ème 4ème année). 
+Pour chacun recruteme établit candidats échéant, complémentaire mérite. V.8.b.ii. Composition convocation 
+Le d'admission directe 4ème comprend Directeur Directeur Etudes l'INSA présentants), Directeurs Département représentants), enseignant participé l'examen dossiers candidature spécialité responsable 
+programme Master Bachelors représentant) V.8.b.iii. Présidence secrétariat Les d'admission directe 4ème présidés Directeur l'INSA 
+représentant. Leur secrétariat assuré Directeur Etudes INSA représentant. Le président secrétaire participent débats votes. V.8.b.iv. Quorum 
+Le quorum nécessaire nombre personnes convoquées représentant chaque Département présent. Les procurations admises. Si conditions -dessus remplies, 
+convoqué nouveau meilleurs délais, conditions quorum. Tous membres participent l'ensemble cependant, peuvent question assisté totalité discussion relative question. 
+Les décisions prises publiées immédiatement séance. 
+Règlement études 20 23-2024 INSA Toulouse 39/ 41 V.8.c. Les commissions transfert V.8.c.i. Rôle composition 
+Une commission -INSA composée Directe Directeurs Etudes chacun INSA assure régulation suivant possibilités ’accueil ’éviter déséquilibres ’installent. Cette commission statue dernier 
+Les étudiants transférés itaires -orientation spécialité Tout transfert accepté commissions départ ’arrivée effectifs ’étudiant. V.8.c.ii. Dispositif spécifique ’INSA Toulouse 
+Deux commissions transfert nstituées ’INSA Toulouse commission Transferts Départ traite transferts ’INSA Toulouse autres INSA, 
+commission Transferts Arrivée traite transferts autres INSA l’INSA Toulouse. Le calendrier réunions commissions arrêté chaque Comité Direction. 
+V.8.c.ii.(1). Composition Chacune commissions transfert comprend directeur directeur études l'INSA représentants), directeurs département représentants) 
+directeurs études -orientations. V.8.c.ii.(2). Fonctionnement commissions statuant matière transferts externes 
+Les dossiers étudiants candidats transfert l'INSA Toulouse, portant l'avis l'INSA d'origine, disponibles séance. Les Directeurs Département directeurs études -orientations donnent 
+chaque dossier d'étudiant demandant Département -orientation. La commission favorable défavorable, chacun dossiers présentés. Le tableau récapitulatif commissions dossiers transmis commission 
+décision -INSA. V.9. Semestre 9 INSA Les élèves -ingénieurs 5ème peuvent demander effectuer semestre 9 
+Le dossier composé lettre motivation, CV bulletins 3e 4e transmis directeur département. Si favorable, dossier transmis directeur 
+Règlement études 20 23-2024 INSA Toulouse 40/ 41 département directeur études mettra directeur études ’autre INSA souhaité En favorable ’élève -ingénieur autorisé période 
+semestre 9 établissement restant inscrit établissement d’origine. Avant toutes démarches, fortement conseillé prendre contact directeurs département concernés. 
+En ’acceptation définitive, ’élève -ingénieur inscrit établissement d’origine notamment matière droits ’inscription, gestion administrative jurys. Un contrat pédagogique établi établissements. 
+Règlement études 20 23-2024 INSA Toulouse Table annexes Annexe A. Déroulement examens attitude fraude ....................... 
+Annexe B. Liste événements donnant absence justifiée ...................... Annexe C. Liste statuts étudiants dispositions particulières ............. Annexe D. Niveau ’anglais ................................ ................................ ..................... 
+Annexe E. Séjours ’études ’étranger ................................ ............................... 
+Règlement études 20 23-2024 INSA Toulouse Annexe A. Déroulement examens attitude fraude 
+La qualité diplôme universitaire respect principe ’égalité auquel étudiant attention soutenue portée gestion épreuves ’examen organisation contrôle connaissances respect 
+Déroulement ’examen Les étudiants composent doubles fournissent. Tous objets personnels, téléphones portables calculatrices 
+autorisées ’enseignant) rangés cartable déposé ’entrée horloge permettra étudiants courant ’heure) Pour étudiants étrangers difficultés français, dictionnaire papier autorisé examen 
+préalable urveillant ’examen traducteurs électroniques interdits. T communication étudiants ’étudiant personne extéri interdite. 
+Le surveillant vérifie ’identité exemple l’aide cartes ’étudiant, émarger étudiants dresse présents absents. En ’examen, nombre copies relevées vérifié feuille ’absences 
+quitter ’examen. Cette feuille retourné secrétariat département Aucun supplémentaire composition accordé étudiant retardataire. Au-delà heure, étudiant accepté. En situation entraînant 
+perturbations pouvant empêcher étudiants ’arriver temps, mesures exceptionnelles seront prises préservant ’égalité traitement étudiants concernés ’épreuve. Lorsqu épreuve heure, étudiants présents ’ouverture 
+autorisés quitter première heure. Après heure, candidats autorisés quitter provisoirement doivent Attitude fraude 
+En fraude constatée tentative fraude, surveillant immédiatement mesures cesser fraude tentative, interrompre participation ’examen. Toutefois, substitution personne troubles affectant déroulement 
+l’examen, ’expulsion prononcée enseignant(s) surveillant l’examen. Le surveillant saisit pièces matériels permettent ’établir ultérieurement réalité dresse procès -verbal. Ce procès -verbal contresigné autres surveillants 
+auteurs fraude tentative fraude. En contresigner, l’attitude ’étudian mentionnée procès -verbal. 
+Règlement études 20 23-2024 INSA Toulouse La étudiant traitée autres étudiants Toutefois, certificats réussite relevés peuvent délivrés ’instance 
+jugement statué saisie. Sanctions éventuelles Tout fraudeur soumis dispositions ’éducation relatif procédure 
+disciplinaire l’égard usagers établissements ’enseignement supérieur Lorsque fraude tentative fraude constatée commission discipline section disciplinaire ’INSA saisie première instance Directeur ’INSA 
+Tribunal administratif Toulouse juridiction ’appel compétent Le Directeur également proposer ’étudiant reconnait sanction. Si dernier ’accepte, proposition soumise commission discipline, valider rejeter. E refus, poursuites 
+disciplinaires standards engagées. En procédure disciplinaire engagée ’étudiant concerné retenue jugement commission discipline En sanction, 
+l’épreuve annulée, communiquée ’étudiant. Il procès -verbal l’examen indisponibilité. Dans s’agit épreuve session 1, ’étudiant repassera session 2. S s’agit épreuve session 2, ’étudiant 
+UE. Il 5ème UE session 2 n’existe En 1ère année, domaines, ’épreuve. La commission discipline décider ’annuler groupement ’épreuves session 
+Dans commission discipline prononce sanction rejette proposition anction Directeur attribuée ’étudiant communiquée. Par ailleurs, sanctions peuvent prononcées (éventuellement sursis) 
+l’avertissement, blâme, mesure responsabilisation, l’exclusion temporai ’établissement maximale 5 ’exclusion temporaire établissement ’enseignement public ’enseignement supérieur maximale 5 enfin, ’exclusion définitive 
+établissement public ’enseig nement supérieur. 
+Règlement études 20 23-2024 INSA Toulouse Annexe B. Liste événements donnant absence justifiée 
+La participation évènements -dessous absence justifiée Association sportive déplacement phases finales divers championnats Arènes partenariat 
+Club Robot participation finale Enfoiros participation semaine concerts préparation Gala participation l’organisation soirée 
+Grimoire participation l’organisation manifestation High Five participation rencontres sportives Groupe INSA Congrès AEI participation congrès l’Association Elèves INSA 
+Interclubs participation semaine représentation Par.T.A.G.E. -P.Q.P.M. participa journées PAR.T.A.G.E. Participation manifestations représentants étudiants (BNEI, PDE, 
+Semaine internationale TIM participation compétitions Elections étudiantes semaine élections 
+Raid INSA -INP participation l’organisation manifestation CATIN participation représentations annuelles (notamment INSART) Participation Parlement Etudiant ’Université Toulouse 
+Règlement études 20 23-2024 INSA Toulouse Annexe C. Conditions ’attribution statuts étudiants particuliers 
+modalités ’aménagement ’études Etudiant appartenant sections artistiques (Musique, Danse, Les étudiants sections artistiques peuvent bénéficier mesures suivantes 
+dispense APS module d'ouverture limite ’année possibilité planifier scolarité supérieure possibilité tutoré (enseignements individualisés, reports ’examen...) 
+suppression règles nombre redoublement Modalités aménagements ’études Les UE valider définies chaque contrat déterminé ’année 
+accord ’étudiant, directeur département directeur études -orientation responsable filières. Des contrat peuvent intervenir moment ’année formes, fonction contraintes. 
+Le contrat ’études ’année considéré honoré ’étudiant validé ’ensemble UE. Dans situation contraire, département compétent examine ’étudiant prononce règles habituelles fonctionnement -jurys validation 
+l’année, validation dettes, redoublement ’intéressé exclusion. Gestion absence Toute autorisation ’absence obligations filière responsable 
+filières Celui transmet ’étudiant secrétariat département concerné justificatif L’étudiant informer enseignants concernés absence présenter justificatif possible départ). Il conviendra report contrôle 
+nécessaire. Celui 15 suivant ’absence. Aucune autorisation ’absence délivrée posteriori Etudiant Section Sport Etude (S²ES2E) 
+Les élèves Section S Etude (S2E) répartis 3 groupes Le cercle 1 (C1) sportifs.ves inscrits ministérielle sportifs Haut niveau comprenant 4 catégories Elite, Senior, Relève, Reconversion -S²E-. (décret 2002 -707 29 
+Règlement études 20 23-2024 INSA Toulouse 2002) Le cercle 2 (C2) sportifs.ves inscrits listes Espoirs Collectifs Nationaux, 
+appartenant structure accession excellence identifiée Projet Performance Fédérale (PPF), sportifs.ves conventionnés centre formation professionnel, sportifs.ves professionnels disposant contrat travail, juges, arbitres entraîneurs 
+niveau listés arrêté ministre chargé sports –PPF-. Le cercle 3 (C3) Les sportifs.ves ’appartenant cercles 1 2 identifiés.es Sportifs.ves Bon Niveau Nati -SBNN 
+S²EConformément ’article L611 -4 Code ’Education, ’INSA permet étudiants S²ES2Ede poursuivre carrière sportive aménagements nécessaires l'organisation déroulement études. 
+Aménagements ’études consentis étudiants Section Sport Etude (S2E)S²E :S²ES²ES²ES²E Tous étudiants appartenant Section Sport Étude peuvent bénéficier dispense module ’ouverture APS, ’étudiant souhaite, limite 
+’année possibilité planifier scolarité supérieure suppression règles nombre redoublement 
+l'accès musculation créneaux Les étudiants Section Sport Etude appartenant catégorie C1 C2 pourront souhaitent 
+bénéficier tutoré (enseignements individualisés, reports ’examen...) bénéficier report d'examen compét valoir semaines l'étranger durant compétitions stages sportifs 
+aménagement travail entreprise. Les étudiants Section Sport Etude appartenant catégorie C1 pourront souhaitent 
+dispensé enseignements LV2 accord directeur études département -orientation, responsable Section Sport Etude responsable LV2 Modalités aménagements d’études 
+Les UE valider définies chaque contrat déterminé ’année accord ’étudiant, directeur département directeur études -orientation responsable S²ES2E. Des avenants peuvent intervenir moment ’année 
+formes, fonction contraintes sportives. Le contrat ’études ’année considéré honoré ’étudiant validé ’ensemble UE. Dans situation contraire, partement compétent examine ’étudiant 
+prononce règles habituelles fonctionnement -jurys validation 
+Règlement études 20 23-2024 INSA Toulouse l’année, validation dettes, redoublement ’intéressé exclusion. Gestion absences 
+Toute autorisation ’absence compétition sportif responsable S2E. Celui transmet ’étudiant secrétariat département concerné justificatif ’absence. L’étudiant informer enseignants concernés présenter 
+justificatif possible départ). Il conviendra report contrôle nécessaire. Celui 15 suivant ’absence. Aucune autorisation ’absence délivrée posteriori 
+Stages séjours ’étranger Un contrat ’études pourra (directeur département, étudiant, responsable S2E) semestre 6 définir nombre semaines ’étranger semaine 
+entreprise réalisab ’étudiant S2E. Etudiant Grand Associatif (EGA) Le statut Etudiant Grand Associatif (EGA) attribué, demande l'étudiant, 
+commission composé directeur études ’INSA, -président étudiant conseil études, chargé mission étudiante, président ’Amicale Elèves, représentant CSH, représentant APS responsable service Scolarité Vie étudiante Les 
+responsabilités ouvrant statut suivantes Vice-président(e) étudiante conseil études -président(e) adjoint(e)s Vice-président(e) étudiante Crous Toulouse Occitanie 
+Président(e) l'Amicale élèves ice-présiden l'Amicale Président, -président, responsable, ésorier ’Amicale associations étudiantes suivantes Association sportive, JIS, Raid INSA, Petit Kawa, 
+Semaine d’accueil, 100 l’INSA Pôle humanitaire, Enfoiros, Gala INSA, JIS (liste exhaustive) Président High Five 
+Président ’AEI Président BREI Secrétaire ’Association sportive 
+Trésorier ’Association sportive Coordonnateur dispositif Ô Talents Co-président élèves 
+Exercice responsabilités bénévoles structures extérieures Responsable Evènements ’Association sportive Si demande concerne responsabilité défini liste, commission statue 
+audition ’étudiant Cette commission réunit semestre nécessaire. Après obtention EGA, contrat Régime Spécial ’Etudes (RSE) établi accord, Direction Etudes ’étudiant. 
+Règlement études 20 23-2024 INSA Toulouse Le statut EGA permet aménagements suivants La dispense UE EC fonction contraintes ’emploi 
+La ibilité tutoré (enseignements individualisés, reports ’examen...) La possibilité planifier scolarité supérieure L’attribution tuteur ’étudiant pendant ’engagement 
+La Direction Etudes informe Conseil Etudes décisions prises ’année. Gestion absences Toute autorisation d'absence ’engagement l'EGA soumise ’accord préalable 
+responsable structure laquelle ’étudiant exerce activités. Le responsable transmet l'étudiant secrétariat département concerné justificatif d'absence. L'étudiant devra, parallèle, informer courrier électronique, enseignants concernés 
+absence cours. Il conviendra report, nécessaire. Ce report réaliser 15 suivant l'absence. Etudiant Entrepreneur (EE) 
+Le statut Etudiant Entrepreneur attribué, demande l'étudiant, commission composée direct études ’INSA, directeur recherche, directeur relations entreprises, -président conseil études, -président étudiant 
+conseil études, responsable entreprenariat. Ce statut particulier obtenu examen commission l’obtention Statut National ’Etudiant Entrepreneur (SNEE) simple inscription Diplôme ’Etudiant Entrepreneur (D2E) l'Université Toulouse, 
+dispositif Pépite ECRIN Après statut EE, contrat Régime Spécial ’Etudes (RSE) établi accord, Direction Etudes ’étudiant. 
+Le statut Etudiant Entrepreneur permet aménagements suivants La dispense module ’ouverture besoin, alisation UE fonction contraintes ’emploi 
+La possibilité tutoré (enseignements individualisés, reports ’examen...) La possibilité planifier scolarité supérieure L’attribution tuteur l’étudiant pendant ’engagement 
+La Direction Etudes informe Conseil Etudes décisions prises ’année. Gestion absences Toute autorisation d'absence ’engagement l'EE soumise ’accord préalable 
+responsable tuteur entreprenariat. Le tuteur transmet l'étudiant secrétariat département concerné justificatif d'absence. L'étudiant devra, parallèle, informer courrier électronique, enseignants concernés 
+absence cours. Il conviendra report, nécessaire. Ce report réaliser 15 suivant l'absence. 
+Règlement études 20 23-2024 INSA Toulouse Etudiant situation handicap situation longue maladie (ESH) Les étudiants situation handicap (permanent temporaire), souffrant maladie 
+invalidante rencontrant graves problèmes peuvent bénéficier aménagement d’études, examens accompagnement scolarité. L’étudiant obligatoirement prendre z-vous médecin SIMPPS désigné 
+CDAPH, évaluation dossier médical. Le médecin informe ’établissement dispositions particulières ’étudiant bénéficier parcours ’études passage L’évaluation pédagogiques s’effectue commission plurielle Elle réunit 
+membres cellule handicap, membres l’équipe pédagogique partenaire compétent articuler ’étudiant. L’avis médical préconisations d'aménagement cursus d'études modalités 
+d'examen déposé médecin logiciel Absences Un arrêté décisions fixant aménagements adaptés (cursus examens) transmis ’étudiant. Le statut ESH aménagements suivants 
+Pour études utilisation matériel spécifique tutorat, disposition ressources numériques, photocopies gratuites, aménagement cursus, aménagement ’horaires, autorisation d’absence, Interprétariat Lan Signes, (liste exhaustive). 
+Pour examens majoré, adaptation sujets, secrétariat, explicitation reformulation consignes, reproduction sujets modalités adaptées handicap, composition particulière, aménagement ’épreuves, autorisation sortie demande, période 
+suffisante épreuves (liste exhaustive). La cellule handicap chargée ’accueillir, conseiller ’accompagner étudiants. Elle organise aménagements ’études identifiés. 
+La demande ’aménagements mesures particulières ’examen renouveler chaque l’étudiant auprès médecin SIMPPS dernier établi totalité parcours format 
+La Direction Etudes informe Conseil Etudes décisions prises ’année. Etudiant réserviste (ER) Le statut étudiant réserviste attribué examen demande l’étudiant, 
+Direction Etudes référent défense sécurité nationale l'INSA Toulouse. L ’étudiant détenteur contrat d’Engagement Servir Réserve (ESR) couvrant période laquelle demande statut ER. Ce statut attribué universitaire 
+préparation diplôme national ’étudiant justifier, chaque année, activité réserviste. Le statut cependant attribué étudiants pouvant justifier ’activité exercée assurée parallèle études contraintes, 
+Règlement études 20 23-2024 INSA Toulouse notamment absences volumes horaires conséquents pendant périodes congés définies calendrier universitaire ’INSA vacances ’été). 
+Après obtention statut ER, contrat Régime Spécial ’Etudes (RSE) établi accord, Direction Etudes ’étudiant. Le statut ER permet aménagements suivants 
+Des dispenses d’assiduité Des allègements modifications d’emploi (priorité groupes TP TD) 
+Des aménagements pédagogiques spécifiques (accès enseignements Des modalités particulières d’examen Un étalement parcours l’absence justifie 
+Une validation l’engagement servir l’activité correspondante l’UE Implication citoyenne modalités contrôle connaissances UE La possibilité tutoré (enseignements individualisés, reports 
+Toute disposition concertation responsable pédagogique formation Direction Etudes. Les aménagements retenus formalisés contrat Régime Spécial d'Etudes (RSE). 
+Le RSE annulé semestre lequel attribué. Il renouvelé conditions présence régulière. La Direction Etudes informe Conseil Etudes décisions prises ’année. 
+Gestion absences Pour périodes 1 5 d'absence, ’étudiant réserviste informer établissement absence prévue. 
+Pour périodes excédant 5 d'absence, ’étudiant réserviste demander ’autorisation s’absenter établissement 2 prévue. Cette autorisation ’absence dépasser 30 cumulés civile. 
+Etudiant salarié (ES) Le statut étudiant salarié attribué, examen demande ’étudiant, Direction Etudes. L’étudiant détenteur contrat travail CDI, CDD 
+formelle justifiant ’activité contraintes ’emploi laquelle demande statut ES. Ce statut attribué semestre semestres période couverte contrat travail. Le statut cependant attribué étudiants pouvant justifier activité 
+professionnelle exercée parallèle études entraine contraintes, notamment horaires décalés volumes horaires conséquents pendant périodes congés définies calendrier universitaire ’INSA vacances ’été). Les étudiants 
+contrat (régis articles D811 -1 ’éduca éligibles 
+Règlement études 20 23-2024 INSA Toulouse Après obtention statut ES, contrat Régime Spécial ’Etudes (RSE) établi accord, Direction Etudes ’étudiant. 
+Le statut ES permet aménagements suivants Des dispenses ’assiduité Des allègements modifications ’emploi (priorité groupes 
+Des aménagements pédagogiques spécifiques (accès enseignements ligne) Des modalités particulières ’examen Un étalement parcours 
+Toute disposition concertation responsable pédagogique formation Direction Etudes Les aménagements retenus formalisés contrat Régime Spécial d'Etudes (RSE). 
+Le RSE annulé semestre attribué. Il renouvelé conditions présence régulière. La Direction Etudes informe Conseil Etudes décisions prises ’année. 
+Etudiante enceinte Le statut étudiant enceinte attribué, examen demande ’étudiant Direction Etude L’étudiante détentrice certificat médical attestant 
+grossesse RSE puisse accordé congés maternité (6 semaines 10 semaines présumée d'accouchement). En symptômes invalidants nécessitant mesures particulières, ’étudiante contacte médecin SIMPPS 
+désigné CDAPH évaluation dossier médical besoins spécifiques. Après btention statut Etudiante enceinte, contrat Régime Spécial ’Etudes (RSE) établi accord, Direction Etudes ’étudiante. 
+Le statut Etudiante enceinte permet aménagements suivants Des dispenses ’assiduité Des allège modifications ’emploi (priorité groupes 
+Des aménagements pédagogiques spécifiques (accès enseignements ligne) Des modalités particulières ’examen Un étalement parcours 
+Toute sition concertation responsable pédagogique formation Direction Etudes Les aménagements retenus formalisés contrat Régime Spécial d'Etudes (RSE). 
+Le RSE annulé semestre lequel attribué. Il renouvelé conditions présence régulière. La Direction Etudes informe Conseil Etudes décisions prises ’année. 
+Règlement études 20 23-2024 INSA Toulouse Etudiant chargé famille Le statut étudiant chargé famille attribué, examen demande ’étudiant, 
+Direction Etudes Ce statut ’applique étudiants détenant ’autorité parentale enfant 12 Il également étendu étudiants apportant ascendant conjoint longue maladie. L’étudiant présenter livret famille. 
+Après obtention statut Etudiant chargé famille, contrat Régime Spécial ’Etudes (RSE) établi accord, Direction Etudes ’étudiant. Ce statut permet aménagements suivants 
+Des dispenses ’assiduité Des allègements modifications ’emploi (priorité groupes Des aménagements pédagogiques spécifiques (accès enseignements ligne) 
+Des modalités partic ulières ’examen Un étalement parcours Toute disposition concertation responsable pédagogique 
+formation Direction Etudes Les aménagements retenus formalisés contrat Régime Spécial d'Etudes (RSE). Le RSE annulé semestre lequel attribué. Il renouvelé 
+conditions présence régulière. La Direction Etudes informe Conseil Etudes décisions prises ’année. Etudiant sapeur -pompier volontaire 
+Le statut étudiant sapeur -pompier volontaire attribué, examen demande ’étudiant Direction Etudes. Ce statut ’applique étudiants détenteur contrat ’engagement sapeur -pompier lontaire. 
+Après obtention statut Etudiant sapeur -pompier volontaire, contrat Régime Spécial d’Etudes (RSE) établi accord, Direction Etudes ’étudiant. Ce statut permet aménagements suivants 
+Des dispenses ’assidui Des allègements modifications ’emploi (priorité groupes Des aménagements pédagogiques spécifiques (accès enseignements ligne) 
+Des modalités particulières ’examen Un étalement parcours Toute disposition concertation responsable pédagogique 
+formation Direction Etudes Les aménagements retenus formalisés contrat Régime Spécial d'Etudes (RSE). Le RSE annulé semestre lequel attribué. Il renouvelé 
+conditions présence régulière. La Direction Etudes informe Conseil Etudes décisions prises ’année. 
+Règlement études 20 23-2024 INSA Toulouse Conditions ’obtention statut particulier Justificatifs fournir 
+Etudiant appartenant Section Musique Attester pratique 
+artistique confirmée discipline choisie. Dossier scolaire artistique Etudiant appartenant 
+Section Danse Etudiant appartenant Section Théâtre 
+Etudiant appartenant Section Sport Etude Être inscrit sportifs 
+niveau, sportifs collectifs nationaux, sportifs espoirs, centre formation 
+professionnels sportif national niveau. Dossier scolaire sportif Associatif Exercer responsabilités 
+bénévoles l’INSA structure extérieure. Dossier candidature déposé Moodle 
+Etudiant Entrepreneur Obtenir Statut National d’Etudiant Entrepreneur (SNEE) simple inscription Diplôme 
+d’Etudiant Entrepreneur (D2E) l'Université Toulouse, dispositif Pépite ECRIN 
+défaut, obtenir Statut Intern Etudiant Entrepreneur règlement études 
+projet entrepreneurial dehors périodes d'attribution SNEE 
+Pépite ECRIN). Rencontre référent entrepreneuriat étudiant l'établissement. Dossier 
+candidature déposer plateforme nationale Etudiant situation 
+handicap situation longue maladie Être situation handicap 
+situation longue maladie. Avis médical d'aménagement cursus d'études modalités 
+Compte -rendu commission Etudiant réserviste Pouvoir justifier l’activité 
+exercée assurée parallèle études entraine contraintes, notamment absences 
+volumes horaires conséquents Contrat d’Engagement Servir Réserve (ESR) période 
+laquelle statut 
+Règlement études 20 23-2024 INSA Toulouse pendant périodes congés définies calendrier 
+universitaire l’INSA vacances d’été). Etudiant salarié 
+Pouvoir justifier l’activité confrontée contraintes d’emploi temps. 
+CDI, CDD formelle Etudiante enceinte 
+Attester grossesse. Certificat médical attestant l’état grossesse (6 semaines 10 
+semaines présumé d'accouchement) Etudiant chargé 
+Détenir l’autorité parentale enfant 12 Apporter ascendant 
+conjoint longue maladie. Livret famille justificatif Etudiant sapeur -pompier volontaire Pouvoir justifier l’activité 
+exercée assurée parallèle études entraine contraintes, notamment absences 
+volumes horaires conséquents pendant périodes congés définies calendrier 
+universitaire l’INSA vacances d’été). Contrat d’engagement sapeur -pompier 
+Maintien avantages statut Tout étudiant bénéficié ’INSA avantages réservés étudiants statut particulier (notamment S²E), qualité ’année, demander 
+conserver bénéfice pendant ’année universitaire suivante demande renouvelée maximum maintien 2 L’étudiant constituer ossier comprenant 
+lettre motivation volume horaire hebdomadaire ’intéressé activité (entraînement programmation détaillée objectifs saison compétitions S²E 
+saison coulée Pour S²E, derniers documents devront signés ’entraîneur président Ce dossier déposé auprès responsable S²E Centre APS, 
+responsable SME SDE, directeur études 15 septembre ’année. Une commission étudiera recevabilité dossier proposera directeur ’INSA 
+Règlement études 20 23-2024 INSA Toulouse dossiers recevables. Elle composée responsable S²E…), directeur département PO concerné(e) 
+Règlement études 20 23-2024 INSA Toulouse Annexe D. Niveau ’anglais Le niveau ’anglais acquis étudiants scolarité évalué ’INSA 
+TOEIC. Celui 4ème étudiants 4ème auront passer 4ème année, 1er semestre 5ème année. Les correspondances scores obtenus TOEIC niveau 
+Niveau B2 815 TOEIC 164 LinguaSkill Niveau B1 650 TOEIC D’autres possibles (TOEF L exemple). 
+Règlement études 20 23-2024 INSA Toulouse Annexe E. Séjours ’études Candidature semestre d'études Université étrangère 
+La mobilité internationale étudiants INSA semestre d'études s'effectuer Université convention l'INSA. La Universités partenaires l'INSA Toulouse disponible l'établissement. Le Correspondant 
+Relations Internationales Département -orientation) ’inscriptio l'étudiant interlocuteur privilégié constitution programme d'étude dossier candidature. Rappel étapes procédure candidature 
+L'étudiant informe Correspondant Relations Internationales projet validation (vérification correspondant l'adéquation l'Université choisie programme cours). 
+L'étudiant candidate logiciel adéquat (3 possibles). L'accès logiciel ouvert novembre décembre. Après affectation destination Direction Relations Internationales (DRI), 
+l'étudiant constitue, l'aide Correspondant Relations Internationales, dossier candidature transmis DRI l'Université d'accueil. Après affectation destinations, désistement motivé raison valable 
+(impossibilité constituer programme d'étude cohérent, maladie, problème financier familial grave). Dans l'étudiant fournir justificatifs avertir meilleurs délais Correspondant Relations Internationales DRI. Les étudiants désistant 
+justification informer Correspondant Relations Internationales DRI n'auront ssibilité candidater départ semestre d'études pourront bénéficier soutien financier l'INSA départ l'étranger. 
+Admission Redoublement Lorsqu étudiant inscrit semestre ’études valide totalité 60 crédits ECTS l’année écoulée directeur département directeur études -orientation 
+autorise départ fonction possibilité ’établir learning agreement cohérent. Lorsqu étudiant dettes séjour ’étude ’étranger ’empêchant suivre session 2, dettes reportées ’année suivante. 
+Contrat d'études Le contrat ’études learning agreement comporte 30 crédits ECTS semestre ’études. Pour universités lesquelles système ECTS vigueur, contrat ’études prévoit 
+nombre crédits identique pratique ’université ’accueil. 
+Règlement études 20 23-2024 INSA Toulouse L’inscription université étrangère, équivalence formation IN SA, ’accord préalable Correspondant Relations Internationales Département 
+d’inscription ’INSA) ’étudiant, responsabilité Directeur Département Directeur Etudes spécialité -orient ation). En conséquence Aucun départ semestre ’études possible Correspondant 
+Relations Internationales Département ’inscription ’étudiant formellement approuvé projet contrat ’études Tout étudiant ’études transmet directement ’INSA propre 
+responsabilité, contrat ’études définitif maximum 3 semaines semestre ’université ’accueil. Le Correspondant Relations Internationales Départe -orientation d'inscription accuse réception 
+programme ’études ’approuve En modification contrat ’études pendant séjour, ’étudiant sollicite préalablement ’accord formel Correspondant Relations Internatio 
+orientation Département ’INSA. Les résultats obtenus lesquels ’étudiant ’accord formel Correspondant Relations Internationales -orientation 
+spécialité) ’inscrire comptabilisés formation ’ingénieur INSA. Suivi étudiant échange Afin permettre étudiants échange équipes pédagogiques ’INSA, 
+étudiant semestre ’études Transmet directement ’INSA propre responsabilité, rapport conditions ’accueil ’installation maximum 3 semaines 
+semestre ’université ’accueil. Toute correspondance électronique s'effectuera l'adresse électronique INSA étudiants. En semestre, informe rapidement Correspondant Relations 
+Internationales Département -orientation d'inscription problème majeur relatif conditions ’accueil déroulement études. Dates départ retour 
+Afin permettre ’installation étudiants ’université ’accueil meilleures conditions, peuvent autorisés quitter ’INSA semestre, laquelle attendus ’université ’accueil ’exige. Dans organisation adaptée 
+examens semestre arrêtée Directeur Département ’inscription ’étudiant Directeur Etudes -orientation spécialité). Afin permettre l’INSA poursuite scolarité ’INSA meilleures conditions, tudiant 
+semestre ’échange s’organise, propre responsabilité, scolarité (examens compris) ’université ’accueil rminée compatible calendrier 
+l’INSA. Pour périodes correspondant 1er semestre, scolarité terminée 1er février contrainte particulière l'Université d'accueil 
+Règlement études 20 23-2024 INSA Toulouse accord Corr espondant Relations Internationales. Pour périodes correspondant 2ème semestre, scolarité terminée 1er 
+transmet directement ’INSA propre responsabilité, copie, signée représent autorisé ’université ’accueil, résultats obtenus. Pour périodes correspondant 1er semestre, transmise 
+20 Pour périodes correspondant 2ème semestre, transmi 20 examen résultats session 1er septembre examen résultats session 
+Non validation crédits Un étudiant valide crédits séjour ’étranger supérieure UEces crédits dette. 
