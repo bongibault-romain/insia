@@ -223,6 +223,10 @@ class UserPrompt:
         user_input=None
         stop=(user_input in ("q", "x", "","quit","exit"))
         nb=5
+        print("================================================")
+        print("Vous pouvez changer le niveau de VERBOSE avec /v")
+        print("Vous pouvez changer le nombre de contextes récupérés avec /n")
+        print("================================================")
         while not stop:
             user_input=input("Bonjour quelle est votre question ?\n")
             if user_input in ("q", "x", "","quit","exit"):
@@ -286,7 +290,6 @@ class RAGDataset:
                 f_out.write(refine(i, filtre) + "\n")
 
     def make_context(self, context_path, refined_path, meta_path, small_to_big):
-        # small_to_big=(1,2)
         bef = small_to_big[0]
         aft = small_to_big[1]
         dataset = []
