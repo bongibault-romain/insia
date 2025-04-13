@@ -86,7 +86,7 @@ class KnowledgeBase:
     """
 
     """
-    def __init__(self,input_rag_dataset:RAGDataset,token_embed_str:str,model_embed_str:str,index_path:str,load:bool=False):
+    def __init__(self,input_rag_dataset:RAGDataset,token_embed_str:str,model_embed_str:str,index_path:str):
         start = time.time()
         self.index_path=index_path
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -288,6 +288,7 @@ class UserPrompt:
         print("================================================")
         print("Vous pouvez changer le niveau de VERBOSE avec /v")
         print("Vous pouvez changer le nombre de contextes récupérés avec /n")
+        print("Vous pouvez quitter avec q, x, \"\", quit, exit")
         print("================================================")
         while not stop:
             user_input=input("Bonjour quelle est votre question ?\n")
@@ -371,16 +372,14 @@ if __name__=="__main__":
     dataset3=[]
     small_to_big = (1,2)
     dataset3=RAGDataset("Reglement_des_Etudes_2023-2024.pdf")
+    knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en",index_path="faiss_index.idx")
 
-    '''
-    RAGDataset().extractPDF("Reglement_des_Etudes_2023-2024.pdf", "reglement.txt","meta.txt")
-    RAGDataset().refineTXT("reglement.txt","refined.txt")
-    dataset3=RAGDataset().make_context("reglement.txt","refined.txt","meta.txt",(1,2))
-    '''
-
-    knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en",index_path="faiss_index.idx",load=True)
-    knowledge.build_faiss_index()
-    knowledge.load_faiss_index()
+    load=True
+    if load:
+        knowledge.load_faiss_index()
+    else:
+        knowledge.build_faiss_index()
+    
     fetcher=VectorFetcher(knowledge)
     
     
