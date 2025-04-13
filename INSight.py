@@ -9,25 +9,93 @@ import time
 from PyPDF2 import PdfReader
 
 
+class RAGDataset:
+    def __init__(self,data_path:str|None=None,dataset_list:list|None=None):
+        small_to_big=(1,2)
+        if data_path is not None:
+            if data_path.endswith("pdf"):
+                self.extractPDF(data_path, "reglement.txt","meta.txt")
+                self.refineTXT("reglement.txt", "refined.txt")
+                self.dataset=self.make_context("reglement.txt", "refined.txt", "meta.txt", small_to_big)
+                print("TODO : passer le small_to_big à l'éxecution dynamique et non à la compilation statique du RAG")
+        elif dataset_list is not None:
+            print("TODO : automatiser l'écriture d'une description pour chaque dataset d'une liste de dataset")
+            print("TODO : mettre tous les dataset dans un gros dataset commun")
+            pass
+    def extractPDF(self, pdf_path, txt_output_path, meta_output_path):
+        from PyPDF2 import PdfReader
+
+        reader = PdfReader(pdf_path)
+        page_indices = []  # Pour stocker les pages de chaque paragraphe
+
+        all_paragraphs = []
+
+        for page_num, page in enumerate(reader.pages):
+            page_text = page.extract_text()
+            if not page_text:
+                continue
+            lines = page_text.split("\n")
+            lines = [line for line in lines if len(line) > 15]
+
+            # Groupe les lignes par 3
+            for i in range(0, len(lines), 3):
+                paragraph = "".join(lines[i:i+3])
+                if len(paragraph.strip()) > 0:
+                    all_paragraphs.append(paragraph.strip())
+                    page_indices.append(page_num + 1)  # Numérotation des pages commence à 1
+
+        # Écriture du texte
+        with open(txt_output_path, "w", encoding="utf-8") as f_txt, \
+             open(meta_output_path, "w", encoding="utf-8") as f_meta:
+            for paragraph, page in zip(all_paragraphs, page_indices):
+                f_txt.write(paragraph + "\n")
+                f_meta.write(str(page) + "\n")  # une ligne par paragraphe
+
+    def refineTXT(self, input_path, output_path):
+        with open(input_path, "r", encoding="utf-8") as f_in, \
+             open(output_path, "w", encoding="utf-8") as f_out:
+            for i in f_in:
+                f_out.write(refine(i, filtre) + "\n")
+
+    def make_context(self, context_path, refined_path, meta_path, small_to_big):
+        bef = small_to_big[0]
+        aft = small_to_big[1]
+        dataset = []
+
+        with open(context_path, 'r', encoding="utf-8") as f_context, \
+             open(refined_path, 'r', encoding="utf-8") as f_refined, \
+             open(meta_path, 'r', encoding="utf-8") as f_meta:
+
+            context_lines = f_context.readlines()
+            refined_lines = f_refined.readlines()
+            meta_lines = [int(line.strip()) for line in f_meta.readlines()]
+
+            for i in range(bef, len(context_lines) - aft):
+                dataset.append({
+                    "description": refined_lines[i],
+                    "data": concaten(cut(context_lines, (bef, i, aft))),
+                    "metadata": {
+                        "page": meta_lines[i]
+                    }
+                })
+
+        return dataset
 
 class KnowledgeBase:
     
     """
 
     """
-    def __init__(self,dataset:list,token_embed_str:str,model_embed_str:str,index_path:str,load:bool=False,method:int = 1):
+    def __init__(self,input_rag_dataset:RAGDataset,token_embed_str:str,model_embed_str:str,index_path:str,load:bool=False):
         start = time.time()
         self.index_path=index_path
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        self.dataset=input_rag_dataset.dataset
         self.loadTokeniser(token_embed_str,model_embed_str)
-        self.setDataset(dataset)
-        if load: self.index = faiss.read_index(index_path)
-        elif method == 1 : 
-            self.build_faiss_index()
-        elif method == 2 : self.make_index_IP(token_embed_str)
         end = time.time()
         print(f"[KnowledgeBase] Temps d'exécution : {end - start:.2f} secondes")
-
+    def load_faiss_index(self):
+        self.index = faiss.read_index(self.index_path)
     def loadTokeniser(self,token_embed_str:AutoTokenizer,model_embed_str:AutoModel):
         self.tokenizer_embed = AutoTokenizer.from_pretrained(token_embed_str) # tokenize
         self.model_embed = AutoModel.from_pretrained(model_embed_str).to(self.device) # vectorize
@@ -35,17 +103,17 @@ class KnowledgeBase:
         start1 = time.time()
         dimension = 384 #vecteur de 384 dimensions pour chaque token
         self.index = faiss.IndexFlatIP(dimension)
-        embeddings = np.vstack([self.get_embedding(q["info"]) for q in self.dataset])
+        embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset])
         self.index.add(embeddings)
         end1 = time.time()
         faiss.write_index(self.index,self.index_path) 
         end2 = time.time()
         print(f"[build_faiss_index] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
 
-    def make_index_IP(self,token_embed:str):
+    def make_index_IP(self):
         start1 = time.time()
-        faiss_model = SentenceTransformer(token_embed)
-        embeddings = np.array([faiss_model.encode(doc["info"]) for doc in self.dataset], dtype=np.float32)
+        faiss_model = SentenceTransformer(self.tokenizer_embed)
+        embeddings = np.array([faiss_model.encode(doc["description"]) for doc in self.dataset], dtype=np.float32)
         # FAISS : Créer un index de recherche (cosine similarity)
         dimension = embeddings.shape[1]
         self.index = faiss.IndexFlatIP(dimension)  # Inner Product = Cosine Similarity si les embeddings sont normalisés
@@ -56,10 +124,6 @@ class KnowledgeBase:
         end2 = time.time()
         print(f"[make_index_IP] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
 
-    def setDataset(self,dataset:list):
-        self.dataset=dataset
-    def addDataset(self,dataset:list):
-        self.dataset.append(dataset)
 
     def get_embedding(self, text):
         inputs = self.tokenizer_embed(text, return_tensors="pt", padding=True, truncation=True).to(self.device)
@@ -78,8 +142,6 @@ class QueryRewriter:
         pass
     def set_context(self,context:str):
         pass
-
-
 class QueryExpander:
     """
     Expand Module : used to split a big query in several small ones and verify the subqueries obtained.
@@ -126,7 +188,7 @@ class VectorFetcher:
         if VERBOSE>=2: 
             print("question: ", query)
             for i in range(0,num_queries):
-                print(f"context: {retrieved_infos[i]["info"]} : score = {D[0][i]:.2f}")
+                print(f"context: {retrieved_infos[i]["description"]} : score = {D[0][i]:.2f}")
         
         end = time.time()
         print(f"[VectorFetcher] Temps d'exécution : {end - start:.2f} secondes")
@@ -203,16 +265,16 @@ class RAGGenerator:
         return response.message.content
 
 class UserPrompt:
-    def __init__(self):
-        pass
+    def __init__(self,fetcher:VectorFetcher):
+        self.fetcher=fetcher
     def ask(self,user_query,nb_contextes):
         start = time.time()
         print("\n\n---------------------------\n",user_query)
-        context=fetcher.retrieve(user_query,num_queries=nb_contextes)
+        context=self.fetcher.retrieve(user_query,num_queries=nb_contextes)
 
         str_context=""
         for i in range(nb_contextes):
-            str_context+=context[i]["context"]+str(context[i]["metadata"])+" \n"
+            str_context+=context[i]["data"]+str(context[i]["metadata"])+" \n"
         generator=RAGGenerator()
         print(generator.generate(query=user_query,context=str_context))
             
@@ -252,66 +314,6 @@ class UserPrompt:
 
 
 
-class RAGDataset:
-    def extractPDF(self, pdf_path, txt_output_path, meta_output_path):
-        from PyPDF2 import PdfReader
-
-        reader = PdfReader(pdf_path)
-        full_text = ""
-        page_indices = []  # Pour stocker les pages de chaque paragraphe
-
-        all_paragraphs = []
-
-        for page_num, page in enumerate(reader.pages):
-            page_text = page.extract_text()
-            if not page_text:
-                continue
-            lines = page_text.split("\n")
-            lines = [line for line in lines if len(line) > 15]
-
-            # Groupe les lignes par 3
-            for i in range(0, len(lines), 3):
-                paragraph = "".join(lines[i:i+3])
-                if len(paragraph.strip()) > 0:
-                    all_paragraphs.append(paragraph.strip())
-                    page_indices.append(page_num + 1)  # Numérotation des pages commence à 1
-
-        # Écriture du texte
-        with open(txt_output_path, "w", encoding="utf-8") as f_txt, \
-             open(meta_output_path, "w", encoding="utf-8") as f_meta:
-            for paragraph, page in zip(all_paragraphs, page_indices):
-                f_txt.write(paragraph + "\n")
-                f_meta.write(str(page) + "\n")  # une ligne par paragraphe
-
-    def refineTXT(self, input_path, output_path):
-        with open(input_path, "r", encoding="utf-8") as f_in, \
-             open(output_path, "w", encoding="utf-8") as f_out:
-            for i in f_in:
-                f_out.write(refine(i, filtre) + "\n")
-
-    def make_context(self, context_path, refined_path, meta_path, small_to_big):
-        bef = small_to_big[0]
-        aft = small_to_big[1]
-        dataset = []
-
-        with open(context_path, 'r', encoding="utf-8") as f_context, \
-             open(refined_path, 'r', encoding="utf-8") as f_refined, \
-             open(meta_path, 'r', encoding="utf-8") as f_meta:
-
-            context_lines = f_context.readlines()
-            refined_lines = f_refined.readlines()
-            meta_lines = [int(line.strip()) for line in f_meta.readlines()]
-
-            for i in range(bef, len(context_lines) - aft):
-                dataset.append({
-                    "info": refined_lines[i],
-                    "context": concaten(cut(context_lines, (bef, i, aft))),
-                    "metadata": {
-                        "page": meta_lines[i]
-                    }
-                })
-
-        return dataset
 
 
 
@@ -344,13 +346,6 @@ def refine(string:str,filtre):
 
 
 
-
-
-
-
-
-
-
 """
 chainSQL1=ChainManager.ChainSem(query_endpoint="http://localhost:3030/cluedo/query",model='llama3')
 chainSQL1.ask("Combien y a-t-il de pièces dans la maison ?") #fuseki-server --update --mem /cluedo
@@ -360,8 +355,6 @@ dataset2=[
     ]
 
 """
-
-
 
 
 VERBOSE=1
@@ -377,12 +370,17 @@ if __name__=="__main__":
     
     dataset3=[]
     small_to_big = (1,2)
+    dataset3=RAGDataset("Reglement_des_Etudes_2023-2024.pdf")
+
+    '''
     RAGDataset().extractPDF("Reglement_des_Etudes_2023-2024.pdf", "reglement.txt","meta.txt")
     RAGDataset().refineTXT("reglement.txt","refined.txt")
     dataset3=RAGDataset().make_context("reglement.txt","refined.txt","meta.txt",(1,2))
+    '''
 
-
-    knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en",index_path="faiss_index.idx",load=True,method=1)
+    knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en",index_path="faiss_index.idx",load=True)
+    knowledge.build_faiss_index()
+    knowledge.load_faiss_index()
     fetcher=VectorFetcher(knowledge)
     
     
@@ -393,7 +391,7 @@ if __name__=="__main__":
     end = time.time()
     print(f"[global init] Temps d'exécution : {end - start:.2f} secondes")
 
-    user=UserPrompt()
+    user=UserPrompt(fetcher)
     user.askloop()
 
 
