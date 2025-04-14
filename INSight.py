@@ -11,45 +11,37 @@ from PyPDF2 import PdfReader
 
 class RAGDataset:
     def __init__(self,data_path:str|None=None,dataset_list:list|None=None):
-        small_to_big=(1,2)
         if data_path is not None:
             if data_path.endswith("pdf"):
                 self.extractPDF(data_path, "reglement.txt","meta.txt")
                 self.refineTXT("reglement.txt", "refined.txt")
-                self.dataset=self.make_context("reglement.txt", "refined.txt", "meta.txt", small_to_big)
-                print("TODO : passer le small_to_big à l'éxecution dynamique et non à la compilation statique du RAG")
+                self.context_lines=open("reglement.txt", 'r', encoding="utf-8").readlines()
+                self.refined_lines=open("refined.txt", 'r', encoding="utf-8").readlines()
+                self.meta_lines=[int(line.strip()) for line in open("meta.txt", 'r', encoding="utf-8").readlines()]
+                self.dataset=self.make_context()
         elif dataset_list is not None:
-            print("TODO : automatiser l'écriture d'une description pour chaque dataset d'une liste de dataset")
-            print("TODO : mettre tous les dataset dans un gros dataset commun")
             pass
+
     def extractPDF(self, pdf_path, txt_output_path, meta_output_path):
-        from PyPDF2 import PdfReader
-
         reader = PdfReader(pdf_path)
-        page_indices = []  # Pour stocker les pages de chaque paragraphe
-
+        page_indices = []
         all_paragraphs = []
-
         for page_num, page in enumerate(reader.pages):
             page_text = page.extract_text()
             if not page_text:
                 continue
             lines = page_text.split("\n")
             lines = [line for line in lines if len(line) > 15]
-
-            # Groupe les lignes par 3
             for i in range(0, len(lines), 3):
                 paragraph = "".join(lines[i:i+3])
                 if len(paragraph.strip()) > 0:
                     all_paragraphs.append(paragraph.strip())
-                    page_indices.append(page_num + 1)  # Numérotation des pages commence à 1
-
-        # Écriture du texte
+                    page_indices.append(page_num + 1)
         with open(txt_output_path, "w", encoding="utf-8") as f_txt, \
              open(meta_output_path, "w", encoding="utf-8") as f_meta:
             for paragraph, page in zip(all_paragraphs, page_indices):
                 f_txt.write(paragraph + "\n")
-                f_meta.write(str(page) + "\n")  # une ligne par paragraphe
+                f_meta.write(str(page) + "\n")
 
     def refineTXT(self, input_path, output_path):
         with open(input_path, "r", encoding="utf-8") as f_in, \
@@ -57,30 +49,17 @@ class RAGDataset:
             for i in f_in:
                 f_out.write(refine(i, filtre) + "\n")
 
-    def make_context(self, context_path, refined_path, meta_path, small_to_big):
-        bef = small_to_big[0]
-        aft = small_to_big[1]
+    def make_context(self):
         dataset = []
-
-        with open(context_path, 'r', encoding="utf-8") as f_context, \
-             open(refined_path, 'r', encoding="utf-8") as f_refined, \
-             open(meta_path, 'r', encoding="utf-8") as f_meta:
-
-            context_lines = f_context.readlines()
-            refined_lines = f_refined.readlines()
-            meta_lines = [int(line.strip()) for line in f_meta.readlines()]
-
-            for i in range(bef, len(context_lines) - aft):
-                dataset.append({
-                    "description": refined_lines[i],
-                    "data": concaten(cut(context_lines, (bef, i, aft))),
-                    "metadata": {
-                        "page": meta_lines[i]
-                    }
-                })
-
+        for i in range(len(self.context_lines)):
+            dataset.append({
+                "description": self.refined_lines[i],
+                "data": self.context_lines[i],
+                "metadata": {
+                    "page": self.meta_lines[i]
+                }
+            })
         return dataset
-
 class KnowledgeBase:
     
     """
@@ -178,24 +157,36 @@ class QueryExpander:
 
 
 class VectorFetcher:
-    def __init__(self,knowledge:KnowledgeBase):
+    def __init__(self,knowledge):
         self.knowledge=knowledge
-    def retrieve(self,query:str,num_queries=5,date_adjust:bool=True): 
+
+    def retrieve(self,query:str,num_queries=5,date_adjust:bool=True,small_to_big=(1,2)):
         start = time.time()
         query_embedding = self.knowledge.get_embedding(query)
         D, I = self.knowledge.index.search(query_embedding, k=num_queries)
-        retrieved_infos = [self.knowledge.dataset[i] for i in I[0]]
-        if VERBOSE>=2: 
+
+        bef, aft = small_to_big
+        retrieved_infos = []
+
+        for idx in I[0]:
+            context_lines = self.knowledge.dataset[idx:idx+1]
+            start_idx = max(idx - bef, 0)
+            end_idx = min(idx + aft + 1, len(self.knowledge.dataset))
+            combined_data = concaten([self.knowledge.dataset[i]["data"] for i in range(start_idx, end_idx)])
+            retrieved_infos.append({
+                "description": self.knowledge.dataset[idx]["description"],
+                "data": combined_data,
+                "metadata": self.knowledge.dataset[idx]["metadata"]
+            })
+
+        if VERBOSE>=2:
             print("question: ", query)
-            for i in range(0,num_queries):
-                print(f"context: {retrieved_infos[i]["description"]} : score = {D[0][i]:.2f}")
-        
+            for i in range(len(retrieved_infos)):
+                print(f"context: {retrieved_infos[i]['description']} : score = {D[0][i]:.2f}")
+
         end = time.time()
         print(f"[VectorFetcher] Temps d'exécution : {end - start:.2f} secondes")
-        return retrieved_infos 
-    def verify(self,query:str,queries:list):
-        pass
-    
+        return retrieved_infos
 
 
 class ChainManager:
@@ -267,10 +258,10 @@ class RAGGenerator:
 class UserPrompt:
     def __init__(self,fetcher:VectorFetcher):
         self.fetcher=fetcher
-    def ask(self,user_query,nb_contextes):
+    def ask(self,user_query,nb_contextes,small_to_big=(1,2)):
         start = time.time()
         print("\n\n---------------------------\n",user_query)
-        context=self.fetcher.retrieve(user_query,num_queries=nb_contextes)
+        context=self.fetcher.retrieve(user_query,num_queries=nb_contextes,small_to_big=small_to_big)
 
         str_context=""
         for i in range(nb_contextes):
@@ -374,7 +365,7 @@ if __name__=="__main__":
     dataset3=RAGDataset("Reglement_des_Etudes_2023-2024.pdf")
     knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en",index_path="faiss_index.idx")
 
-    load=True
+    load=False
     if load:
         knowledge.load_faiss_index()
     else:
