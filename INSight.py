@@ -18,9 +18,9 @@ class RAGDataset:
                 self.context_lines=open("reglement.txt", 'r', encoding="utf-8").readlines()
                 self.refined_lines=open("refined.txt", 'r', encoding="utf-8").readlines()
                 self.meta_lines=[int(line.strip()) for line in open("meta.txt", 'r', encoding="utf-8").readlines()]
-                self.dataset=self.make_context()
+                self.dataset=self.make_context("pdf")
         elif dataset_list is not None:
-            pass
+            self.dataset=self.make_context("folder")
 
     def extractPDF(self, pdf_path, txt_output_path, meta_output_path):
         reader = PdfReader(pdf_path)
@@ -49,16 +49,18 @@ class RAGDataset:
             for i in f_in:
                 f_out.write(refine(i, filtre) + "\n")
 
-    def make_context(self):
-        dataset = []
+    def make_context(self,type:str):
+        embeddings=[]
         for i in range(len(self.context_lines)):
-            dataset.append({
+            embeddings.append({
                 "description": self.refined_lines[i],
                 "data": self.context_lines[i],
                 "metadata": {
                     "page": self.meta_lines[i]
                 }
             })
+            
+        dataset = {"type":type,"embeddings":embeddings,"index":None}
         return dataset
 class KnowledgeBase:
     
@@ -75,6 +77,7 @@ class KnowledgeBase:
         print(f"[KnowledgeBase] Temps d'exécution : {end - start:.2f} secondes")
     def load_faiss_index(self):
         self.index = faiss.read_index(self.index_path)
+        self.dataset["index"]=self.index
     def loadTokeniser(self,token_embed_str:AutoTokenizer,model_embed_str:AutoModel):
         self.tokenizer_embed = AutoTokenizer.from_pretrained(token_embed_str) # tokenize
         self.model_embed = AutoModel.from_pretrained(model_embed_str).to(self.device) # vectorize
@@ -82,17 +85,18 @@ class KnowledgeBase:
         start1 = time.time()
         dimension = 384 #vecteur de 384 dimensions pour chaque token
         self.index = faiss.IndexFlatIP(dimension)
-        embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset])
+        embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset["embeddings"]])
         self.index.add(embeddings)
         end1 = time.time()
         faiss.write_index(self.index,self.index_path) 
+        self.dataset["index"]=self.index
         end2 = time.time()
         print(f"[build_faiss_index] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
 
     def make_index_IP(self):
         start1 = time.time()
         faiss_model = SentenceTransformer(self.tokenizer_embed)
-        embeddings = np.array([faiss_model.encode(doc["description"]) for doc in self.dataset], dtype=np.float32)
+        embeddings = np.array([faiss_model.encode(doc["embeddings"]["description"]) for doc in self.dataset], dtype=np.float32)
         # FAISS : Créer un index de recherche (cosine similarity)
         dimension = embeddings.shape[1]
         self.index = faiss.IndexFlatIP(dimension)  # Inner Product = Cosine Similarity si les embeddings sont normalisés
@@ -100,6 +104,7 @@ class KnowledgeBase:
         end1 = time.time()
         start2 = time.time()
         faiss.write_index(self.index, "faiss_index.idx")
+        self.dataset["index"]=self.index
         end2 = time.time()
         print(f"[make_index_IP] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
 
@@ -157,7 +162,7 @@ class QueryExpander:
 
 
 class VectorFetcher:
-    def __init__(self,knowledge):
+    def __init__(self,knowledge:KnowledgeBase):
         self.knowledge=knowledge
 
     def retrieve(self,query:str,num_queries=5,date_adjust:bool=True,small_to_big=(1,2)):
@@ -165,20 +170,24 @@ class VectorFetcher:
         query_embedding = self.knowledge.get_embedding(query)
         D, I = self.knowledge.index.search(query_embedding, k=num_queries)
 
-        bef, aft = small_to_big
-        retrieved_infos = []
 
-        for idx in I[0]:
-            context_lines = self.knowledge.dataset[idx:idx+1]
-            start_idx = max(idx - bef, 0)
-            end_idx = min(idx + aft + 1, len(self.knowledge.dataset))
-            combined_data = concaten([self.knowledge.dataset[i]["data"] for i in range(start_idx, end_idx)])
-            retrieved_infos.append({
-                "description": self.knowledge.dataset[idx]["description"],
-                "data": combined_data,
-                "metadata": self.knowledge.dataset[idx]["metadata"]
-            })
+        if self.knowledge.dataset["type"]=="pdf":
 
+            bef, aft = small_to_big
+            retrieved_infos = []
+
+            for idx in I[0]:
+                context_lines = self.knowledge.dataset["embeddings"][idx:idx+1]
+                start_idx = max(idx - bef, 0)
+                end_idx = min(idx + aft + 1, len(self.knowledge.dataset["embeddings"]))
+                combined_data = concaten([self.knowledge.dataset["embeddings"][i]["data"] for i in range(start_idx, end_idx)])
+                retrieved_infos.append({
+                    "description": self.knowledge.dataset["embeddings"][idx]["description"],
+                    "data": combined_data,
+                    "metadata": self.knowledge.dataset["embeddings"][idx]["metadata"]
+                })
+        elif self.knowledge.dataset["type"]=="folder":
+            pass
         if VERBOSE>=2:
             print("question: ", query)
             for i in range(len(retrieved_infos)):
