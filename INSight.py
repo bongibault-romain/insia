@@ -8,6 +8,14 @@ from langchain_ollama import OllamaLLM
 import time
 from PyPDF2 import PdfReader
 
+import re
+
+def clean_paragraph(p):
+    # remplace tous les séparateurs de ligne Unicode possibles par un espace
+    p = re.sub(r'[\r\n\x0b\x0c\u2028\u2029]+', ' ', p)
+    return p.strip()
+
+
 
 class RAGDataset:
     def __init__(self,data_path:str|None=None,dataset_list:list|None=None):
@@ -22,7 +30,7 @@ class RAGDataset:
         elif dataset_list is not None:
             self.dataset=self.make_context("folder")
 
-    def extractPDF(self, pdf_path, txt_output_path, meta_output_path):
+    def extractPDF(self, pdf_path:str, txt_output_path:str, meta_output_path:str):
         reader = PdfReader(pdf_path)
         page_indices = []
         all_paragraphs = []
@@ -33,15 +41,26 @@ class RAGDataset:
             lines = page_text.split("\n")
             lines = [line for line in lines if len(line) > 15]
             for i in range(0, len(lines), 3):
-                paragraph = "".join(lines[i:i+3])
+                paragraph = "".join(lines[i:i+3]).replace("\n", " ")
                 if len(paragraph.strip()) > 0:
                     all_paragraphs.append(paragraph.strip())
                     page_indices.append(page_num + 1)
+        print("[DEBUG] : len(all_paragraphs)",len(all_paragraphs),"len(page_indices) ",len(page_indices)) #[DEBUG] : len(all_paragraphs) 10980 len(page_indices)  10980
         with open(txt_output_path, "w", encoding="utf-8") as f_txt, \
              open(meta_output_path, "w", encoding="utf-8") as f_meta:
-            for paragraph, page in zip(all_paragraphs, page_indices):
+            for page, paragraph in zip(page_indices,all_paragraphs):
+                paragraph = paragraph.replace("\n", " ")
+                paragraph=clean_paragraph(paragraph)
                 f_txt.write(paragraph + "\n")
                 f_meta.write(str(page) + "\n")
+        with open(txt_output_path, "r", encoding="utf-8") as f:
+            num_lines_txt = sum(1 for _ in f)
+
+        with open(meta_output_path, "r", encoding="utf-8") as f:
+            num_lines_meta = sum(1 for _ in f)
+
+        print("[DEBUG] : len(txt_output_path)",num_lines_txt,"len(meta_output_path) ",num_lines_meta) #[DEBUG] : len(txt_output_path) 11005 len(meta_output_path)  10980
+
 
     def refineTXT(self, input_path, output_path):
         with open(input_path, "r", encoding="utf-8") as f_in, \
@@ -366,25 +385,28 @@ if __name__=="__main__":
 
     start = time.time()
 
-    
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print("device : ",device)
     
     
     dataset3=[]
     small_to_big = (1,2)
-    dataset3=RAGDataset("Reglement_des_Etudes_2023-2024.pdf")
+    dataset3=RAGDataset("NEW STM32 RM0008 Reference Manual.pdf")
     knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en",index_path="faiss_index.idx")
 
-    load=False
+
+    start_index = time.time()
+    load=True
     if load:
         knowledge.load_faiss_index()
     else:
         knowledge.build_faiss_index()
-    
+    end_index = time.time()
+    print(f"[index] Temps d'exécution : {end_index - start_index:.2f} secondes LOAD = ",load)
     fetcher=VectorFetcher(knowledge)
     
     
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    print("device : ",device)
+    
 
     
     end = time.time()
