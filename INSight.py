@@ -270,7 +270,7 @@ class RAGGenerator:
     def generate(self,query:str,context:str):
         input_text = f"context: {context} question: {query}"
 
-        response = ollama.chat(model='llama3', messages=[
+        response = ollama.chat(model='llama3:latest', messages=[
             {
                 'role': 'system',
                 'content': 'développe ton raisonnement mais n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Le contexte qui t\'est donné est le réglement des études, cite la page d\'origine des informations essentielles. '
