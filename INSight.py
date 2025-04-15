@@ -18,7 +18,7 @@ def clean_paragraph(p):
 
 
 class RAGDataset:
-    def __init__(self,data_path:str|None=None,dataset_list:list|None=None):
+    def __init__(self,data_path:str=None,dataset_list:list=None):
         if data_path is not None:
             if data_path.endswith("pdf"):
                 self.extractPDF(data_path, "reglement.txt","meta.txt")
