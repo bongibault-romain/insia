@@ -8,6 +8,8 @@ import time
 from PyPDF2 import PdfReader
 import os
 import re
+import config
+VERBOSE=config.VERBOSE
 
 def clean_paragraph(p):
     # remplace tous les séparateurs de ligne Unicode possibles par un espace
@@ -138,7 +140,7 @@ class KnowledgeBase:
         self.model_embed = AutoModel.from_pretrained(model_embed_str).to(self.device) # vectorize
     def build_faiss_index(self):
         start1 = time.time()
-        dimension = 384 #vecteur de 384 dimensions pour chaque token
+        dimension = config.EMBED_DIM #vecteur de 384 dimensions par défaut pour chaque chunk
         self.index = faiss.IndexFlatIP(dimension)
         embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset["embeddings"]])
         self.index.add(embeddings)
@@ -296,10 +298,10 @@ class ChainManager:
 
 
 class RAGGenerator:
-    def generate(self,query:str,context:str):
+    def generate(self,query:str,context:str,model:str):
         input_text = f"context: {context} question: {query}"
 
-        response = ollama.chat(model='llama3:latest', messages=[
+        response = ollama.chat(model=model, messages=[
             {
                 'role': 'system',
                 'content': 'répond à la question, n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Cite la page d\'origine des informations essentielles ainsi que le nom du fichier d\'où provient l\'information. '
@@ -315,7 +317,7 @@ class RAGGenerator:
 class UserPrompt:
     def __init__(self,fetcher:VectorFetcher):
         self.fetcher=fetcher
-    def ask(self,user_query,nb_contextes,small_to_big=(1,2)): #TODO dynamic small_to_big
+    def ask(self,user_query,nb_contextes,small_to_big=config.SMALL_TO_BIG): #TODO dynamic small_to_big
         start = time.time()
         print("\n\n---------------------------\n",user_query)
         context=self.fetcher.retrieve(user_query,num_queries=nb_contextes,small_to_big=small_to_big)
@@ -324,7 +326,7 @@ class UserPrompt:
         for i in range(nb_contextes):
             str_context+=context[i]["data"]+str(context[i]["metadata"])+" \n"
         generator=RAGGenerator()
-        print(generator.generate(query=user_query,context=str_context))
+        print(generator.generate(query=user_query,context=str_context,model='llama3:latest'))
             
         end = time.time()
         if VERBOSE>=1:print(f"[ask] Temps d'exécution : {end - start:.2f} secondes")
@@ -332,10 +334,10 @@ class UserPrompt:
         global VERBOSE
         user_input=None
         stop=(user_input in ("q", "x", "","quit","exit"))
-        nb=5
+        nb=config.NB_CONTEXTES
         print("================================================")
         print("Vous pouvez changer le niveau de VERBOSE avec /v")
-        print("Vous pouvez changer le nombre de contextes récupérés avec /n")
+        print(f"Vous pouvez changer le nombre de contextes récupérés avec (par défaut {config.NB_CONTEXTES}/n")
         print("Vous pouvez quitter avec q, x, \"\", quit, exit")
         print("================================================")
         while not stop:
@@ -420,25 +422,24 @@ if __name__=="__main__":
     
     dataset3=[]
     small_to_big = (1,2)
-    LOAD=False
 
 
     path=select_directory()
-    dataset3=RAGDataset(LOAD,path)
+    dataset3=RAGDataset(config.LOAD_INDEX,path)
 
 
 
-    knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en")
+    knowledge = KnowledgeBase(dataset3,config.EMBED_MODEL,config.EMBED_MODEL)
 
 
     start_index = time.time()
     
-    if LOAD:
+    if config.LOAD_INDEX:
         knowledge.load_faiss_index()
     else:
         knowledge.build_faiss_index()
     end_index = time.time()
-    print(f"[index] Temps d'exécution : {end_index - start_index:.2f} secondes LOAD = ",LOAD)
+    print(f"[index] Temps d'exécution : {end_index - start_index:.2f} secondes LOAD = ",config.LOAD_INDEX)
     fetcher=VectorFetcher(knowledge)
     
     
@@ -454,8 +455,6 @@ if __name__=="__main__":
     nb_contextes=5
     small_to_big=(0,0)
 
-    #context=fetcher.retrieve(user_query,num_queries=nb_contextes,small_to_big=small_to_big)
-    #print(context)
     user=UserPrompt(fetcher)
     user.askloop()
 
