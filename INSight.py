@@ -315,7 +315,7 @@ class RAGGenerator:
 class UserPrompt:
     def __init__(self,fetcher:VectorFetcher):
         self.fetcher=fetcher
-    def ask(self,user_query,nb_contextes,small_to_big=(1,2)):
+    def ask(self,user_query,nb_contextes,small_to_big=(1,2)): #TODO dynamic small_to_big
         start = time.time()
         print("\n\n---------------------------\n",user_query)
         context=self.fetcher.retrieve(user_query,num_queries=nb_contextes,small_to_big=small_to_big)

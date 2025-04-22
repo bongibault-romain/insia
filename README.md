@@ -4,7 +4,7 @@
 A RAG-system chatbot for academics guidance at INSA Toulouse.
 
 
-## Deployment
+## **Deployment**
 
 To deploy this project create a virtual environnement
 
@@ -24,7 +24,40 @@ now you're good to go just run the project :
   python3 INSight
 ```
 select a folder where are located pdf files and ask question about them !
-## Authors
+
+
+
+
+## **Features**
+
+- Querying a RAG-system linked to your chosen folder of pdf
+- RAG-system hyperparameters evolutionary optimization (TBD)
+
+
+## 🔧 **Hyperparameters**
+
+In this RAG pipeline, we distinguish between:
+
+- **Static hyperparameters**: Fixed during indexing (affect preprocessing and indexing).
+- **Dynamic hyperparameters**: Tuned at query time (affect retrieval and response quality).
+
+### Static Hyperparameters
+
+- **Number of chunks per index**: How many text segments are generated and stored in the vector database.
+- **Chunk size**: Number of tokens or characters per text chunk.
+- **Chunk overlap**: Number of tokens shared between consecutive chunks to preserve context.
+- **Keyword filter**: Filtering of chunks to keep only meaningful words.
+
+### Dynamic Hyperparameters
+
+- **Top-k contexts retrieved**: Number of most relevant chunks retrieved for each query.
+- **Small-to-big**: Whether to start from short chunks and progressively expand context scope (e.g., with longer chunks or surrounding context).
+- **Similarity metric**: Metric used to compare embeddings (e.g., cosine similarity).
+- **Expand factor**: Multiplier for retrieved chunks when using context expansion strategies.
+- **Metadata coefficient**: Weight assigned to metadata (e.g., date, source) when scoring and ranking results.
+
+
+## **Authors**
 
 - [Firmin Rousseau](https://github.com/hilire31)
 - [Romain Bongibault](https://github.com/bongibault-romain)
@@ -32,26 +65,3 @@ select a folder where are located pdf files and ask question about them !
 - [Elsa Hindi](https://github.com/hilire31)
 - [Jean-Philippe Loubejac Combalbert](https://github.com/hilire31)
 - [Hilal Hamdan](https://github.com/hilire31)
-
-
-
-## Features
-
-- Querying a RAG-system linked to your chosen folder of pdf
-- RAG-system hyperparameters evolutionary optimization (TBD)
-
-
-## Hyperparameters
-
-#### Statiques : 
-- nombre de chunks par index 
-- chunks size 
-- chunks overlap 
-- key-words filter 
-
-#### Dynamiques :
-- nombre de contextes retrieved (top-k) 
-- Small to big
-- similarity metric (cosine similarity)
-- expand factor
-- metadata coefficient (date... ) 
