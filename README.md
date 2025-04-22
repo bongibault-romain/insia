@@ -23,6 +23,7 @@ now you're good to go just run the project :
 ```bash
   python3 INSight
 ```
+select a folder where are located pdf files and ask question about them !
 ## Authors
 
 - [Firmin Rousseau](https://github.com/hilire31)
@@ -33,3 +34,24 @@ now you're good to go just run the project :
 - [Hilal Hamdan](https://github.com/hilire31)
 
 
+
+## Features
+
+- Querying a RAG-system linked to your chosen folder of pdf
+- RAG-system hyperparameters evolutionary optimization (TBD)
+
+
+## Hyperparameters
+
+#### Statiques : 
+- nombre de chunks par index 
+- chunks size 
+- chunks overlap 
+- key-words filter 
+
+#### Dynamiques :
+- nombre de contextes retrieved (top-k) 
+- Small to big
+- similarity metric (cosine similarity)
+- expand factor
+- metadata coefficient (date... ) 

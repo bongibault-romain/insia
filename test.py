@@ -1,9 +1,15 @@
+import tkinter as tk
+from tkinter import filedialog
 
-from PyPDF2 import PdfReader
-pdf_path="Reglement_des_Etudes_2023-2024.pdf"
-reader = PdfReader(pdf_path)
-full_text = ""
-i=0
-for page in reader.pages:
-    i+=1
-print(i)
+def select_file():
+    root = tk.Tk()
+    root.withdraw()  # cache la fenêtre principale
+    file_path = filedialog.askopenfilename(
+        title="Select a file",
+        filetypes=[("All files", "*.*"), ("Text files", "*.txt"), ("PDF files", "*.pdf")]
+    )
+    return file_path
+
+# Exemple d'utilisation
+file = select_file()
+print("Fichier sélectionné :", file)

@@ -1,6 +1,5 @@
 import faiss
 import ollama
-from sentence_transformers import SentenceTransformer
 import torch
 import numpy as np
 from transformers import (AutoTokenizer, AutoModel)
@@ -15,37 +14,59 @@ def clean_paragraph(p):
     p = re.sub(r'[\r\n\x0b\x0c\u2028\u2029]+', ' ', p)
     return p.strip()
 
+import tkinter as tk
+from tkinter import filedialog
+
+def select_directory():
+    root = tk.Tk()
+    root.withdraw()  # cache la fenêtre principale
+    folder_path = filedialog.askdirectory(title="Select a folder")
+    return folder_path
+
+
 
 
 class RAGDataset:
-    def __init__(self,data_path:str=None):
+    def __init__(self,load:bool,data_path:str=None):
         assert os.path.exists(data_path),f"incorrect path to data : {data_path}"
         self.work_path=data_path
         self.context_path = os.path.join(self.work_path,"context.txt")
         self.refined_path= os.path.join(self.work_path,"refined.txt")
         self.meta_path= os.path.join(self.work_path,"meta.txt")
         pdf_paths = []
-        load=False#TODO
         if not load:
+            with open(self.context_path, "w", encoding="utf-8") as f:
+                pass
+            with open(self.refined_path, "w", encoding="utf-8") as f:
+                pass
+            with open(self.meta_path, "w", encoding="utf-8") as f:
+                pass
             for nom_fichier in os.listdir(data_path):
                 chemin_complet = os.path.join(data_path, nom_fichier)
                 if os.path.isfile(chemin_complet) and nom_fichier.lower().endswith(".pdf"):
                     pdf_paths.append(chemin_complet)
             for path in pdf_paths:
                 self.extractPDF(path,self.context_path,self.meta_path)
-                self.refineTXT(self.context_path, self.refined_path)
+            self.refineTXT(self.context_path, self.refined_path)
         
+        
+
         self.context_lines=open(self.context_path, 'r', encoding="utf-8").readlines()
         self.refined_lines=open(self.refined_path, 'r', encoding="utf-8").readlines()
         
         
-        if len(pdf_paths)>0: #TODO multifile metadata
-            self.meta_lines=[int(line.strip()) for line in open(self.meta_path, 'r', encoding="utf-8").readlines()]
+        if len(pdf_paths)>0: 
+            meta=open(self.meta_path, 'r', encoding="utf-8").readlines()
+            self.meta_lines=[]
+            for ligne in meta:
+                self.meta_lines.append(ligne.split('\t'))
             self.dataset=self.make_context("pdf",meta=True)
         else:
             self.dataset=self.make_context("folder",meta=False)
 
     def extractPDF(self, pdf_path:str, txt_output_path:str, meta_output_path:str):
+        file_name = os.path.basename(pdf_path)
+        file_name=str(file_name)
         reader = PdfReader(pdf_path)
         page_indices = []
         all_paragraphs = []
@@ -60,21 +81,14 @@ class RAGDataset:
                 if len(paragraph.strip()) > 0:
                     all_paragraphs.append(paragraph.strip())
                     page_indices.append(page_num + 1)
-        print("[DEBUG] : len(all_paragraphs)",len(all_paragraphs),"len(page_indices) ",len(page_indices)) #[DEBUG] : len(all_paragraphs) 10980 len(page_indices)  10980
         with open(txt_output_path, "a", encoding="utf-8") as f_txt, \
              open(meta_output_path, "a", encoding="utf-8") as f_meta:
-            for page, paragraph in zip(page_indices,all_paragraphs):
+            for page, paragraph in zip(page_indices,all_paragraphs):    
                 paragraph = paragraph.replace("\n", " ")
                 paragraph=clean_paragraph(paragraph)
                 f_txt.write(paragraph + "\n")
-                f_meta.write(str(page) + "\n")
-        with open(txt_output_path, "r", encoding="utf-8") as f:
-            num_lines_txt = sum(1 for _ in f)
-
-        with open(meta_output_path, "r", encoding="utf-8") as f:
-            num_lines_meta = sum(1 for _ in f)
-
-        print("[DEBUG] : len(txt_output_path)",num_lines_txt,"len(meta_output_path) ",num_lines_meta) #[DEBUG] : len(txt_output_path) 11005 len(meta_output_path)  10980
+                f_meta.write(str(page)+ '\t' + file_name + "\n")
+        
 
 
     def refineTXT(self, input_path, output_path):
@@ -89,7 +103,8 @@ class RAGDataset:
             dict_meta={}
             if meta:
                 dict_meta={
-                    "page": self.meta_lines[i]
+                    "page": self.meta_lines[i][0],
+                    "file": self.meta_lines[i][1]
                 }
             embeddings.append({
                 "description": self.refined_lines[i],
@@ -128,7 +143,7 @@ class KnowledgeBase:
         embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset["embeddings"]])
         self.index.add(embeddings)
         end1 = time.time()
-        print("[DEBUG] os.path.exists(self.index_path) : ",os.path.exists(self.index_path))
+        
         relative_path = os.path.relpath(self.index_path)
         faiss.write_index(self.index, relative_path)
         
@@ -136,29 +151,19 @@ class KnowledgeBase:
         end2 = time.time()
         print(f"[build_faiss_index] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
 
-    def make_index_IP(self):
-        start1 = time.time()
-        faiss_model = SentenceTransformer(self.tokenizer_embed)
-        embeddings = np.array([faiss_model.encode(doc["embeddings"]["description"]) for doc in self.dataset], dtype=np.float32)
-        # FAISS : Créer un index de recherche (cosine similarity)
-        dimension = embeddings.shape[1]
-        self.index = faiss.IndexFlatIP(dimension)  # Inner Product = Cosine Similarity si les embeddings sont normalisés
-        self.index.add(embeddings)
-        end1 = time.time()
-        start2 = time.time()
-        print("[DEBUG] os.path.exists(self.index_path) : ",os.path.exists(self.index_path))
-        relative_path = os.path.relpath(self.index_path)
-        faiss.write_index(self.index, relative_path)
-        self.dataset["index"]=self.index
-        end2 = time.time()
-        print(f"[make_index_IP] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
-
 
     def get_embedding(self, text):
         inputs = self.tokenizer_embed(text, return_tensors="pt", padding=True, truncation=True).to(self.device)
         with torch.no_grad():
             output = self.model_embed(**inputs)
-        return output.last_hidden_state[:, 0, :].cpu().numpy()
+        embedding = output.last_hidden_state[:, 0, :].cpu().numpy()
+
+        # Normalisation L2
+        norm = np.linalg.norm(embedding, axis=1, keepdims=True)
+        embedding = embedding / norm
+
+        return embedding
+
     
   
 
@@ -297,7 +302,7 @@ class RAGGenerator:
         response = ollama.chat(model='llama3:latest', messages=[
             {
                 'role': 'system',
-                'content': 'développe ton raisonnement mais n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Le contexte qui t\'est donné est le réglement des études, cite la page d\'origine des informations essentielles. '
+                'content': 'répond à la question, n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Cite la page d\'origine des informations essentielles ainsi que le nom du fichier d\'où provient l\'information. '
             },
             {
                 'role': 'user',
@@ -375,7 +380,7 @@ def filtre(string:str):
             return False
         if i.isupper():
             return False
-    if len(string)>5:
+    if len(string)>4:
         return False
     else: return True
 
@@ -415,20 +420,25 @@ if __name__=="__main__":
     
     dataset3=[]
     small_to_big = (1,2)
-    dataset3=RAGDataset(r"C:\Users\firmi\Documents\COURS INSA\Informatique\4e année\PIR\git\insia\t1\INSA\Associatif")
-    #C:\Users\firmi\Documents\COURS INSA\Informatique\4e année\PIR\git\insia\t1
+    LOAD=False
+
+
+    path=select_directory()
+    dataset3=RAGDataset(LOAD,path)
+
+
 
     knowledge = KnowledgeBase(dataset3,"BAAI/bge-small-en","BAAI/bge-small-en")
 
 
     start_index = time.time()
-    load=False
-    if load:
+    
+    if LOAD:
         knowledge.load_faiss_index()
     else:
         knowledge.build_faiss_index()
     end_index = time.time()
-    print(f"[index] Temps d'exécution : {end_index - start_index:.2f} secondes LOAD = ",load)
+    print(f"[index] Temps d'exécution : {end_index - start_index:.2f} secondes LOAD = ",LOAD)
     fetcher=VectorFetcher(knowledge)
     
     
@@ -444,10 +454,10 @@ if __name__=="__main__":
     nb_contextes=5
     small_to_big=(0,0)
 
-    context=fetcher.retrieve(user_query,num_queries=nb_contextes,small_to_big=small_to_big)
-    print(context)
-    #user=UserPrompt(fetcher)
-    #user.askloop()
+    #context=fetcher.retrieve(user_query,num_queries=nb_contextes,small_to_big=small_to_big)
+    #print(context)
+    user=UserPrompt(fetcher)
+    user.askloop()
 
 
 
