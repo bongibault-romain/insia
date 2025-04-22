@@ -19,14 +19,23 @@ then install the dependancies :
 ```bash
   pip install -r requirements.txt
 ```
+you can modify the generation model by modifying the [config.py](https://github.com/bongibault-romain/insia/blob/RAGSystem/config.py) file
+
+
+
 now you're good to go just run the project : 
 ```bash
   python3 INSight
 ```
 select a folder where are located pdf files and ask question about them !
 
+### **(Optional)**
+you can **locally** download your tokenizer model for example for bge-small run :
 
-
+```bash
+  huggingface-cli download BAAI/bge-small-en
+```
+don't forget to update the [config.py](https://github.com/bongibault-romain/insia/blob/RAGSystem/config.py) file if you decided to use a different model
 
 ## **Features**
 

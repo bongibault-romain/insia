@@ -17,6 +17,7 @@ LOAD_INDEX = False
 # Default number of chunks/contexts to retrieve during search
 NB_CONTEXTES = 10
 
+
 # Context window around a given paragraph (number of paragraphs before, number after)
 # Example: (1, 2) means include 1 paragraph before and 2 after the selected one
 SMALL_TO_BIG = (1, 2)
@@ -31,6 +32,10 @@ EMBED_MODEL = "BAAI/bge-small-en"
 # Dimensionality of the embedding vectors (must match the model's output size)
 EMBED_DIM = 384
 
+# Max size of the contexts retrieved
+CHUNK_MAX_SIZE = 100
+
+CHUNK_OVERLAP = 5
 # ------------------------------
 # LLM configuration
 # ------------------------------
@@ -43,3 +48,5 @@ EXPANDER_MODEL = "llama3:latest"
 
 # Model name for query rewriting (e.g., rewriting user input for better retrieval)
 REWRITER_MODEL = "llama3:latest"
+
+

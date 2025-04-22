@@ -1,9 +1,6 @@
-import faiss
-import ollama
-import torch
+
 import numpy as np
 from transformers import (AutoTokenizer, AutoModel)
-from langchain_ollama import OllamaLLM
 import time
 from PyPDF2 import PdfReader
 import os
@@ -24,13 +21,16 @@ def select_directory():
     root.withdraw()  # cache la fenêtre principale
     folder_path = filedialog.askdirectory(title="Select a folder")
     return folder_path
-
+def clean_paragraph(text: str) -> str:
+        return ' '.join(text.split())  # remove extra whitespace/newlines
 
 
 
 class RAGDataset:
-    def __init__(self,load:bool,data_path:str=None):
+    def __init__(self,load:bool,data_path:str=None,chunk_size=config.CHUNK_MAX_SIZE):
         assert os.path.exists(data_path),f"incorrect path to data : {data_path}"
+        assert chunk_size.is_integer, f"need chunk_size as integer"
+        assert chunk_size>=10, f"need chunk_size >=10"
         self.work_path=data_path
         self.context_path = os.path.join(self.work_path,"context.txt")
         self.refined_path= os.path.join(self.work_path,"refined.txt")
@@ -66,30 +66,53 @@ class RAGDataset:
         else:
             self.dataset=self.make_context("folder",meta=False)
 
-    def extractPDF(self, pdf_path:str, txt_output_path:str, meta_output_path:str):
+
+
+    
+
+    def extractPDF(self,pdf_path: str, txt_output_path: str, meta_output_path: str, chunk_size=config.CHUNK_MAX_SIZE,chunk_overlap=config.CHUNK_OVERLAP):
         file_name = os.path.basename(pdf_path)
-        file_name=str(file_name)
         reader = PdfReader(pdf_path)
-        page_indices = []
-        all_paragraphs = []
-        for page_num, page in enumerate(reader.pages):
-            page_text = page.extract_text()
-            if not page_text:
-                continue
-            lines = page_text.split("\n")
-            lines = [line for line in lines if len(line) > 15]
-            for i in range(0, len(lines), 3):
-                paragraph = "".join(lines[i:i+3]).replace("\n", " ")
-                if len(paragraph.strip()) > 0:
-                    all_paragraphs.append(paragraph.strip())
-                    page_indices.append(page_num + 1)
-        with open(txt_output_path, "a", encoding="utf-8") as f_txt, \
-             open(meta_output_path, "a", encoding="utf-8") as f_meta:
-            for page, paragraph in zip(page_indices,all_paragraphs):    
-                paragraph = paragraph.replace("\n", " ")
-                paragraph=clean_paragraph(paragraph)
+        print("[DEBUG] init extractPDF")
+        chunk = []
+        next_chunk = []
+
+        with open(txt_output_path, "w", encoding="utf-8") as f_txt, \
+            open(meta_output_path, "w", encoding="utf-8") as f_meta:
+
+            for page_num, page in enumerate(reader.pages):
+                text = page.extract_text()
+                if not text:
+                    continue  # skip empty pages
+
+                words = text.split()  # split by word
+
+                for word in words:
+                    chunk.append(word)
+
+                    # If we're nearing the chunk size, start saving overlap words
+                    if chunk_size - len(chunk) <= chunk_overlap:
+                        next_chunk.append(word)
+
+                    # When chunk is full, write it and prepare next
+                    if len(chunk) >= chunk_size:
+                        paragraph = clean_paragraph(' '.join(chunk))
+                        assert len(paragraph.split(" "))<=chunk_size,"incorrect chunk size"
+                        f_txt.write(paragraph + "\n")
+                        f_meta.write(f"{page_num + 1}\t{file_name}\n")
+                        
+                        # Set current chunk to the overlapping words
+                        chunk = next_chunk
+                        next_chunk = []
+
+            # Write the last remaining chunk if it's not empty
+            if chunk:
+                paragraph = clean_paragraph(' '.join(chunk))
+                assert len(paragraph.split(" "))<=chunk_size,"incorrect chunk size"
                 f_txt.write(paragraph + "\n")
-                f_meta.write(str(page)+ '\t' + file_name + "\n")
+                f_meta.write(f"{page_num + 1}\t{file_name}\n")
+        print("[DEBUG] end extractPDF")
+
         
 
 
@@ -122,32 +145,48 @@ class KnowledgeBase:
 
     """
     def __init__(self,input_rag_dataset:RAGDataset,token_embed_str:str,model_embed_str:str):
+        
         start = time.time()
         self.index_path=os.path.join(input_rag_dataset.work_path,"faiss_index.idx")
+        
         if not os.path.exists(self.index_path):
             with open(self.index_path, "x", encoding="utf-8") as f:
                 pass
-        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+        
+        from torch import cuda
+        self.device = "cuda" if cuda.is_available() else "cpu"
         self.dataset=input_rag_dataset.dataset
         self.loadTokeniser(token_embed_str,model_embed_str)
         end = time.time()
         print(f"[KnowledgeBase] Temps d'exécution : {end - start:.2f} secondes")
     def load_faiss_index(self):
-        self.index = faiss.read_index(self.index_path)
+        from faiss import read_index
+        self.index = read_index(self.index_path)
         self.dataset["index"]=self.index
-    def loadTokeniser(self,token_embed_str:AutoTokenizer,model_embed_str:AutoModel):
-        self.tokenizer_embed = AutoTokenizer.from_pretrained(token_embed_str) # tokenize
-        self.model_embed = AutoModel.from_pretrained(model_embed_str).to(self.device) # vectorize
+    def loadTokeniser(self,token_embed_str:AutoTokenizer,model_embed_str:AutoModel): #EMBED_MODEL = "BAAI/bge-small-en"
+        from huggingface_hub import hf_hub_download
+
+        try:
+            path = hf_hub_download(repo_id="BAAI/bge-small-en", filename="config.json", local_files_only=True)
+            print(f"Model is cached at: {path}")
+            self.tokenizer_embed = AutoTokenizer.from_pretrained(token_embed_str, local_files_only=True) # tokenize
+            self.model_embed = AutoModel.from_pretrained(model_embed_str, local_files_only=True).to(self.device) # vectorize
+        except Exception as e:
+            print("Model not found locally:", e)
+            self.tokenizer_embed = AutoTokenizer.from_pretrained(token_embed_str, local_files_only=False) # tokenize
+            self.model_embed = AutoModel.from_pretrained(model_embed_str, local_files_only=False).to(self.device) # vectorize
+        
     def build_faiss_index(self):
         start1 = time.time()
         dimension = config.EMBED_DIM #vecteur de 384 dimensions par défaut pour chaque chunk
-        self.index = faiss.IndexFlatIP(dimension)
+        from faiss import IndexFlatIP,write_index
+        self.index = IndexFlatIP(dimension)
         embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset["embeddings"]])
         self.index.add(embeddings)
         end1 = time.time()
         
         relative_path = os.path.relpath(self.index_path)
-        faiss.write_index(self.index, relative_path)
+        write_index(self.index, relative_path)
         
         self.dataset["index"]=self.index
         end2 = time.time()
@@ -156,7 +195,8 @@ class KnowledgeBase:
 
     def get_embedding(self, text):
         inputs = self.tokenizer_embed(text, return_tensors="pt", padding=True, truncation=True).to(self.device)
-        with torch.no_grad():
+        from torch import no_grad
+        with no_grad():
             output = self.model_embed(**inputs)
         embedding = output.last_hidden_state[:, 0, :].cpu().numpy()
 
@@ -277,6 +317,8 @@ class ChainManager:
         """
         
         def __init__(self,query_endpoint:str,model:str):
+            
+            from langchain_ollama import OllamaLLM
             from langchain_community.graphs import RdfGraph
             from langchain_community.chains.graph_qa.sparql import GraphSparqlQAChain
 
@@ -299,12 +341,14 @@ class ChainManager:
 
 class RAGGenerator:
     def generate(self,query:str,context:str,model:str):
+        
+        from ollama import chat
         input_text = f"context: {context} question: {query}"
 
-        response = ollama.chat(model=model, messages=[
+        response = chat(model=model, messages=[
             {
                 'role': 'system',
-                'content': 'répond à la question, n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Cite la page d\'origine des informations essentielles ainsi que le nom du fichier d\'où provient l\'information. '
+                'content': 'répond à la question en français, n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Cite la page d\'origine des informations essentielles ainsi que le nom du fichier d\'où provient l\'information. '
             },
             {
                 'role': 'user',
@@ -325,39 +369,67 @@ class UserPrompt:
         str_context=""
         for i in range(nb_contextes):
             str_context+=context[i]["data"]+str(context[i]["metadata"])+" \n"
+        print("\n\n---------------------------\n",user_query)
+        print(f"[ask] generation in progress using {config.GENERATOR_MODEL} please wait ...")
         generator=RAGGenerator()
-        print(generator.generate(query=user_query,context=str_context,model='llama3:latest'))
+        print(generator.generate(query=user_query,context=str_context,model=config.GENERATOR_MODEL))
             
         end = time.time()
         if VERBOSE>=1:print(f"[ask] Temps d'exécution : {end - start:.2f} secondes")
+    
+
     def askloop(self):
+        import sys
+        if sys.platform == "win32":
+            try:
+                from pyreadline3.rlmain import Readline # assure le support readline sous Windows
+            except ImportError:
+                print("Pour une meilleure expérience, installez pyreadline3 avec `pip install pyreadline3`")
+        else:
+            import readline  # fonctionne nativement sur Unix/Linux/Mac
         global VERBOSE
-        user_input=None
-        stop=(user_input in ("q", "x", "","quit","exit"))
-        nb=config.NB_CONTEXTES
+        nb = config.NB_CONTEXTES
+
         print("================================================")
         print("Vous pouvez changer le niveau de VERBOSE avec /v")
-        print(f"Vous pouvez changer le nombre de contextes récupérés avec (par défaut {config.NB_CONTEXTES}/n")
+        print(f"Vous pouvez changer le nombre de contextes récupérés avec (par défaut {config.NB_CONTEXTES})")
         print("Vous pouvez quitter avec q, x, \"\", quit, exit")
         print("================================================")
-        while not stop:
-            user_input=input("Bonjour quelle est votre question ?\n")
-            if user_input in ("q", "x", "","quit","exit"):
+
+        while True:
+            try:
+                user_input = input("Bonjour quelle est votre question ?\n").strip()
+
+                if user_input in ("q", "x", "", "quit", "exit"):
+                    break
+
+                
+                readline = Readline()
+                readline.add_history("ta question")  # Ajoute la question à l'historique
+
+                if user_input == "/v":
+                    v = input("Quel niveau de VERBOSE ? \n").strip()
+                    while not v.isnumeric() or not (0 <= int(v) <= 6):
+                        print("Valeur incorrecte (0 à 6)")
+                        v = input("Quel niveau de VERBOSE ?\n").strip()
+                    VERBOSE = int(v)
+
+                elif user_input == "/n":
+                    nb_str = input("Combien de contextes donner ?\n").strip()
+                    while not nb_str.isnumeric() or not (2 <= int(nb_str) <= 20):
+                        print("Valeur incorrecte (entre 2 et 20)")
+                        nb_str = input("Combien de contextes donner ?\n").strip()
+                    nb = int(nb_str)
+
+                else:
+                    self.ask(user_input, nb_contextes=nb)
+
+            except KeyboardInterrupt:
+                print("\nInterrompu. Tapez 'q' pour quitter.")
+            except EOFError:
+                print("\nFin de l'entrée. Au revoir.")
                 break
-            elif user_input=="/v":
-                v = input("quelle niveau de VERBOSE ? \n")
-                while (not v.isnumeric() or int(v)>6 or int(v)<0):
-                    print("valeur incorrecte")
-                    v = input("quelle niveau de VERBOSE ?\n")
-                VERBOSE=int(v)
-            elif user_input=="/n":
-                nb = input("Combien de contextes donner ?\n")
-                while (not nb.isnumeric() or int(nb)>20 or int(nb)<2):
-                    print("valeur incorrecte")
-                    nb = input("Combien de contextes donner ?\n")
-                nb=int(nb)
-            else:
-                self.ask(user_input,nb_contextes=nb)
+
 
     def askfile(self):
         pass
@@ -414,9 +486,9 @@ if __name__=="__main__":
     
     VERBOSE=2
 
-    start = time.time()
-
-    device = "cuda" if torch.cuda.is_available() else "cpu"
+    
+    from torch import cuda
+    device = "cuda" if cuda.is_available() else "cpu"
     print("device : ",device)
     
     
@@ -425,8 +497,9 @@ if __name__=="__main__":
 
 
     path=select_directory()
-    dataset3=RAGDataset(config.LOAD_INDEX,path)
-
+    start = time.time()
+    dataset3=RAGDataset(config.LOAD_INDEX,path,30)
+    print(f"[RAGDataset] Temps d'exécution : {time.time() - start:.2f} secondes CHUNK_MAX_SIZE = ",30)
 
 
     knowledge = KnowledgeBase(dataset3,config.EMBED_MODEL,config.EMBED_MODEL)
