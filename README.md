@@ -73,4 +73,4 @@ In this RAG pipeline, we distinguish between:
 - [Anya Meetoo](https://github.com/AnyaMeetoo492)
 - [Elsa Hindi](https://github.com/hilire31)
 - [Jean-Philippe Loubejac Combalbert](https://github.com/hilire31)
-- [Hilal Hamdan](https://github.com/hilire31)
+- [Célian Hilal Hamdan](https://github.com/Hilalh27)
