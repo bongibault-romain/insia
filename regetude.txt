@@ -1,0 +1,380 @@
+REGLEMENT DES ETUDES DES FORMATIONS DE L'INSA TOULOUSE
+
+# I. Préambule
+
+Le règlement des études a pour objet de définir les règles en vigueur dans le domaine de la formation et d'informer la communauté universitaire.
+Le règlement des études est opposable à toute personne, enseignant ou étudiant à l'INSA, qui de facto, l'accepte en rejoignant l'établissement.
+Aucune disposition ou note d'organisation des départements, des laboratoires de recherche ou des services ne peut faire obstacle à l'application du règlement des études.
+Quels que soient les termes généraux employés pour désigner les personnes il va de soi qu'ils désignent indifféremment des femmes ou des hommes.
+
+## II. Déroulement des études et validation
+
+Chaque année universitaire, organisée en semestres, est composée d'Unités d'Enseignement (UE) ou domaines insécables et obligatoires représentant un total de 60 crédits ECTS par an. Leur modification peut intervenir annuellement, par décision du conseil de département compétent et sous réserve de validation par le conseil des études.
+
+Le tableau récapitulant l'ensemble des UE d'une année et les conditions de leur validation est porté à la connaissance des étudiants en début d'année. Pour les filières par apprentissage, le calendrier annuel spécifique sera joint au tableau récapitulant les UE.
+
+La présence aux travaux pratiques, aux examens, aux activités impliquant un travail de groupe ainsi qu'aux activités physiques et sportives est obligatoire, sauf dispense (par exemple médicale) dûment constatée et notifiée. Toute absence non justifiée à une séance d'activités physiques et sportives, de travaux pratiques ou impliquant du travail de groupe ainsi qu'à tout enseignement évalué en continu (APP par exemple) est susceptible d'être sanctionnée au niveau de l'évaluation.
+
+Les étudiants qui ont une UE en dette la passent en session 2 sauf s'ils peuvent suivre la totalité des enseignements de l'UE. Dans ce cas, ils pourront la passer en session 1.
+
+## II.1. Evaluation des unités d'enseignement
+
+## II.1.a. Méthode d'évaluation
+
+L'équipe pédagogique de l'UE met à la disposition des étudiants en début d'année la liste des acquis de l'apprentissage (connaissances, capacités et/ou compétences) étudiés dans l'UE.
+
+Dans chacune des UE, l'évaluation des acquis de l'apprentissage pourra faire intervenir un contrôle continu et/ou un contrôle final. Elle peut aussi être associée à une évaluation des travaux pratiques correspondants et/ou d'un projet tutoré ou à un travail personnel relatif à cette UE. Les copies, corrigées doivent être rendues dans un délai maximum de 3 semaines hors vacances. Les étudiants doivent avoir connaissance de leur résultat et des observations formulées au sujet de leur travail. Un corrigé ou des éléments de corrigé seront portés à la connaissance des élèves, idéalement dans les jours suivant l'évaluation. Les contestations éventuelles concernant l'évaluation ne pourront se faire que lors de la restitution des copies.
+
+Les évaluations doivent être réparties durant le semestre. Le programme des contrôles porte sur tout ce qui a été donné à étudier dans l'UE au moins 7 jours avant la date du contrôle. Les modalités doivent être communiquées aux étudiants au moins 7 jours avant la date du contrôle.
+
+L'évaluation des acquis de l'apprentissage pourra se faire, uniformément au sein d'une UE, selon deux voies, au choix de l'équipe pédagogique :
+
+- Une évaluation par notes (cf. II.1.a.i)
+- Une évaluation des acquis de l'apprentissage (cf. II.1.a.ii)
+
+Quelle que soit la méthode d'évaluation choisie, le principe de compensation au sein de l'UE s'applique.
+
+# II.1.a.i. Cas de l'évaluation par notes
+
+L'évaluation des acquis de l'apprentissage découle de la prise en compte de plusieurs notes dont les modalités de calcul sont précisées en début d'enseignement. Il ne pourra pas être utilisé de notes éliminatoires ou de méthodes de calcul introduisant de fait de telles notes (moyenne harmonique par exemple).
+
+## II.1.a.ii. Cas de l'évaluation par acquis de l'apprentissage
+
+Ils peuvent être classés en deux catégories :
+
+- les acquis de l'apprentissage fondamentaux qui doivent être impérativement acquis à la fin de l'UE
+- les acquis de l'apprentissage dont une partie doit être acquise à la fin de l'UE.
+
+Lors de la remise de travaux corrigés, servant à l'évaluation de l'UE, la liste des acquis de l'apprentissage évalués ainsi que leur niveau d'acquisition observé (non acquis, partiellement acquis, acquis, maîtrisé, remarquable) devra être remise à l'étudiant.
+
+## II.1.b. Validation des UE
+
+L'année universitaire est composée de deux sessions sauf en 1ère année (cf. §II.1.c).
+A la fin de la première session, le jury d'UE - composé de l'équipe pédagogique de l'UE et convoqué par le responsable de l'UE - se réunit afin d'évaluer les acquis de l'apprentissage de chaque étudiant. L'évaluation de l'UE est définie par les 5 niveaux suivants :
+
+- «remarquable» : l'étudiant maîtrise l'ensemble des acquis de l'UE ou du domaine
+- «maîtrisé »: l'étudiant possède la grande majorité des acquis attendus
+- «acquis » : l'étudiant possède les acquis attendus essentiels
+- «partiellement acquis » : l'étudiant possède une partie des acquis mais présente des lacunes
+- «non acquis » : l'étudiant a des lacunes importantes
+
+Dans le cas d'une évaluation par note, une note d'UE supérieure ou égale à 10/20 conduit à «acquis» ou «maîtrisé » ou « remarquable».
+
+Les niveaux « Acquis », « Maîtrisé » ou « Remarquable » entraînent la validation de l'UE et l'octroi des crédits ECTS. Pour les niveaux «Non acquis» et «partiellement acquis», le pré-jury de département ou de pré-orientation, réuni après la session 2 du second semestre, pourra proposer la validation de l'UE en particulier si les acquis d'apprentissage manquants sont acquis dans une autre UE. Dans ce cas, le niveau de l'UE devient «Acquis».
+
+Toute UE validée l'est définitivement et les crédits ECTS correspondants sont, eux aussi, définitivement acquis.
+
+Tout étudiant qui n'a pas validé une UE en session 1 est automatiquement inscrit en session 2 où il passera une nouvelle épreuve. Pour les UE «continues sur l'année» (la validation d'une UE du second semestre peut permettre la validation d'une UE du premier semestre), une seule session 2 est organisée à la fin de l'année. A la suite de l'épreuve de la session 2, le jury d'UE se réunit à nouveau et effectue le même travail qu'à la suite de la session 1. Le niveau obtenu à l'issue de cette épreuve devient le niveau de l'UE.
+
+Si, à l'issue de la session 2, une UE n'est pas validée, l'étudiant devra la repasser l'année suivante. Dans le cas d'un redoublement, l'étudiant doit suivre la totalité de l'UE, qu'elle soit homogène ou hétérogène, et doit assister à l'intégralité des cours, TD et TP. Les examens sont passés en session 1, sauf avis motivé de l'équipe pédagogique dans le cas des UE hétérogènes.
+
+Dans le cas d'un passage en année supérieure les examens des différentes composantes de l'UE sont passés en session 2. Lorsque l'UE est hétérogène, le programme de l'examen est discuté avec l'équipe pédagogique. Lorsque l'UE est homogène l'étudiant doit repasser la totalité des composantes de l'UE en dette.
+
+Pour les étudiants qui anticipent une UE, ils ne pourront passer la session 2 que s'ils ont obtenu le niveau « partiellement acquis » à la session 1.
+
+La liste des étudiants convoqués à la session 2 est établie par le jury d'UE et validée par le jury d'établissement. Elle est publiée le plus rapidement possible avant la session 2.
+
+# II.1.c. Cas particulier de la 1ère année : les domaines
+
+La première année est composée de trois domaines (mathématique-algorithmique / sciences physiques, chimiques et industrielles / humanités). Ces domaines sont évalués via les acquis d'apprentissage.
+
+Le mode de fonctionnement des Grands Domaines (notamment avec un plus grand nombre d'évaluations et plusieurs évaluations du même acquis d'apprentissage) fait qu'il n'y a pas de session 2 spécifique organisée. Les équipes pédagogiques pourront en fonction des résultats rajouter des évaluations supplémentaires si elles le jugent nécessaires.
+
+A la fin de l'année, le jury de domaine - composé de l'équipe pédagogique du domaine et convoqué par le responsable du domaine - se réunit afin d'évaluer les acquis d'apprentissage de chaque étudiant. L'évaluation des acquis d'apprentissage et du domaine est définie par les 5 niveaux suivants :
+
+- «remarquable » : l'étudiant maîtrise l'ensemble des acquis de l'UE ou du domaine
+- « maîtrisé »: l'étudiant possède la grande majorité des acquis attendus
+- «acquis » : l'étudiant possède les acquis attendus essentiels
+- «partiellement acquis » : l'étudiant possède une partie des acquis mais présente des lacunes
+- «non acquis » : l'étudiant a des lacunes importantes
+
+Les niveaux «Acquis», «Maîtrisé» ou «Remarquable» entrainent la validation du domaine et l'octroi des crédits ECTS. Pour le niveau «partiellement acquis », le pré-jury de 1ère année pourra proposer la validation du domaine. Dans ce cas, le niveau du domaine devient «Acquis».
+
+Tout domaine validé l'est définitivement et les crédits ECTS correspondants sont, eux aussi, définitivement acquis.
+
+En cas de redoublement de la 1ère année, les étudiants devront repasser la totalité des domaines non validés. Les anticipations sur la 2ème année n'est donc pas possible.
+
+# II.1.d. Gestion des fraudes
+
+Les conditions de déroulement des examens et l'attitude en cas de fraude sont précisées en Annexe A.
+
+## II.1.e. Gestion des absences
+
+Toute absence non justifiée à un contrôle entraîne une note égale à zéro (lorsque l'évaluation se fait par note). Un étudiant qui a participé totalement ou partiellement à une épreuve de contrôle ne peut prétendre ensuite à un rattrapage sur cette épreuve, sauf cas de force majeure. Pour justifier une absence, l'étudiant doit présenter, lorsqu'il reprend les cours, une pièce justificative officielle au secrétariat de son département qui informera les enseignants concernés.
+
+La participation active à certains événements (cf. liste en Annexe B) constitue un motif d'absence justifiée à condition de prévenir le directeur de département dès que possible et au moins 48 heures avant l'épreuve. Si la demande concerne un évènement non défini dans la liste, celle-ci doit alors être motivée auprès du directeur des études via le directeur de département. Le directeur des études informe le conseil des études des décisions prises au cours de l'année.
+
+Aux étudiants totalement ou partiellement inaptes à la pratique de l'éducation physique (avec justificatif), il sera proposé un enseignement sous une forme adaptée (rapports, épreuves aménagées...).
+
+Pour les étudiants ayant une absence justifiée lors d'une (ou de plusieurs) épreuve(s), l'épreuve organisée lors de la session 2 servira de rattrapage. Le résultat obtenu alors remplace le résultat de l'épreuve (ou des épreuves) à laquelle l'étudiant a été absent. Le jury d'UE décide alors du niveau de validation de l'UE en session 1 ou en session 2. Par exemple, dans le cas d'une évaluation par note, si, avec cette note, l'étudiant valide l'UE, l'UE aura été validée en session 1. Si, avec cette note, l'étudiant ne valide pas l'UE, la note de l'UE est la note obtenue à la session 2.
+
+Dans le cas des domaines de 1ère année, lorsqu'un étudiant a une absence justifiée, il repasse l'épreuve pour laquelle il a été absent. Néanmoins, l'équipe pédagogique peut dispenser l'étudiant d'épreuve de rattrapage ou en adapter le contenu.
+
+# II.1.f. Modalités de contrôle des connaissances dérogatoires
+
+En cas de situations exceptionnelles liées à l'évolution de la situation sanitaire (pandémie Covid-19), les modalités de contrôle de connaissance alternatives au présentiel suivantes peuvent s'appliquer. Par dérogation de l'article II.1.a du règlement des études des formations de l'INSA, les évaluations peuvent avoir lieu via une des modalités d'évaluation à distance ; elles peuvent prendre d'autres formes que le contrôle terminal et l'évaluation en continu. Les enseignants font leur meilleur effort pour informer les étudiants des modalités d'évaluation de l'UE et du programme des contrôles de l'UE au moins 7 jours avant la date du contrôle annoncée.
+
+## II.2. Double diplôme INSA-Sciences Po Toulouse
+
+En 1A, les enseignements d'APS du semestre 1 et d' Expression et Projet Documentaire ainsi que le module PENSER du semestre 2 sont remplacés par les modules suivis à Sciences Po Toulouse.
+
+En 2A, les enseignements d' Économie contemporaine et transition écologique du semestre 1 et des APS du semestre 2 sont remplacés par les modules suivis à Sciences Po Toulouse.
+
+En 3A, le MO du semestre 2 est remplacé par les modules suivis à Sciences Po Toulouse.
+En 4A, les modules suivis à Sciences Po Toulouse au semestre 1 remplacent l'enseignement de Droit et un des deux modules restant de l'UE associée, à savoir Finance d'entreprise et Stratégie d'entreprise responsable de l'INSA Toulouse.Au semestre 2 le module Prospective est remplacé par le module suivi à Sciences Po Toulouse.
+
+En 5ème année, les étudiants suivent les cours du master à Science Po. A l'INSA, ils suivent des modules de 5ème année pour 6 ECTS. Chaque département définit les modules à suivre et les modalités pédagogiques, sachant que les étudiants ne suivront pas les cours en présentiel (documents sur moodle, video, tutorat...).
+
+# II.3. Reconnaissance des Challenge Based Learning
+
+Les étudiant/es de 4A et 5A ont accès à l'offre de challenges proposée par ECIU University, l'université européenne dont le Groupe INSA est membre. Cette offre est disponible en ligne et renouvelée chaque semestre.
+
+1. Un.e étudiant.e intéressé.e par un challenge soumet le challenge choisi à la direction des études (et/ou au correspondant RI) de son département, impérativement avant le début du semestre académique
+2. La direction des études du département valide le choix, sur la base des éléments descriptifs du challenge (thématique, acquis d'apprentissage visés, charge de travail estimé, nombre de crédits ECTS, ...)
+3. La direction des études du département établit un contrat avec l'étudiant.e pour définir l'UE ou les cours du programme INSA dont l'étudiant.e est dispensé.e afin de lui permettre de s'engager dans le challenge.
+4. Les crédits ECTS obtenus par l'étudiant.e à l'issue du challenge sont intégrés dans les 30 ECTS requis pour valider le semestre.
+5. Il est possible de suivre au maximum 1 challenge proposé par ECIU University par semestre.
+
+## II.4. Etudiants à statut particulier
+
+En vertu de Code de l'éducation, notamment articles L611-9 L611-11L612-1D611-7 D611-8 D611-91, de l'Article 12 de l'arrêté du 30 juillet 2018 modifiant l'arrêté du 22 janvier 2014 fixant le cadre national des formations conduisant à la délivrance des diplômes nationaux de licence, de licence professionnelle et de master, certains étudiants peuvent obtenir, sous conditions, un statut particulier leur permettant de concilier leurs besoins spécifiques avec le déroulement de leurs études.
+
+Les différents statuts particuliers et leurs conditions d'obtention ainsi que les modalités pédagogiques spéciales qui leur sont applicables sont décrits en Annexe C et listés ci-dessous :
+
+- Etudiant appartenant à la Section Musique Etudes (SME)
+- Etudiant appartenant à la Section Danse Etudes (SDE)
+- Etudiant appartenant à la Section Théâtre Etudes (STE)
+- Etudiant appartenant à la Section Sport Etudes ( S2E )
+- Etudiant Grand Associatif (EGA)
+- Etudiant Entrepreneur (EE)
+- Etudiant en situation de handicap ou en situation de longue maladie (ESH)
+- Etudiant réserviste (ER)
+- Etudiant Sapeur Pompier volontaire
+- Etudiant salarié (ES)
+- Etudiante enceinte
+- Etudiant chargé de famille
+
+## II.5. Bilan pédagogique
+
+Un bilan pédagogique est organisé à la fin de chaque semestre. Il se tient par promotion ou par groupe si nécessaire, en présence des enseignants et des élèves du groupe ou de la promotion.
+
+# II.6. Validation de l'année
+
+## II.6.a. Conditions de validation de l'année
+
+L'année est validée si l'étudiant obtient 60 crédits ECTS c'est-à-dire s'il valide la totalité des UE / domaines.
+
+Les résultats des étudiants qui ne satisfont pas cette condition sont examinés au cas par cas par le pré-jury, qui prend en compte tous les éléments d'information à sa disposition (ensemble des résultats, participation à la vie associative, assiduité, circonstances particulières...).
+
+Le pré-jury peut proposer le passage en année supérieure pour des étudiants n'ayant pas 60 crédits ECTS. Dans ce cas, l'étudiant aura des «dettes » et devra valider les UE manquantes l'année (ou les années) suivante(s). Le pré-jury peut proposer le passage en année supérieure avec au maximum 2 UE en dette.
+
+## II.6.b. Redoublements / Exclusions
+
+Pour les étudiants qui ne satisfont pas les conditions de passage en année supérieure, le pré-jury peut proposer au jury d'établissement l'autorisation de redoublement ou l'exclusion. Si le préjury propose l'exclusion, il doit argumenter sa décision au jury d'établissement. Tout étudiant exclu peut bénéficier, sur sa demande, d'une aide de la part de son département, sous forme de conseils pour la réorientation et de liaison avec l'établissement d'accueil pour une inscription hors délais.
+
+La première année ne pourra pas être redoublée plus d'une fois. Un seul redoublement est possible sur les années 2 et 3 et sur les années 4 et 5 .
+
+Le redoublement est aménagé après discussion avec l'étudiant de façon à privilégier notamment la consolidation des bases de l'année redoublée et le développement personnel de celui-ci (stage en entreprise, travail en autonomie...). Il est également possible de l'autoriser à suivre certaines UE de l'année suivante sous réserve que le nombre d'UE à repasser dans chaque semestre ne soit pas trop important et sous réserve de compatibilité d'emploi du temps, de cohérence pédagogique (l'année de l'inscription administrative est prioritaire sur les anticipations) et de capacité d'accueil. Le directeur du département ou le directeur des études de la pré-orientation concerné(e) en définira les modalités en s'assurant de la mise en œuvre. Un contrat d'étude sera signé entre l'étudiant redoublant et le directeur du département ou le directeur des études de la pré-orientation 15 jours maximum après la rentrée de l'étudiant.
+
+## III. Déroulement des pré-jurys de fin d'année
+
+La composition et les règles générales de fonctionnement des pré-jurys sont détaillées dans le règlement des jurys (cf. IV).
+
+Tous les étudiants qui n'ont pas obtenu 60 crédits ECTS sont convoqués au pré-jury. La liste des étudiants convoqués au pré-jury sera affichée au moins 24 heures avant la date du pré-jury.
+
+A l'issue du pré-jury, celui-ci missionne l'un de ses membres qui propose à chaque étudiant concerné de lui expliquer la décision prise.
+
+Toute contestation relative au déroulement d'un pré-jury doit être portée devant le jury d'établissement de l'INSA. Pour cela, un courrier doit être envoyé au directeur de l'INSA (avec copie au directeur de département concerné) dans les meilleurs délais et dans tous les cas 48 heures avant la tenue du jury d'établissement.
+
+## III.1. Pré-jury de première année
+
+Compte tenu du grand nombre d'étudiants en 1ère année, ce pré-jury est précédé de commissions préparatoires qui examinent le cas des étudiants n'ayant pas satisfait aux conditions cidessus. Celles-ci se tiennent par groupe d'étudiants; tous les enseignants ayant participé aux enseignements du groupe, ainsi que tous les étudiants n'ayant pas obtenu 60 crédits ECTS, y sont convoqués.
+
+Ces commissions se tiennent en deux parties :
+
+- 1ère partie : audition individuelle des étudiants
+- 2ème partie : les enseignants analysent chacun des cas.
+
+Pour chacun de ces étudiants, une proposition est soumise au pré-jury de première année. Cette proposition n'est à aucun moment et en aucun cas portée à la connaissance de l'étudiant, car elle ne préjuge en rien de la proposition du pré-jury de 1ère année.
+
+Le pré-jury de première année se tient après que toutes les commissions préparatoires ont délibéré. Il peut proposer la validation des UE dont le niveau est «non acquis» ou « partiellement acquis » ainsi que la validation des domaines dont le niveau est « partiellement acquis », la validation de l'année pour les étudiants qui satisfont aux conditions de validation d'office de celle-ci. Il propose ensuite l'admission, l'autorisation de redoublement ou l'exclusion de chacun des étudiants restants.
+
+## III.2. Autres pré-jurys de fin d'année
+
+Compte tenu de la spécificité du groupe FAS en 2ème année, une commission préparatoire au pré-jury de 2ème année est instituée. Pour les promotions de grande taille, des commissions préparatoires peuvent également être mises en place. Elles fonctionnent sur le même modèle que celles de 1ère année (cf. III.1).
+
+Les pré-jurys examinent les résultats de l'ensemble des étudiants inscrits administrativement dans l'année concernée. Ils se déroulent en trois phases :
+
+- 1ère phase : le pré-jury propose la validation de l'année et/ou éventuellement la validation d'une ou plusieurs UE avec le niveau «non acquis» ou « partiellement acquis» pour les étudiants pour lesquels il estime pouvoir le faire sans les auditionner.
+- 2ème phase : les étudiants présents, dont le cas reste à examiner après la 1ère phase, sont invités par le pré-jury à lui transmettre toute information complémentaire jugée utile. Les étudiants qui ne peuvent pas être auditionnés peuvent écrire une lettre au pré-jury.
+- 3ème phase : le pré-jury examine le cas de ces étudiants. D'une part, il propose la validation ou non des UE avec le niveau «non acquis» ou «partiellement acquis», d'autre part il propose l'admission, l'admission avec dette, l'autorisation de redoublement ou l'exclusion de ces étudiants.
+
+Les résultats des pré-jurys devront être affichés immédiatement après les délibérations et visibles de l'extérieur et / ou mis en ligne sur l'intranet pédagogique dans les meilleurs délais.
+
+# III.3. Autorisations de se réinscrire pour raisons médicales ou sociales graves
+
+## III.3.a. Principes
+
+Lorsque des étudiants ont rencontré des difficultés médicales ou sociales graves (en particulier travail salarié important), les responsables des services sociaux et médicaux peuvent en informer les pré-jurys concernés, moyennant l'accord des étudiants concernés et le respect du secret professionnel sur la nature précise de la difficulté rencontrée.
+
+Tout étudiant que des raisons médicales ou sociales graves auront mis dans l'impossibilité de suivre les enseignements pendant une partie significative de l'année universitaire peut demander à bénéficier d'une autorisation à se réinscrire dans la même année d'études. Cette autorisation, si elle est proposée par le pré-jury de département, n'est pas considérée comme un redoublement.
+
+## III.3.b. Interactions entre l'équipe médico-sociale et le pré-jury
+
+L'information du pré-jury sur l'importance et l'impact éventuel des difficultés médicales ou sociales rencontrées par les étudiants est effectuée à l'aide d'une fiche transmise avant le pré-jury au directeur de département ou au directeur des études de la PO.
+
+La demande d'autorisation à se réinscrire doit être accompagnée d'un document émanant du SIMPPS (Service Interuniversitaire de Médecine Préventive et de Promotion de la Santé) ou d'un service social compétent selon le cas, proposant ou non l'octroi de cette autorisation. Le pré-jury statue par vote sur cette proposition.
+
+# III.4. Autres dispositions
+
+## III.4.a. Première année: répartition des étudiants dans les pré-orientations
+
+Le jury d'établissement de l'INSA procède à la répartition des étudiants dans les pré-orientations.
+
+Les étudiants de 1ère année indiquent leurs vœux de pré-orientation en classant obligatoirement la totalité des pré-orientations proposées.
+
+Le classement des étudiants est établi sur les acquis de l'apprentissage de la manière suivante. Un nombre est affecté par niveau à la fin de l'année pour chaque acquis de l'apprentissage ( 0 pour non acquis ; 1 pour partiellement acquis ; 2 pour acquis ; 3 pour maîtrisé ; 4 pour remarquable) et chaque domaine est pondéré par son nombre de crédits ECTS.
+
+Ce classement sert également pour les départs en semestre à l'étranger.
+Après avoir déterminé la capacité totale de chacune des pré-orientations de 2ème année (FAS exclus pour IC et MIC), les étudiants admis sont répartis dans les pré-orientations en fonction de leur classement et selon leur vœu entre 80 % et 85 % de la capacité totale de chacune des pré-orientations.
+
+Une commission transversale composée de l'ensemble des Directeurs des Etudes du Département STPI ( 1ère année et pré-orientations), du Directeur de ce département et du responsable du PPI (ou leurs représentants) examine le cas de chacun des étudiants qui n'aurait pas obtenu son premier choix à l'issue de cette répartition. Si un étudiant d'une filière spécifique (FAS, ASINSA...) est concerné, le responsable de la filière assiste à l'audition. L'examen de chaque cas se fait sur la base de la fiche extraite du PPI et d'un entretien. L'étudiant peut être admis dans la pré-orientation de son choix ou se voir attribuer l'un de ses choix suivants examinés dans l'ordre décroissant de ses vœux.
+
+Cas particuliers :
+Les étudiants de 1ère année inscrits au programme FAS et admis en 2ème année sont automatiquement affectés au groupe FAS soit de la PO IC, soit de la PO MIC (en fonction de leur spécialité du BAC). La commission transversale mentionnée ci-dessus examine le cas de chacun des étudiants de ce programme qui souhaite se diriger vers une autre pré-orientation.
+
+## III.4.b. Troisième année : choix des spécialités
+
+Sauf cas particulier, le choix des spécialités est arrêté provisoirement à la fin du 1er semestre de la 3ème année en tenant compte des vœux des étudiants et de leur classement.
+
+Cas particuliers :
+
+1. Etudiants partant tout ou partie de la troisième année à l'étranger: les étudiants qui effectuent toute la troisième année à l'étranger sont affectés à la spécialité de leur choix avant leur départ. Les étudiants qui effectuent un semestre à l'étranger sont affectés dans la spécialité de leur choix selon la procédure commune.
+
+2. Les étudiants déjà affectés qui redoublent la 3ème année gardent le bénéfice de leur affectation, sauf démarche contraire de leur part.
+3. Les étudiants de 3ème année issus du programme FAS sont automatiquement affectés à la spécialité de leur choix si celui-ci correspond à la spécialité de leur baccalauréat. Dans le cas d'un choix différent, ils sont affectés selon les mêmes règles que les autres étudiants.
+4. Les étudiants recrutés en 3ème année sont affectés à une spécialité dès leur recrutement.
+
+Tout étudiant qui n'a pas obtenu la spécialité de son choix à l'issue du classement ci-dessus, ainsi que tout étudiant qui souhaite changer de spécialité d'affectation, passe un entretien de motivation devant une commission composée du directeur du département STPI, des directeurs des études des PO, des directeurs des départements des spécialités concernées et du responsable du PPI (ou leurs représentants). Cette commission prononce l'affectation de l'étudiant en considérant ses motivations et ses capacités ainsi que la capacité d'accueil de la spécialité considérée.
+
+L'affectation définitive des étudiants dans les spécialités est arrêtée par le jury d'établissement.
+
+# III.4.c. Choix des parcours transversaux pluridisciplinaires
+
+Les étudiants ont la possibilité de suivre un parcours transversal pluridisciplinaire (PTP) à l'interface entre plusieurs disciplines. Tous les PTP ne sont pas accessibles à tous les étudiants. En particulier, l'accès à certains PTP en dernière année ne permet pas un départ à l'étranger en 4ème année.
+
+Chaque spécialité fixe un quota d'étudiants qui peuvent suivre l'ensemble des PTP ainsi que le nombre maximum par PTP.
+
+La liste des PTP et leurs conditions d'accès sont validées par le Conseil des Etudes sur proposition des conseils de département.
+
+Les étudiants de 4ère année qui le souhaitent indiquent leurs vœux de PTP.
+Le jury d'établissement de l'INSA procède à la répartition des étudiants dans les PTP. Les étudiants sont classés sur la base des résultats obtenus en troisième et quatrième année. Dans chaque promotion, les étudiants sont classés en fonction des règles définies ci-dessus (cf. III.4.a).
+
+L'interclassement entre les différentes spécialités se fait sur la base du classement (en pourcentage de l'ensemble des étudiants inscrits) de chaque étudiant dans sa promotion et de la prise en compte de la motivation.
+
+## III.4.d. Césures
+
+La période de césure est un dispositif correspondant à une suspension temporaire et volontaire des études réalisée à la demande de l'étudiant et avec l'accord du directeur de département, directeur des études, directeur de l'établissement. La période de césure permet à l'étudiant d'acquérir une expérience professionnelle ou personnelle, en France ou à l'étranger.
+
+La période de césure ne remplace aucun élément de la formation dans l'établissement et les éventuels ECTS acquis dans le cadre de la période de césure ne sont pas reconnus dans le cadre de la formation de l'établissement. La période de césure peut être prise en compte dans la période de mobilité obligatoire à l'étranger. Les justificatifs originaux sont à fournir au secrétariat de département.
+
+La période de césure peut prendre différentes formes : formation, expérience en milieu professionnel (contrat de travail, bénévolat, stage), réalisation d'une mission de service civique, d'un volontariat associatif, international en entreprise, international en administration, volontariat de solidarité internationale, ou service volontaire européen, travail sur un projet de création d'entreprise en qualité d'étudiant-entrepreneur.
+
+La durée maximale d'une période de césure est d'une année universitaire. La césure débute obligatoirement en même temps qu'un semestre universitaire. Elle peut être effectuée dès le début de la première année de cursus mais jamais après la dernière année de cursus. La demande de césure doit être faite à partir du dossier de demande de césure transmis par le département. Lorsque la césure a été acceptée par toutes les parties, une convention de césure est rédigée entre l'étudiant et l'INSA. L'étudiant sera donc inscrit en césure et devra s'acquitter des droits d'inscription en césure.
+
+Par application du décret n° 2021-1154 du 3 septembre 2021, les étudiants accomplissant une césure sous forme de stage dans le cadre de leur cursus de formation initiale sont soumis à des modalités de stage identiques à celles d'un stage classique, à l'exception des points suivants :
+
+- Pas d'obligation d'être inscrit dans un cursus ayant un volume pédagogique d'enseignement de deux cents heures comportant un minimum de cinquante heures dispensées en présence des étudiants (non application de l'art. D124-2 du code de l'éducation),
+- Pas d'obligation de mentionner l'intitulé de ladite formation ni son volume horaire dans la convention de stage (non application de l'article D124-4/1 du code de l'éducation),
+- Pas d'obligation de restitution, ni d'évaluation du stage (non application de l'article D124-1/2 du code de l'éducation).
+
+# III.4.e. Fin d'année administrative
+
+La fin d'année administrative est le 30 septembre. Toute UE doit être validée avant cette date pour être prise en compte. Pour être comptabilisé sur l'année en cours, les stages doivent être terminés (stage terminé et soutenance faite) avant le 30 septembre. Dans le cas où la convention et/ou la soutenance va au-delà de cette date, l'étudiant devra se réinscrire à l'INSA Toulouse.
+
+# IV. Règles de délivrance des diplômes et des labels
+
+## IV.1. Diplôme d'Ingénieur INSA de Toulouse, grade de master
+
+Le jury d'établissement prend en compte lors de sa décision de délivrance ou de non-délivrance du diplôme, les éléments suivants :
+
+- les résultats obtenus au cours de la scolarité,
+- le niveau d'anglais,
+- le niveau de français,
+- la durée des séjours à l'étranger effectués,
+- la durée et la validation des stages effectués
+- l'implication citoyenne.
+
+Le jury est souverain et à ce titre il peut lorsqu'il le juge opportun délivrer le diplôme lorsque les conditions ci-dessus ne sont pas remplies.
+
+## IV.1.a. Résultats obtenus au cours de la scolarité
+
+Les étudiants doivent avoir obtenu 60 crédits ECTS par année de scolarité, soit 300 ECTS à l'issue de la 5ème année.
+
+## IV.1.b. Niveau d'anglais
+
+En application des recommandations de la CTI², le niveau souhaitable pour un ingénieur est le niveau C1 du «Cadre européen de référence pour les langues» du conseil de l'Europe. Le niveau minimum qui est demandé aux étudiants de formation initiale est le niveau B2+ (cf. Annexe D). Ce niveau concerne tous les étudiants en formation initiale de l'INSA, y compris les filières spécifiques.
+
+Dans le cas où ce niveau n'est pas obtenu en fin de 5ème année, le jury suspend la délivrance du diplôme pour un maximum de 3 ans. Au-delà de ce délai, l'étudiant ne pourra plus être diplômé de l'INSA de Toulouse. L'obtention du score requis après le jury entraîne la délivrance immédiate du diplôme si les autres conditions de délivrance sont remplies. Pendant les années de suspension, l'étudiant doit être inscrit à l'INSA Toulouse et doit s'être acquitté de la contribution de vie étudiante et de campus (CVEC).
+
+## IV.1.c. Niveau de français
+
+En application des recommandations de la CTI, un niveau minimum B2 est demandé à tous les étudiants INSA non francophones : ces étudiants sont identifiés par un test de langue (que passent tous les étudiants de nationalité étrangère ayant un diplôme étranger) lors de leur entrée à l'INSA quelle que soit leur année d'étude. Il doit être atteint de préférence en fin de 3ème année.
+Pour tous les étudiants étrangers qui ne justifient pas d'un niveau C1 en entrée à l'INSA, des cours de FLE sont mis en place en lieu et place de la LV2 jusqu'à ce que le niveau C1 soit atteint (sauf dans le cas du groupe spécifique ENG'INSA où ces cours viennent en plus de la LV2). Ces étudiants bénéficient d'un tiers temps jusqu'à l'obtention du niveau C1.
+
+En 4ème année, il y a une UE (Développer ses aptitudes managériales) «difficile » au niveau rédactionnel (qui demande un niveau C1 minimum). Tous les étudiants qui ont eu du FLE en 3A auront le tiers temps sur cette UE.
+
+Dans le cas où le niveau B2 n'est pas atteint en fin de 5ème année, le jury peut suspendre la délivrance du diplôme pour un maximum de 3 ans. L'obtention du niveau requis entraîne la délivrance immédiate du diplôme si les autres conditions de délivrance sont remplies. Pendant les années de suspension, l'étudiant doit être inscrit à l'INSA Toulouse et doit s'être acquitté de la CVEC.
+
+# IV.1.d. Durée et validation des stages et séjour à l'étranger
+
+Au cours d'une scolarité à l'INSA, tout étudiant doit obligatoirement effectuer au moins 40 semaines de stages (ou d'expériences professionnelles) dont 14 semaines au minimum en entreprise.
+
+# V. Les Formations à l'INSA Toulouse
+
+​L'INSA Toulouse propose huit spécialités d'ingénierie accessibles en 4ᵉ et 5ᵉ année, couvrant un large éventail de domaines scientifiques et technologiques : Automatique et Électronique, Génie Biologique, Génie Civil, Génie Mécanique, Génie Physique, Informatique et Réseaux et Mathématiques Appliquées. Chaque spécialité est conçue pour répondre aux besoins du marché et aux défis sociétaux actuels. Voici un aperçu des spécialités disponibles :​
+
+- Automatique et Électronique : Formation axée sur la conception et la régulation de systèmes automatisés, intégrant l'électronique et l'informatique industrielle.
+
+- Génie Biologique : Couvre les biotechnologies, la biochimie et la bioproduction, avec des applications en santé, agroalimentaire et environnement.
+
+- Génie Civil : Se concentre sur la conception, la construction et la maintenance d'infrastructures telles que les bâtiments, les ponts et les routes.
+
+- Génie des Procédés et Environnement : Aborde la transformation de la matière et de l'énergie, en mettant l'accent sur les procédés industriels durables et la protection de l'environnement.
+
+- Génie Mécanique : Formation polyvalente couvrant la conception, la modélisation et la fabrication de systèmes mécaniques complexes.
+
+- Génie Physique : Intègre la physique appliquée à l'ingénierie, avec des domaines tels que l'optoélectronique, les nanotechnologies et les matériaux avancés.
+
+- Informatique et Réseaux : Prépare des ingénieurs capables de concevoir et de gérer des systèmes informatiques et des réseaux, en mettant l'accent sur la cybersécurité, l'intelligence artificielle et les systèmes embarqués.
+
+- Mathématiques Appliquées : Se focalise sur la modélisation mathématique, les méthodes numériques et l'analyse de données, avec des applications en finance, en ingénierie et en recherche opérationnelle.
+
+La formation d’ingénieur sur cinq années est structurée en semestres. En première année, dite "tronc commun", les étudiants suivent des enseignements généralistes comprenant des bases scientifiques et techniques, des sciences humaines, des activités physiques et sportives, ainsi qu’un parcours professionnel individualisé (PPI) destiné à initier une réflexion sur leur orientation future.
+
+En deuxième année, les étudiants s’orientent progressivement vers des domaines plus spécifiques. Cette année de "pré-orientation" propose quatre grands axes : Ingénierie Chimique, Biochimique et Environnementale (ICBE), Ingénierie de la Construction (IC), Ingénierie des Matériaux, Composants et Systèmes (IMACS), et Modélisation, Informatique, Communication (MIC). Un stage d’exécution d’une durée d’un mois est prévu à la fin de cette année.
+
+En troisième année, la spécialisation s’affine. Les étudiants choisissent une voie parmi huit disciplines : Génie des Procédés et Environnement, Génie Biologique, Génie Civil, Génie Mécanique, Automatique et Électronique, Génie Physique, Informatique et Réseaux, ou Mathématiques Appliquées. Cette année marque la fin de la phase de pré-orientation et peut inclure un stage facultatif d’une durée de un à trois mois.
+
+En quatrième année, les étudiants intègrent pleinement leur spécialité choisie. Les enseignements deviennent plus techniques, en lien direct avec les compétences attendues dans le monde professionnel. La spécialisation se poursuit en cinquième année avec un approfondissement disciplinaire, accompagné d’un Projet Technique Personnel (PTP) et d’un stage de fin d’études de cinq mois minimum, indispensable à la validation du diplôme.
+
+Le diplôme d’ingénieur est délivré à l’issue de la cinquième année, après validation de tous les semestres, des projets et des stages. Il est également possible d’intégrer la formation à différents niveaux : en première année après une CPGE ou une Licence, en deuxième année après un DUT, une deuxième année de CPGE, un BTS ou une Licence, et en quatrième année après un Master 1 ou une troisième année de Licence.
+
+Les différentes préorientations sont Ingénierie de la construction (IC), Ingénierie des Matériaux, Composants et Systèmes (IMACS), Modélisation, Informatique et Communication (MIC) et Ingénierie Chimique, Biochimique et Environnementale (ICBE).
+
+Ingénierie de la construction (IC)
+La pré-orientation INGÉNIERIE DE LA CONSTRUCTION (IC) est un premier pas vers les deux domaines les plus importants économiquement et en termes d’emploi de l’industrie : la construction mécanique et la construction civile. La formation donne des connaissances des lois fondamentales de la mécanique, de la résistance des matériaux, de la thermique et de la mécanique des fluides. Les méthodes numériques, les outils mathématiques et informatiques sont appliqués à la discipline. Les trois premiers semestres permettent de découvrir l’environnement des deux métiers. Le dernier semestre permet d’aborder intensivement l’une ou l’autre des spécialités : conception de mécanismes de transmission de puissance dans le génie mécanique, connaissance des sols et du comportement des matériaux dans le génie civil.
+Cette pré-orientation conduit vers les filières Génie Civil et Génie Mécanique.
+ 
+Ingénierie des Matériaux, Composants et Systèmes (IMACS)
+La pré-orientation INGÉNIERIE DES MATÉRIAUX, COMPOSANTS ET SYSTÈMES (IMACS) apporte les connaissances nécessaires pour comprendre la physique des matériaux et des composants de la micro et nano-électronique, la commande automatique des processus ainsi que pour concevoir des systèmes électroniques intégrés en vue de l’acquisition de données et de leur utilisation dans la commande des systèmes et processus en temps réel. En alternant des enseignements théoriques et des mises en œuvre expérimentales, cette pré-orientation sensibilise en particulier les futurs ingénieurs aux méthodes liées à la physique microscopique, à l’électronique analogique et numérique, au traitement du signal, à l’assemblage de composants et à la commande des systèmes.
+Cette pré-orientation conduit vers les filières Automatique et Électronique et Génie Physique.
+ 
+Modélisation, Informatique et Communication (MIC)
+La pré-orientation en MODÉLISATION, INFORMATIQUE ET COMMUNICATION (MIC) vise à sensibiliser les futurs ingénieurs aux méthodes liées au traitement de l’information, à l’ingénierie logicielle et matérielle, au calcul scientifique, aux techniques de communication et à leur mise en application. La formation a pour objectif de permettre aux étudiants de comprendre, modéliser, calculer et concevoir des systèmes complexes. Elle comporte des enseignements théoriques dans des disciplines comme les mathématiques, la physique, l’informatique, les télécommunications et les réseaux. Ces enseignements sont complétés par des mises en œuvre expérimentales sous forme de travaux pratiques, de projets et de bureaux d’études sur des applications concrètes.
+Cette pré-orientation conduit vers les filières : Mathématiques appliquées et Informatique et Réseaux.
+ 
+Ingénierie Chimique, Biochimique et Environnementale (ICBE)
+La pré-orientation INGÉNIERIE CHIMIQUE, BIOCHIMIQUE ET ENVIRONNEMENTALE (ICBE) apporte les connaissances nécessaires pour concevoir et mettre en œuvre les procédés de transformation physico-chimique et biologique de la matière. Ces procédés sont utilisés pour répondre aux enjeux mondiaux actuels pour la production de médicaments, d’aliments, d’eau ou d’énergie… mais aussi pour le traitement des pollutions engendrées par l’activité humaine (gaz, eaux usées, déchets…). La formation concerne la description et la caractérisation du comportement des molécules et des catalyseurs biologiques, la compréhension des principaux phénomènes physiques mis en jeu (écoulements, transferts de chaleur et de matière, conversion de l’énergie …) ainsi que des approches méthodologiques spécifiques permettant le calcul des installations. Des outils mathématiques et informatiques permettent l’analyse et la modélisation des systèmes. Des bases en instrumentation familiarisent à la commande et au contrôle des installations. La formation est complétée par une ouverture sur le contexte industriel réel dans lequel ces compétences sont utilisées.
+Cette pré-orientation conduit vers les filières Génie des Procédés, Eau, Énergie, Environnement et Génie Biologique.
+
