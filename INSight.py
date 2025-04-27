@@ -357,6 +357,44 @@ class RAGGenerator:
         ])
 
         return response.message.content
+    def light_generate(self, query: str, context: str, model, hf_token=None):
+        from dotenv import load_dotenv
+        from huggingface_hub import InferenceClient
+        import os
+
+        load_dotenv()
+        hf_token = os.getenv("HF_TOKEN")
+
+        client = InferenceClient(
+            model=model,
+            token=hf_token
+        )
+
+        system_prompt = (
+            "Tu t'appelles CÉLia. Tu es une assistante francophone de l'INSA de Toulouse. "
+            "Tu réponds toujours en français, même si la question est posée dans une autre langue. "
+            "Tu peux répondre aussi bien à des questions pédagogiques qu'à des questions de conversation générale comme \"ça va ?\", \"tu fais quoi ?\", etc. "
+            "Utilise le contexte ci-dessous si nécessaire pour répondre à la question. "
+            "Si tu ne sais pas, dis-le simplement. Ta réponse doit être concise, naturelle, et tenir en 2 phrases maximum."
+        )
+
+        prompt = (
+            "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n"
+            f"{system_prompt}\n<|eot_id|>\n"
+            "<|start_header_id|>user<|end_header_id|>\n"
+            f"Contexte : {context}\nQuestion : {query}\n<|eot_id|>\n"
+            "<|start_header_id|>assistant<|end_header_id|>\n"
+        )
+
+        response = client.text_generation(
+            prompt,
+            max_new_tokens=200,
+            temperature=0.8,
+            top_p=0.8,
+            top_k=50,
+            stop=["<|eot_id|>"]
+        )
+        return response
 
 class UserPrompt:
     def __init__(self,fetcher:VectorFetcher):
@@ -435,8 +473,7 @@ class UserPrompt:
         pass
 
 
-
-
+    
 
 
 
