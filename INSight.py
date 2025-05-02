@@ -410,7 +410,7 @@ class UserPrompt:
         print("\n\n---------------------------\n",user_query)
         print(f"[ask] generation in progress using {config.GENERATOR_MODEL} please wait ...")
         generator=RAGGenerator()
-        print(generator.generate(query=user_query,context=str_context,model=config.GENERATOR_MODEL))
+        print(generator.light_generate(query=user_query,context=str_context,model=config.GENERATOR_MODEL))
             
         end = time.time()
         if VERBOSE>=1:print(f"[ask] Temps d'exécution : {end - start:.2f} secondes")

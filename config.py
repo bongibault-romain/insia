@@ -41,12 +41,12 @@ CHUNK_OVERLAP = 5
 # ------------------------------
 
 # Model name or endpoint for the generator (e.g., answer generation)
-GENERATOR_MODEL = "llama3:latest"
+GENERATOR_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
 # Model name for query expansion (e.g., turning short query into detailed one)
-EXPANDER_MODEL = "llama3:latest"
+EXPANDER_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
 # Model name for query rewriting (e.g., rewriting user input for better retrieval)
-REWRITER_MODEL = "llama3:latest"
+REWRITER_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
 
