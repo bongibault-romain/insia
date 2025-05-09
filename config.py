@@ -47,6 +47,7 @@ GENERATOR_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 EXPANDER_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
 # Model name for query rewriting (e.g., rewriting user input for better retrieval)
-REWRITER_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+LIGHT_MODEL = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 
 
+HEAVY_MODEL = "mistral:7b"

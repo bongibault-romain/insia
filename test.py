@@ -1,15 +1,15 @@
-import tkinter as tk
-from tkinter import filedialog
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
+import torch
 
-def select_file():
-    root = tk.Tk()
-    root.withdraw()  # cache la fenêtre principale
-    file_path = filedialog.askopenfilename(
-        title="Select a file",
-        filetypes=[("All files", "*.*"), ("Text files", "*.txt"), ("PDF files", "*.pdf")]
-    )
-    return file_path
+model_name = "cross-encoder/nli-roberta-base"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
-# Exemple d'utilisation
-file = select_file()
-print("Fichier sélectionné :", file)
+def score(q, c):
+    inputs = tokenizer(q, c, return_tensors="pt", truncation=True)
+    with torch.no_grad():
+        logits = model(**inputs).logits
+    return torch.softmax(logits, dim=1)[0][1].item()  # probabilité que la paire soit "entailment"
+
+# seuil à calibrer
+print("Score (1 = suffisant) :", score("Can I apply?", "You can apply if you are 18 or over..."))

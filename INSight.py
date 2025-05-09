@@ -25,9 +25,28 @@ def clean_paragraph(text: str) -> str:
         return ' '.join(text.split())  # remove extra whitespace/newlines
 
 
+from datetime import datetime, timedelta, timezone
+import re
 
+def parse_pdf_date(pdf_date):
+    if pdf_date.startswith("D:"):
+        pdf_date = pdf_date[2:]
+
+    # Extraction avec regex : date + offset
+    match = re.match(r"(\d{14})([+-])(\d{2})'(\d{2})'?", pdf_date)
+    if not match:
+        return None
+
+    dt_str, sign, offset_hours, offset_minutes = match.groups()
+    dt = datetime.strptime(dt_str, "%Y%m%d%H%M%S")
+
+    offset = timedelta(hours=int(offset_hours), minutes=int(offset_minutes))
+    if sign == '-':
+        offset = -offset
+
+    return dt.replace(tzinfo=timezone(offset))
 class RAGDataset:
-    def __init__(self,load:bool,data_path:str=None,chunk_size=config.CHUNK_MAX_SIZE):
+    def __init__(self,load:bool,data_path:str=None,chunk_size=config.CHUNK_MAX_SIZE,chunk_overlap=config.CHUNK_OVERLAP):
         assert os.path.exists(data_path),f"incorrect path to data : {data_path}"
         assert chunk_size.is_integer, f"need chunk_size as integer"
         assert chunk_size>=10, f"need chunk_size >=10"
@@ -48,13 +67,14 @@ class RAGDataset:
                 if os.path.isfile(chemin_complet) and nom_fichier.lower().endswith(".pdf"):
                     pdf_paths.append(chemin_complet)
             for path in pdf_paths:
-                self.extractPDF(path,self.context_path,self.meta_path)
+                self.extractPDF(path,self.context_path,self.meta_path,chunk_size=chunk_size,chunk_overlap=chunk_overlap)
             self.refineTXT(self.context_path, self.refined_path)
         
         
 
         self.context_lines=open(self.context_path, 'r', encoding="utf-8").readlines()
         self.refined_lines=open(self.refined_path, 'r', encoding="utf-8").readlines()
+        assert len(self.refined_lines)==len(self.context_lines), f" need equal context and refined : len(self.refined_lines) = {len(self.refined_lines)} and len(self.context_lines)={len(self.context_lines)}"
         
         
         if len(pdf_paths)>0: 
@@ -73,10 +93,12 @@ class RAGDataset:
     def extractPDF(self,pdf_path: str, txt_output_path: str, meta_output_path: str, chunk_size=config.CHUNK_MAX_SIZE,chunk_overlap=config.CHUNK_OVERLAP):
         file_name = os.path.basename(pdf_path)
         reader = PdfReader(pdf_path)
-        print("[DEBUG] init extractPDF")
         chunk = []
         next_chunk = []
-
+        
+        metadata = reader.metadata
+        date=metadata.get("/CreationDate")
+        parsed_date=parse_pdf_date(date)
         with open(txt_output_path, "w", encoding="utf-8") as f_txt, \
             open(meta_output_path, "w", encoding="utf-8") as f_meta:
 
@@ -99,7 +121,7 @@ class RAGDataset:
                         paragraph = clean_paragraph(' '.join(chunk))
                         assert len(paragraph.split(" "))<=chunk_size,"incorrect chunk size"
                         f_txt.write(paragraph + "\n")
-                        f_meta.write(f"{page_num + 1}\t{file_name}\n")
+                        f_meta.write(f"{page_num + 1}\t{file_name}\t{parsed_date}\n")
                         
                         # Set current chunk to the overlapping words
                         chunk = next_chunk
@@ -110,8 +132,7 @@ class RAGDataset:
                 paragraph = clean_paragraph(' '.join(chunk))
                 assert len(paragraph.split(" "))<=chunk_size,"incorrect chunk size"
                 f_txt.write(paragraph + "\n")
-                f_meta.write(f"{page_num + 1}\t{file_name}\n")
-        print("[DEBUG] end extractPDF")
+                f_meta.write(f"{page_num + 1}\t{file_name}\t{parsed_date}\n")
 
         
 
@@ -129,7 +150,8 @@ class RAGDataset:
             if meta:
                 dict_meta={
                     "page": self.meta_lines[i][0],
-                    "file": self.meta_lines[i][1]
+                    "file": self.meta_lines[i][1],
+                    "date": self.meta_lines[i][2]
                 }
             embeddings.append({
                 "description": self.refined_lines[i],
@@ -176,13 +198,17 @@ class KnowledgeBase:
             self.tokenizer_embed = AutoTokenizer.from_pretrained(token_embed_str, local_files_only=False) # tokenize
             self.model_embed = AutoModel.from_pretrained(model_embed_str, local_files_only=False).to(self.device) # vectorize
         
-    def build_faiss_index(self):
+    def build_faiss_index(self,refined:bool=True):
         start1 = time.time()
         dimension = config.EMBED_DIM #vecteur de 384 dimensions par défaut pour chaque chunk
         from faiss import IndexFlatIP,write_index
         self.index = IndexFlatIP(dimension)
-        embeddings = np.vstack([self.get_embedding(q["description"]) for q in self.dataset["embeddings"]])
-        self.index.add(embeddings)
+        if refined:
+            list_embeddings=[self._get_embedding(q["description"]) for q in self.dataset["embeddings"]]
+        else:
+            list_embeddings=[self._get_embedding(q["data"]) for q in self.dataset["embeddings"]]
+        self.embeddings = np.vstack(list_embeddings)
+        self.index.add(self.embeddings)
         end1 = time.time()
         
         relative_path = os.path.relpath(self.index_path)
@@ -193,7 +219,7 @@ class KnowledgeBase:
         print(f"[build_faiss_index] Temps d'exécution : {end2 - start1:.2f} secondes, avec {end1 - start1:.2f} secondes pour calculer l'index")
 
 
-    def get_embedding(self, text):
+    def _get_embedding(self, text):
         inputs = self.tokenizer_embed(text, return_tensors="pt", padding=True, truncation=True).to(self.device)
         from torch import no_grad
         with no_grad():
@@ -259,7 +285,7 @@ class VectorFetcher:
 
     def retrieve(self,query:str,num_queries=5,date_adjust:bool=True,small_to_big=(1,2)):
         start = time.time()
-        query_embedding = self.knowledge.get_embedding(query)
+        query_embedding = self.knowledge._get_embedding(query)
         D, I = self.knowledge.index.search(query_embedding, k=num_queries)
 
 
@@ -340,22 +366,23 @@ class ChainManager:
 
 
 class RAGGenerator:
-    def generate(self,query:str,context:str,model:str):
-        
+    def generate(self,query:str,context:str,model:str=config.HEAVY_MODEL):
+        start = time.time()
         from ollama import chat
         input_text = f"context: {context} question: {query}"
 
         response = chat(model=model, messages=[
             {
                 'role': 'system',
-                'content': 'répond à la question en français, n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Cite la page d\'origine des informations essentielles ainsi que le nom du fichier d\'où provient l\'information. '
+                'content': 'répond à la question en français, n\'invente rien, ne doute jamais du contexte qui t\'est donné, dis clairement si tu ne sais pas la réponse. Cite la page d\'origine des informations essentielles ainsi que le nom du fichier d\'où provient l\'information. Prends en compte les informations les plus récentes quand c\'est incohérent'
             },
             {
                 'role': 'user',
                 'content': input_text,
             },
         ])
-
+        end = time.time()
+        print(f"[RAGGenerator] Temps d'exécution : {end - start:.2f} secondes")
         return response.message.content
     def light_generate(self, query: str, context: str, model, hf_token=None):
         from dotenv import load_dotenv
@@ -375,7 +402,9 @@ class RAGGenerator:
             "Tu réponds toujours en français, même si la question est posée dans une autre langue. "
             "Tu peux répondre aussi bien à des questions pédagogiques qu'à des questions de conversation générale comme \"ça va ?\", \"tu fais quoi ?\", etc. "
             "Utilise le contexte ci-dessous si nécessaire pour répondre à la question. "
-            "Si tu ne sais pas, dis-le simplement. Ta réponse doit être concise, naturelle, et tenir en 2 phrases maximum."
+            "Ta réponse doit être approfondie"
+            "Prends en compte les informations les plus récentes quand c\'est incohérent"
+            "si tu trouve une incohérence tu dois absolument la citer"
         )
 
         prompt = (
@@ -388,7 +417,7 @@ class RAGGenerator:
 
         response = client.text_generation(
             prompt,
-            max_new_tokens=200,
+            max_new_tokens=500,
             temperature=0.8,
             top_p=0.8,
             top_k=50,
