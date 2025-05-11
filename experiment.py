@@ -144,8 +144,12 @@ def verif(query,contexts):
     print(f"[RAGGenerator] Temps d'exécution : {end - start:.2f} secondes")
     return response.message.content
 
+
+
+print("verification : ")
+from verif import RagVerifier
 print("Gen : ...")
-i = 12
+i = 14
 contexts=open(f"./experiment/{i}/contexts.txt", 'r', encoding="utf-8").readlines()
 rg=RAGGenerator()
 rep=rg.generate(queries[i],contexts)

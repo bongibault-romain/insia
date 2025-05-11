@@ -2,3 +2,8 @@
 .env
 /experiment/*
 /__pycache__/*
+verif2.py
+/qa_model/
+/qa_model_final/
+/verifier_model/
+hotpot_qa_suffisance.tsv
